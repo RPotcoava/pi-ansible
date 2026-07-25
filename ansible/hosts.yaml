@@ -1,0 +1,19 @@
+all:
+  vars:
+    ansible_user: razvan
+  hosts:
+    raspberrypi5a:
+      ansible_host: 192.168.0.53
+    raspberrypi5b:
+      ansible_host: 192.168.0.21
+    raspberrypi5c:
+      ansible_host: 192.168.0.14
+    raspberrypi4:
+      ansible_host: 192.168.0.101
+  children:
+    pi_nodes:
+      hosts:
+        raspberrypi5a:
+        raspberrypi5b:
+        raspberrypi5c:
+        raspberrypi4:

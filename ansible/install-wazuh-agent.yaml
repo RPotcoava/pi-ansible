@@ -1,0 +1,42 @@
+- name: Install and configure Wazuh Agent on Raspberry Pis
+  hosts: pi_nodes
+  become: yes
+  vars:
+    wazuh_manager_ip: "192.168.0.248"
+  tasks:
+    - name: Ensure dependencies are installed
+      apt:
+        name:
+          - curl
+          - apt-transport-https
+          - lsb-release
+          - gnupg
+        state: present
+        update_cache: yes
+
+    - name: Download Wazuh GPG key
+      get_url:
+        url: https://packages.wazuh.com/key/GPG-KEY-WAZUH
+        dest: /usr/share/keyrings/wazuh.gpg
+        mode: '0644'
+
+    - name: Add Wazuh APT repository
+      apt_repository:
+        repo: "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main"
+        state: present
+        filename: wazuh
+
+    - name: Install Wazuh Agent
+      apt:
+        name: wazuh-agent
+        state: present
+        update_cache: yes
+      environment:
+        WAZUH_MANAGER: "{{ wazuh_manager_ip }}"
+
+    - name: Enable and start Wazuh Agent service
+      systemd:
+        name: wazuh-agent
+        state: started
+        enabled: yes
+        daemon_reload: yes

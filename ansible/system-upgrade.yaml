@@ -1,0 +1,13 @@
+- name: Perform system upgrade on all Raspberry Pis
+  hosts: pi_nodes
+  become: yes
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Upgrade all packages to their latest versions
+      apt:
+        upgrade: dist
+        autoclean: yes
+        autoremove: yes
