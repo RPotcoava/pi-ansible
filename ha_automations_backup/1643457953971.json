@@ -1,0 +1,51 @@
+{
+  "id": "1643457953971",
+  "alias": "BEDROOM: Bedroom Air Purifier OFF when open window",
+  "description": "Turns off bedroom air purifier when balcony door has been open for 10 minutes.",
+  "triggers": [
+    {
+      "trigger": "state",
+      "entity_id": "binary_sensor.balcony_door",
+      "to": "on",
+      "for": {
+        "minutes": 10
+      }
+    },
+    {
+      "trigger": "state",
+      "entity_id": "fan.mi_air_purifier_3_3h2",
+      "to": "on"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "state",
+      "entity_id": "fan.mi_air_purifier_3_3h2",
+      "state": "on"
+    },
+    {
+      "condition": "state",
+      "entity_id": "binary_sensor.balcony_door",
+      "state": "on",
+      "for": {
+        "minutes": 10
+      }
+    }
+  ],
+  "actions": [
+    {
+      "action": "fan.turn_off",
+      "target": {
+        "entity_id": "fan.mi_air_purifier_3_3h2"
+      }
+    },
+    {
+      "action": "tts.cloud_say",
+      "data": {
+        "entity_id": "media_player.sufragerie_speaker",
+        "message": "OK, turning off the bedroom air purifier"
+      }
+    }
+  ],
+  "mode": "restart"
+}

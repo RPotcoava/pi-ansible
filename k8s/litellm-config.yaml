@@ -1,0 +1,144 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: litellm-config
+  namespace: default
+data:
+  ad_hoc_recognizers.json: |
+    [
+      {
+        "name": "SecretKeyRecognizer",
+        "supported_language": "en",
+        "supported_entity": "SECRET_KEY",
+        "patterns": [
+          {
+            "name": "openai_or_anthropic_key",
+            "regex": "sk-(ant-|proj-)?[a-zA-Z0-9_-]{20,}",
+            "score": 0.95
+          },
+          {
+            "name": "google_api_key",
+            "regex": "AIza[0-9A-Za-z-_]{35}",
+            "score": 0.95
+          },
+          {
+            "name": "github_token",
+            "regex": "gh[pousr]_[a-zA-Z0-9]{36,}",
+            "score": 0.95
+          },
+          {
+            "name": "bearer_token",
+            "regex": "Bearer\\s+[a-zA-Z0-9_\\-\\.]{25,}",
+            "score": 0.9
+          },
+          {
+            "name": "private_key",
+            "regex": "-----BEGIN (RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----",
+            "score": 1.0
+          }
+        ]
+      }
+    ]
+  config.yaml: |
+    general_settings:
+      store_model_in_db: false
+      store_prompts_in_spend_logs: true
+
+    guardrails:
+      - guardrail_name: "privacy-and-secrets-guard"
+        litellm_params:
+          guardrail: "presidio"
+          mode: "pre_call"
+          default_on: true
+          presidio_analyzer_api_base: "http://presidio-service.default.svc.cluster.local:5002"
+          presidio_anonymizer_api_base: "http://presidio-service.default.svc.cluster.local:5001"
+          presidio_language: "en"
+          presidio_ad_hoc_recognizers: "/app/config/ad_hoc_recognizers.json"
+          output_parse_pii: false
+          pii_entities_config:
+            EMAIL_ADDRESS: "MASK"
+            PHONE_NUMBER: "MASK"
+            CREDIT_CARD: "MASK"
+            US_SSN: "MASK"
+            SECRET_KEY: "MASK"
+            CRYPTO: "MASK"
+
+    model_list:
+      # --- Local gemma4:e4b-it-qat (Fast HA model) ---
+      - model_name: fast-ha-model
+        litellm_params:
+          model: ollama/gemma4:e4b-it-qat
+          api_base: http://llm-host.local:11434
+          num_ctx: 8192
+
+      # --- Local gemma4:31b (Smart reasoning model) ---
+      - model_name: smart-reasoning
+        litellm_params:
+          model: ollama/gemma4:31b
+          api_base: http://llm-host.local:11434
+          num_ctx: 8192
+
+      # --- Local llama3 ---
+      - model_name: llama3
+        litellm_params:
+          model: ollama/llama3
+          api_base: http://llm-host.local:11434
+          num_ctx: 8192
+
+      # --- OpenRouter Auto Fallback ---
+      - model_name: openrouter-auto
+        litellm_params:
+          model: openrouter/auto
+          api_key: os.environ/OPENROUTER_API_KEY
+          
+      # --- Gemini 2.5 Flash Fallback ---
+      - model_name: gemini-2.5-flash
+        litellm_params:
+          model: gemini/gemini-2.5-flash
+          api_key: os.environ/GEMINI_API_KEY
+
+      # --- Client Aliases ---
+      - model_name: default-agent-model
+        litellm_params:
+          model: ollama/gemma4:31b
+          api_base: http://llm-host.local:11434
+          num_ctx: 8192
+
+      - model_name: home-assistant-model
+        litellm_params:
+          model: ollama/gemma4:e4b-it-qat
+          api_base: http://llm-host.local:11434
+          num_ctx: 8192
+
+      - model_name: llm-model
+        litellm_params:
+          model: ollama/gemma4:e4b-it-qat
+          api_base: http://llm-host.local:11434
+          num_ctx: 8192
+
+      - model_name: gpt-4o
+        litellm_params:
+          model: openrouter/openai/gpt-4o
+          api_key: os.environ/OPENROUTER_API_KEY
+
+      - model_name: gpt-3.5-turbo
+        litellm_params:
+          model: openrouter/openai/gpt-3.5-turbo
+          api_key: os.environ/OPENROUTER_API_KEY
+
+      - model_name: gpt-4o-mini
+        litellm_params:
+          model: openrouter/openai/gpt-4o-mini
+          api_key: os.environ/OPENROUTER_API_KEY
+
+    router_settings:
+      num_retries: 0
+      fallbacks:
+        - default-agent-model: ["openrouter-auto", "gemini-2.5-flash"]
+        - fast-ha-model: ["openrouter-auto", "gemini-2.5-flash"]
+        - smart-reasoning: ["openrouter-auto", "gemini-2.5-flash"]
+        - home-assistant-model: ["openrouter-auto", "gemini-2.5-flash"]
+        - llm-model: ["openrouter-auto", "gemini-2.5-flash"]
+        - gpt-4o: ["openrouter-auto", "gemini-2.5-flash"]
+        - gpt-3.5-turbo: ["openrouter-auto", "gemini-2.5-flash"]
+        - gpt-4o-mini: ["openrouter-auto", "gemini-2.5-flash"]

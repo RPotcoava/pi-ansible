@@ -1,0 +1,208 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dms
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dms-db-secrets
+  namespace: dms
+type: Opaque
+stringData:
+  # Database root and user passwords. Change these to your secure passwords.
+  POSTGRES_PASSWORD: "dms_secure_postgres_pass"
+  MARIADB_ROOT_PASSWORD: "dms_secure_mariadb_root_pass"
+  MARIADB_PASSWORD: "dms_secure_mariadb_pass"
+---
+# Persistent Volumes & Claims backed by the NFS Share
+# NOTE: Replace <NFS_SERVER_IP> with the IP of your NFS node (e.g., 192.168.0.x)
+# and adjust the export paths if needed.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv
+spec:
+  capacity:
+    storage: 50Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-storage
+  nfs:
+    path: /export/postgres
+    server: <NFS_SERVER_IP>
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: dms
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-storage
+  resources:
+    requests:
+      storage: 50Gi
+  volumeName: postgres-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mariadb-pv
+spec:
+  capacity:
+    storage: 50Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-storage
+  nfs:
+    path: /export/mariadb
+    server: <NFS_SERVER_IP>
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc
+  namespace: dms
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-storage
+  resources:
+    requests:
+      storage: 50Gi
+  volumeName: mariadb-pv
+---
+# PostgreSQL Database Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-db
+  namespace: dms
+  labels:
+    app: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16-alpine
+          env:
+            - name: POSTGRES_DB
+              value: dms_db
+            - name: POSTGRES_USER
+              value: dms_user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dms-db-secrets
+                  key: POSTGRES_PASSWORD
+          ports:
+            - containerPort: 5432
+              name: postgres
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+              subPath: pgdata
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: postgres-pvc
+---
+# PostgreSQL Service exposed via MetalLB LoadBalancer for external access (e.g. from TrueNAS)
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+  namespace: dms
+  labels:
+    app: postgres
+  # Uncomment the annotation below if you want to request a specific MetalLB IP
+  # annotations:
+  #   metallb.universe.tf/loadBalancerIPs: 192.168.0.101
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+  selector:
+    app: postgres
+  type: LoadBalancer
+---
+# MariaDB Database Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb-db
+  namespace: dms
+  labels:
+    app: mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb:10.11
+          env:
+            - name: MARIADB_DATABASE
+              value: nextcloud_db
+            - name: MARIADB_USER
+              value: nextcloud_user
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dms-db-secrets
+                  key: MARIADB_ROOT_PASSWORD
+            - name: MARIADB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dms-db-secrets
+                  key: MARIADB_PASSWORD
+          ports:
+            - containerPort: 3306
+              name: mariadb
+          volumeMounts:
+            - name: mariadb-storage
+              mountPath: /var/lib/mysql
+              subPath: mysql
+      volumes:
+        - name: mariadb-storage
+          persistentVolumeClaim:
+            claimName: mariadb-pvc
+---
+# MariaDB Service exposed via MetalLB LoadBalancer for external access (e.g. from TrueNAS Nextcloud)
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb-service
+  namespace: dms
+  labels:
+    app: mariadb
+  # Uncomment the annotation below if you want to request a specific MetalLB IP
+  # annotations:
+  #   metallb.universe.tf/loadBalancerIPs: 192.168.0.102
+spec:
+  ports:
+    - port: 3306
+      targetPort: 3306
+  selector:
+    app: mariadb
+  type: LoadBalancer

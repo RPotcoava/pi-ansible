@@ -1,0 +1,362 @@
+# Persistent Volumes & Claims for Applications
+# NOTE: Replace <NFS_SERVER_IP> with the IP of your NFS node and adjust export paths.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nextcloud-pv
+spec:
+  capacity:
+    storage: 100Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-storage
+  nfs:
+    path: /export/nextcloud
+    server: <NFS_SERVER_IP>
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nextcloud-pvc
+  namespace: dms
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-storage
+  resources:
+    requests:
+      storage: 100Gi
+  volumeName: nextcloud-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: paperless-pv
+spec:
+  capacity:
+    storage: 200Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-storage
+  nfs:
+    path: /export/paperless
+    server: <NFS_SERVER_IP>
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: paperless-pvc
+  namespace: dms
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-storage
+  resources:
+    requests:
+      storage: 200Gi
+  volumeName: paperless-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: immich-pv
+spec:
+  capacity:
+    storage: 500Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-storage
+  nfs:
+    path: /export/immich
+    server: <NFS_SERVER_IP>
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: immich-pvc
+  namespace: dms
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-storage
+  resources:
+    requests:
+      storage: 500Gi
+  volumeName: immich-pv
+---
+# Secrets for Frontend Applications
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dms-app-secrets
+  namespace: dms
+type: Opaque
+stringData:
+  NEXTCLOUD_ADMIN_PASSWORD: "nextcloud_secure_admin_pass"
+  PAPERLESS_ADMIN_PASSWORD: "paperless_secure_admin_pass"
+  IMMICH_JWT_SECRET: "immich_secure_jwt_secret_key"
+---
+# Redis Deployment & Service (used as cache/broker for Paperless and Immich)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dms-redis
+  namespace: dms
+  labels:
+    app: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:7-alpine
+          ports:
+            - containerPort: 6379
+              name: redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  namespace: dms
+  labels:
+    app: redis
+spec:
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    app: redis
+  type: LoadBalancer # Exposed externally for TrueNAS workers
+---
+# Nextcloud Deployment & Service (24/7 on K8s)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextcloud
+  namespace: dms
+  labels:
+    app: nextcloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextcloud
+  template:
+    metadata:
+      labels:
+        app: nextcloud
+    spec:
+      containers:
+        - name: nextcloud
+          image: nextcloud:29-apache
+          env:
+            - name: MYSQL_HOST
+              value: mariadb-service.dms.svc.cluster.local:3306
+            - name: MYSQL_DATABASE
+              value: nextcloud_db
+            - name: MYSQL_USER
+              value: nextcloud_user
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dms-db-secrets
+                  key: MARIADB_PASSWORD
+            - name: NEXTCLOUD_ADMIN_USER
+              value: admin
+            - name: NEXTCLOUD_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dms-app-secrets
+                  key: NEXTCLOUD_ADMIN_PASSWORD
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - name: nextcloud-storage
+              mountPath: /var/www/html
+      volumes:
+        - name: nextcloud-storage
+          persistentVolumeClaim:
+            claimName: nextcloud-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud-service
+  namespace: dms
+  labels:
+    app: nextcloud
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: nextcloud
+  type: LoadBalancer
+---
+# Paperless-ngx Webserver Deployment (24/7 on K8s)
+# The heavy worker/consumer container runs on TrueNAS Scale.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paperless-webserver
+  namespace: dms
+  labels:
+    app: paperless-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paperless-web
+  template:
+    metadata:
+      labels:
+        app: paperless-web
+    spec:
+      containers:
+        - name: webserver
+          image: ghcr.io/paperless-ngx/paperless-ngx:2.11
+          command: ["/sbin/docker-entrypoint.sh", "gunicorn", "-c", "/usr/src/paperless/gunicorn.conf.py", "paperless.wsgi"]
+          env:
+            - name: PAPERLESS_REDIS
+              value: redis://redis-service.dms.svc.cluster.local:6379
+            - name: PAPERLESS_DBENGINE
+              value: postgresql
+            - name: PAPERLESS_DBHOST
+              value: postgres-service.dms.svc.cluster.local
+            - name: PAPERLESS_DBNAME
+              value: dms_db
+            - name: PAPERLESS_DBUSER
+              value: dms_user
+            - name: PAPERLESS_DBPASS
+              valueFrom:
+                secretKeyRef:
+                  name: dms-db-secrets
+                  key: POSTGRES_PASSWORD
+            - name: PAPERLESS_ADMIN_USER
+              value: admin
+            - name: PAPERLESS_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dms-app-secrets
+                  key: PAPERLESS_ADMIN_PASSWORD
+            - name: PAPERLESS_URL
+              value: "http://paperless.local"
+            # Disable local consumption/OCR on K8s to save RPi resources
+            - name: PAPERLESS_OCR_MODE
+              value: skip
+          ports:
+            - containerPort: 8000
+              name: http
+          volumeMounts:
+            - name: paperless-storage
+              mountPath: /usr/src/paperless/data
+              subPath: data
+            - name: paperless-storage
+              mountPath: /usr/src/paperless/media
+              subPath: media
+      volumes:
+        - name: paperless-storage
+          persistentVolumeClaim:
+            claimName: paperless-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: paperless-service
+  namespace: dms
+  labels:
+    app: paperless-web
+spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+  selector:
+    app: paperless-web
+  type: LoadBalancer
+---
+# Immich Server Deployment (24/7 on K8s)
+# Immich Machine Learning and Microservices (heavy work) run on TrueNAS.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: immich-server
+  namespace: dms
+  labels:
+    app: immich-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: immich-server
+  template:
+    metadata:
+      labels:
+        app: immich-server
+    spec:
+      containers:
+        - name: server
+          image: ghcr.io/immich-app/immich-server:v1.105.1
+          command: ["start.sh", "immich"]
+          env:
+            - name: DB_HOSTNAME
+              value: postgres-service.dms.svc.cluster.local
+            - name: DB_DATABASE_NAME
+              value: dms_db
+            - name: DB_USERNAME
+              value: dms_user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dms-db-secrets
+                  key: POSTGRES_PASSWORD
+            - name: REDIS_HOSTNAME
+              value: redis-service.dms.svc.cluster.local
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: dms-app-secrets
+                  key: IMMICH_JWT_SECRET
+            # Point to Immich Machine Learning container on TrueNAS
+            - name: IMMICH_MACHINE_LEARNING_URL
+              value: "http://192.168.0.15:3003"
+          ports:
+            - containerPort: 3001
+              name: http
+          volumeMounts:
+            - name: immich-storage
+              mountPath: /usr/src/app/upload
+              subPath: upload
+      volumes:
+        - name: immich-storage
+          persistentVolumeClaim:
+            claimName: immich-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: immich-service
+  namespace: dms
+  labels:
+    app: immich-server
+spec:
+  ports:
+    - port: 3001
+      targetPort: 3001
+  selector:
+    app: immich-server
+  type: LoadBalancer

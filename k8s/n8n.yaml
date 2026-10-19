@@ -1,0 +1,125 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: n8n-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n
+  namespace: default
+  labels:
+    app: n8n
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: n8n
+  template:
+    metadata:
+      labels:
+        app: n8n
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: raspberrypi5b
+      containers:
+        - name: n8n
+          image: docker.n8n.io/n8nio/n8n:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: N8N_HOST
+              value: "n8n.rpotcoava.duckdns.org"
+            - name: N8N_PORT
+              value: "5678"
+            - name: N8N_PROTOCOL
+              value: "https"
+            - name: NODE_ENV
+              value: "production"
+            - name: WEBHOOK_URL
+              value: "https://n8n.rpotcoava.duckdns.org/"
+            - name: GENERIC_TIMEZONE
+              value: "Europe/Bucharest"
+            - name: TZ
+              value: "Europe/Bucharest"
+            - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+              value: "false"
+            - name: EXECUTIONS_DATA_PRUNE
+              value: "true"
+            - name: EXECUTIONS_DATA_MAX_AGE
+              value: "168"
+            - name: EXECUTIONS_DATA_PRUNE_MAX_COUNT
+              value: "50000"
+            - name: N8N_DIAGNOSTICS_ENABLED
+              value: "false"
+          ports:
+            - containerPort: 5678
+              name: http
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 1500m
+              memory: 1536Mi
+          volumeMounts:
+            - name: n8n-storage
+              mountPath: /home/node/.n8n
+      volumes:
+        - name: n8n-storage
+          persistentVolumeClaim:
+            claimName: n8n-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: n8n-service
+  namespace: default
+  labels:
+    app: n8n
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5678
+      targetPort: 5678
+      name: http
+  selector:
+    app: n8n
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: n8n-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/websocket-services: "n8n-service"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - n8n.rpotcoava.duckdns.org
+      secretName: rpotcoava-wildcard-tls
+  rules:
+    - host: n8n.rpotcoava.duckdns.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: n8n-service
+                port:
+                  number: 5678

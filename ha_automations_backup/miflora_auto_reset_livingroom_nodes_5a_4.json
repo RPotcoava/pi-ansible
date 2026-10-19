@@ -1,0 +1,45 @@
+{
+  "id": "miflora_auto_reset_livingroom_nodes_5a_4",
+  "alias": "FLOWER: Auto-Reset MiFlora on Nodes 5a & 4 (Living Room)",
+  "description": "Automatically restarts miflora.service on Nodes 5a and 4 if no flower sensor in Living Room groups (LV1, LV2, LV3) has provided readings for over 24 hours.",
+  "triggers": [
+    {
+      "trigger": "time_pattern",
+      "hours": "/1",
+      "minutes": "0"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "template",
+      "value_template": "{% set lv_groups = ['sensor.mean_moisture_lv1', 'sensor.mean_moisture_lv2', 'sensor.mean_moisture_lv3'] %}\n{% set lv_sensors = expand(lv_groups) | map(attribute='attributes.entity_id') | sum(start=[]) | unique | list %}\n{% set ns = namespace(latest=0) %}\n{% for s in expand(lv_sensors) %}\n  {% if s.state not in ['unknown', 'unavailable'] %}\n    {% set ts = as_timestamp(s.last_updated, 0) %}\n    {% if ts > ns.latest %}\n      {% set ns.latest = ts %}\n    {% endif %}\n  {% endif %}\n{% endfor %}\n{{ (as_timestamp(now()) - ns.latest) >= 86400 }}"
+    }
+  ],
+  "actions": [
+    {
+      "action": "button.press",
+      "target": {
+        "entity_id": [
+          "button.miflora_daemon_raspberrypi5a_restart_miflora_node_5a",
+          "button.miflora_daemon_raspberrypi4_restart_miflora_node_4"
+        ]
+      }
+    },
+    {
+      "action": "persistent_notification.create",
+      "data": {
+        "title": "\ud83c\udf38 Living Room Flower Sensors: Nodes 5a & 4 Reset",
+        "message": "No readings received from Living Room flower sensors (LV1-LV3) for over 24 hours. Automatically restarted miflora.service on Nodes 5a and 4.",
+        "notification_id": "miflora_reset_livingroom"
+      }
+    },
+    {
+      "action": "notify.mobile_app_home",
+      "data": {
+        "title": "MiFlora Nodes 5a & 4 Reset",
+        "message": "No readings from Living Room flower sensors for >24h. Automatically restarted miflora.service on Nodes 5a and 4."
+      }
+    }
+  ],
+  "mode": "single"
+}

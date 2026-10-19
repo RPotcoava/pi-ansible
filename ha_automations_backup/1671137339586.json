@@ -1,0 +1,37 @@
+{
+  "id": "1671137339586",
+  "alias": "HALLWAY: Set Light Level when turned on",
+  "description": "Sets the Hallway Light Level to desired",
+  "triggers": [
+    {
+      "entity_id": [
+        "light.ikea_of_sweden_tradfri_bulb_e27_w_opal_1000lm"
+      ],
+      "from": [
+        "off"
+      ],
+      "to": [
+        "on"
+      ],
+      "trigger": "state"
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "data": {
+        "transition": 3,
+        "color_temp_kelvin": "{{ states(\"input_number.lights_color\") | int }}",
+        "brightness_pct": "{{ states(\"input_number.light_level\") | int }}"
+      },
+      "target": {
+        "entity_id": [
+          "light.tradfri_bulb_e27_w_opal_1000lm_2",
+          "light.ikea_of_sweden_tradfri_bulb_e27_w_opal_1000lm"
+        ]
+      },
+      "action": "light.turn_on"
+    }
+  ],
+  "mode": "single"
+}

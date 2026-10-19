@@ -1,0 +1,196 @@
+{
+  "id": "air_quality_alert_living_room",
+  "alias": "AIR: Living Room Air Quality Alert & Management",
+  "description": "Monitors Living Room CO2, PM2.5, and formaldehyde. Sets alert when bad, clears alert after 10 minutes of clean air.",
+  "triggers": [
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mt15_mt29_carbon_dioxide",
+      "above": 1200,
+      "for": {
+        "minutes": 1
+      },
+      "id": "co2_high"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mt15_mt29_pm2_5",
+      "above": 30,
+      "for": {
+        "minutes": 1
+      },
+      "id": "pm25_high"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mt15_mt29_formaldehyde",
+      "above": 0.08,
+      "for": {
+        "minutes": 1
+      },
+      "id": "hcho_high"
+    },
+    {
+      "trigger": "state",
+      "entity_id": "binary_sensor.livingroom_window_sensor_1",
+      "to": "off",
+      "id": "window_closed"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mt15_mt29_carbon_dioxide",
+      "below": 1000,
+      "for": {
+        "minutes": 10
+      },
+      "id": "air_clean_co2"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mt15_mt29_pm2_5",
+      "below": 25,
+      "for": {
+        "minutes": 10
+      },
+      "id": "air_clean_pm25"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mt15_mt29_formaldehyde",
+      "below": 0.07,
+      "for": {
+        "minutes": 10
+      },
+      "id": "air_clean_hcho"
+    }
+  ],
+  "actions": [
+    {
+      "choose": [
+        {
+          "conditions": [
+            {
+              "condition": "template",
+              "value_template": "{{ states('sensor.mt15_mt29_carbon_dioxide') | float(0) <= 1000 and states('sensor.mt15_mt29_pm2_5') | float(0) <= 25 and states('sensor.mt15_mt29_formaldehyde') | float(0) <= 0.07 and is_state('input_boolean.living_room_air_quality_alert', 'on') }}"
+            }
+          ],
+          "sequence": [
+            {
+              "action": "input_boolean.turn_off",
+              "target": {
+                "entity_id": "input_boolean.living_room_air_quality_alert"
+              }
+            },
+            {
+              "action": "persistent_notification.dismiss",
+              "data": {
+                "notification_id": "living_room_air_alert"
+              }
+            },
+            {
+              "action": "input_text.set_value",
+              "target": {
+                "entity_id": "input_text.recent_alerts_24h"
+              },
+              "data": {
+                "value": "{% set current = states('input_text.recent_alerts_24h') %}\n{% if current not in ['unknown', 'unavailable', '', 'none'] %}\n  {% set items = current.split('   \u2022   ') %}\n  {% set ns = namespace(rem=[]) %}\n  {% for item in items %}\n    {% if 'Living Room High' not in item and 'CO2' not in item and 'Formaldehyde' not in item and 'PM2.5' not in item %}\n      {% set ns.rem = ns.rem + [item] %}\n    {% endif %}\n  {% endfor %}\n  {{ ns.rem | join('   \u2022   ') }}\n{% else %}\n  {{ '' }}\n{% endif %}"
+              }
+            }
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "condition": "template",
+              "value_template": "{{ states('sensor.mt15_mt29_carbon_dioxide') | float(0) > 1200 or states('sensor.mt15_mt29_pm2_5') | float(0) > 30 or states('sensor.mt15_mt29_formaldehyde') | float(0) > 0.08 }}"
+            }
+          ],
+          "sequence": [
+            {
+              "action": "input_boolean.turn_on",
+              "target": {
+                "entity_id": "input_boolean.living_room_air_quality_alert"
+              }
+            },
+            {
+              "variables": {
+                "co2": "{{ states('sensor.mt15_mt29_carbon_dioxide') | float(0) }}",
+                "pm25": "{{ states('sensor.mt15_mt29_pm2_5') | float(0) }}",
+                "hcho": "{{ states('sensor.mt15_mt29_formaldehyde') | float(0) }}",
+                "window_open_10m": "{{ is_state('binary_sensor.livingroom_window_sensor_1', 'on') and (now() - states.binary_sensor.livingroom_window_sensor_1.last_changed).total_seconds() >= 600 }}",
+                "alert_msg": "{% if pm25 > 30 %}\n\ud83d\udea8 Living Room PM2.5 is high ({{ pm25 | round(0) }} \u00b5g/m\u00b3). {% if window_open_10m %}Window open > 10m; purifier turned off for efficiency.{% else %}Purifier should be running.{% endif %}\n{% elif co2 > 1200 %}\n\u26a0\ufe0f Living Room CO2 is high ({{ co2 | round(0) }} ppm). Please OPEN windows to ventilate with fresh air.\n{% elif hcho > 0.08 %}\n\u26a0\ufe0f Living Room Formaldehyde is elevated ({{ hcho }} mg/m\u00b3). Please ventilate with fresh air.\n{% else %}\nAir quality warning in Living Room.\n{% endif %}"
+              }
+            },
+            {
+              "choose": [
+                {
+                  "conditions": [
+                    {
+                      "condition": "template",
+                      "value_template": "{{ window_open_10m }}"
+                    }
+                  ],
+                  "sequence": [
+                    {
+                      "action": "fan.turn_off",
+                      "target": {
+                        "entity_id": "fan.zhimi_vb4_5851_air_purifier"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "conditions": [
+                    {
+                      "condition": "template",
+                      "value_template": "{{ pm25 > 30 and not window_open_10m and states('fan.zhimi_vb4_5851_air_purifier') not in ['unavailable', 'unknown'] }}"
+                    }
+                  ],
+                  "sequence": [
+                    {
+                      "action": "fan.turn_on",
+                      "target": {
+                        "entity_id": "fan.zhimi_vb4_5851_air_purifier"
+                      },
+                      "data": {
+                        "preset_mode": "Auto"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "persistent_notification.create",
+              "data": {
+                "title": "\ud83d\udea8 Living Room Air Quality Alert",
+                "message": "{{ alert_msg }}",
+                "notification_id": "living_room_air_alert"
+              }
+            },
+            {
+              "action": "notify.send_message",
+              "target": {
+                "entity_id": "notify.s24"
+              },
+              "data": {
+                "title": "Living Room Air Quality Alert",
+                "message": "{{ alert_msg }}"
+              }
+            },
+            {
+              "action": "input_text.set_value",
+              "target": {
+                "entity_id": "input_text.recent_alerts_24h"
+              },
+              "data": {
+                "value": "{% set t = now().strftime(\"%H:%M\") %}\n{% if pm25 > 30 %}\n  {% set entry = \"\ud83d\udea8 [\" ~ t ~ \"] Living Room High PM2.5 (\" ~ (pm25 | round(0)) ~ \" \u00b5g/m\u00b3)\" %}\n{% elif co2 > 1200 %}\n  {% set entry = \"\u26a0\ufe0f [\" ~ t ~ \"] Living Room High CO2 (\" ~ (co2 | round(0)) ~ \" ppm)\" %}\n{% else %}\n  {% set entry = \"\u26a0\ufe0f [\" ~ t ~ \"] Living Room High Formaldehyde (\" ~ hcho ~ \" mg/m\u00b3)\" %}\n{% endif %}\n{% set current = states('input_text.recent_alerts_24h') %}\n{% if current in ['unknown', 'unavailable', '', 'none'] %}\n  {{ entry }}\n{% elif entry not in current %}\n  {{ (entry ~ '   \u2022   ' ~ current)[:250] }}\n{% else %}\n  {{ current }}\n{% endif %}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "mode": "restart"
+}

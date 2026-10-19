@@ -1,0 +1,40 @@
+{
+  "id": "1671139285406",
+  "alias": "HOME: Trigger Override when at 100%",
+  "description": "Trigger Lights Override when Ceiling light set to 100%",
+  "trigger": [
+    {
+      "platform": "template",
+      "value_template": "{% if state_attr(\"light.tradfri_light_7e1831520440000f_65611\",\"brightness\") >253 %} True {%- else -%} False {%- endif %}\n"
+    }
+  ],
+  "condition": [],
+  "action": [
+    {
+      "service": "input_boolean.turn_on",
+      "data": {},
+      "target": {
+        "entity_id": "input_boolean.light_override"
+      }
+    },
+    {
+      "service": "input_number.set_value",
+      "data": {
+        "value": 98.974
+      },
+      "target": {
+        "entity_id": "input_number.light_level"
+      }
+    },
+    {
+      "service": "input_number.set_value",
+      "data": {
+        "value": 4000
+      },
+      "target": {
+        "entity_id": "input_number.lights_color"
+      }
+    }
+  ],
+  "mode": "single"
+}

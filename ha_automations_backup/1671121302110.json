@@ -1,0 +1,49 @@
+{
+  "id": "1671121302110",
+  "alias": "LV: Change Ceiling Lights Color when updated",
+  "description": "Sets the LV Ceiling Lights Color to desired updated value",
+  "triggers": [
+    {
+      "entity_id": [
+        "input_number.lights_color"
+      ],
+      "trigger": "state"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "and",
+      "conditions": [
+        {
+          "condition": "state",
+          "entity_id": "group.ceilinglight",
+          "state": "on"
+        },
+        {
+          "condition": "state",
+          "entity_id": "input_boolean.light_override",
+          "state": "off"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "data": {
+        "transition": 3,
+        "color_temp_kelvin": "{{ states(\"input_number.lights_color\") | int }}",
+        "brightness_pct": "{{ states(\"input_number.light_level\") | int }}"
+      },
+      "target": {
+        "entity_id": [
+          "light.tradfri_light_7e1831520440000f_65611",
+          "light.tradfri_bulb_6",
+          "light.tradfri_bulb_e27_ws_opal_980lm_2",
+          "light.tradfri_bulb_8"
+        ]
+      },
+      "action": "light.turn_on"
+    }
+  ],
+  "mode": "single"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "eJ2X9Q4k8L7a1b2c",
+  "name": "Home Assistant Energy Digest & Alert",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "1e5c3e01-8b4e-4f32-9c4a-67a4d5b201a1",
+      "name": "Daily at 08:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://192.168.0.100:8123/api/states",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmZmI3ZjM0NzQ3NGY0MWY0ODk1MTg2YjZhOTcxZWQ1NyIsImlhdCI6MTc3NDc4MDE2OCwiZXhwIjoyMDkwMTQwMTY4fQ.DDFL78eGrjalD1kdSVR42K9MGXOIZf90ZQGSYREpgd8"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2a7b8c9d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+      "name": "Get HA States",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const states = $input.first().json;\n\nfunction getState(id) {\n  const s = states.find(e => e.entity_id === id);\n  return s ? parseFloat(s.state) || 0 : 0;\n}\n\nconst outletsCost = getState('sensor.shellypro4pm_outlets_energy_cost');\nconst lightsCost = getState('sensor.shellypro4pm_lights_energy_cost');\nconst doorbellCost = getState('sensor.shellypro4pm_doorbell_energy_cost');\nconst totalCost = (outletsCost + lightsCost + doorbellCost).toFixed(2);\n\nconst rate = getState('input_number.electricity_tariff') || 1.38;\nconst totalKwh = (totalCost / rate).toFixed(1);\n\nconst outletsPower = getState('sensor.shellypro4pm_outlets_power');\nconst lightsPower = getState('sensor.shellypro4pm_lights_power');\nconst livePower = Math.round(outletsPower + lightsPower);\n\nconst fridgePower = getState('sensor.shellyplugsg3_8cbfea943910_power');\nconst pcPower = getState('sensor.pc_shelly_plug_power');\nconst tvPower = getState('sensor.tv_shellyplugsg_power');\nconst washerPower = getState('sensor.shellyplugsg3_b08184a5b7e8_power');\n\nconst text = `⚡ *Home Energy Summary (Current Month)*\\n\\n` +\n  `• *Total Month Cost:* ${totalCost} RON\\n` +\n  `• *Total Month Energy:* ${totalKwh} kWh (@ ${rate} RON/kWh)\\n` +\n  `• *Live Draw:* ${livePower} W (Outlets: ${Math.round(outletsPower)} W, Lights: ${Math.round(lightsPower)} W)\\n\\n` +\n  `🔌 *Active Device Draw:*\\n` +\n  `• Fridge: ${fridgePower.toFixed(0)} W\\n` +\n  `• PC: ${pcPower.toFixed(0)} W\\n` +\n  `• TV: ${tvPower.toFixed(0)} W\\n` +\n  `• Washer: ${washerPower.toFixed(0)} W`;\n\nreturn [{ json: { text, totalCost, totalKwh, livePower, rate } }];"
+      },
+      "id": "3b8c9d0e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+      "name": "Parse & Calculate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8613303986:AAGDiZ9LTlteW31sveSOkzFUdEntkJjc4R8/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"chat_id\": \"8691520729\",\n  \"text\": \"{{ $json.text }}\",\n  \"parse_mode\": \"Markdown\"\n}",
+        "options": {}
+      },
+      "id": "4c9d0e1f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+      "name": "Send Telegram Digest",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        900,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily at 08:00": {
+      "main": [
+        [
+          {
+            "node": "Get HA States",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get HA States": {
+      "main": [
+        [
+          {
+            "node": "Parse & Calculate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse & Calculate": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

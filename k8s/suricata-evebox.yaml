@@ -1,0 +1,221 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wazuh-agent-config
+  namespace: default
+data:
+  ossec.conf: |
+    <ossec_config>
+      <client>
+        <server>
+          <address>wazuh-manager-lb.security.svc.cluster.local</address>
+          <port>1514</port>
+          <protocol>tcp</protocol>
+        </server>
+        <config-profile>debian, debian12</config-profile>
+        <enrollment>
+          <enabled>yes</enabled>
+          <agent_name>suricata-sensor-5b</agent_name>
+        </enrollment>
+      </client>
+
+      <logging>
+        <log_format>plain</log_format>
+      </logging>
+
+      <localfile>
+        <log_format>json</log_format>
+        <location>/var/log/suricata/eve.json</location>
+      </localfile>
+    </ossec_config>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: suricata-app-deployment
+  namespace: default
+  labels:
+    app: suricata-app
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: suricata-app
+  template:
+    metadata:
+      labels:
+        app: suricata-app
+    spec:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      nodeSelector:
+        kubernetes.io/hostname: raspberrypi5b
+      containers:
+      # 1. Suricata NIDS Container
+      - name: suricata-container
+        image: jasonish/suricata:latest
+        imagePullPolicy: Always
+        command: ["suricata"]
+        args:
+        - -c
+        - /etc/suricata/suricata.yaml
+        - -i
+        - wlan0
+        - --runmode
+        - workers
+        - --user
+        - suricata
+        - --group
+        - suricata
+        - --set
+        - logging.outputs.[0].eve-log.enabled=yes
+        - --set
+        - logging.outputs.[0].eve-log.file=/var/log/suricata/eve.json
+        - --set
+        - logging.outputs.[0].eve-log.json-format=extended
+        - --set
+        - logging.outputs.[0].eve-log.level=info
+        - --set
+        - default-rule-path=/var/lib/suricata/rules
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - mountPath: /var/log/suricata
+          name: suricata-logs
+        - mountPath: /var/lib/suricata
+          name: suricata-rules-volume
+
+      # 2. EveBox Event Viewer Container
+      - name: evebox-container
+        image: jasonish/evebox:latest
+        imagePullPolicy: Always
+        command: ["/usr/bin/evebox"]
+        args:
+        - server
+        - --database
+        - sqlite
+        - --no-tls
+        - --no-auth
+        - --input
+        - /var/log/suricata/eve.json
+        - --port
+        - "8080"
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 200m
+            memory: 512Mi
+        volumeMounts:
+        - mountPath: /var/log/suricata
+          name: suricata-logs
+        - mountPath: /var/lib/evebox
+          name: evebox-data-volume
+
+      # 3. Wazuh Agent Sidecar Container
+      - name: wazuh-agent
+        image: wazuh/wazuh-agent:4.14.3
+        imagePullPolicy: Always
+        securityContext:
+          runAsUser: 0  # Required to read Suricata log mount and write configurations
+        env:
+        - name: WAZUH_MANAGER
+          value: "wazuh-manager-lb.security.svc.cluster.local"
+        - name: WAZUH_AGENT_NAME
+          value: "suricata-sensor-5b"
+        - name: WAZUH_REGISTRATION_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: wazuh-authd-pass
+              key: authd.pass
+        - name: WAZUH_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: wazuh-authd-pass
+              key: authd.pass
+        volumeMounts:
+        - mountPath: /var/log/suricata
+          name: suricata-logs
+          readOnly: true
+        - mountPath: /var/ossec/etc/ossec.conf
+          name: wazuh-config-volume
+          subPath: ossec.conf
+        - mountPath: /var/ossec/etc/client.keys
+          name: wazuh-keys-volume
+
+      volumes:
+      # Shared memory volume for Suricata log exports
+      - name: suricata-logs
+        emptyDir: {}
+      # Custom Wazuh configuration ConfigMap
+      - name: wazuh-config-volume
+        configMap:
+          name: wazuh-agent-config
+      # Persistent Wazuh client key storage on the host node
+      - name: wazuh-keys-volume
+        hostPath:
+          path: /var/lib/wazuh-agent/client.keys
+          type: FileOrCreate
+      # Persistent Suricata rules volume from NFS
+      - name: suricata-rules-volume
+        persistentVolumeClaim:
+          claimName: suricata-rules-pvc
+      # Persistent EveBox database volume from NFS
+      - name: evebox-data-volume
+        persistentVolumeClaim:
+          claimName: evebox-data-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: suricata-rules-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: evebox-data-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: evebox-service
+  namespace: default
+  labels:
+    app: suricata-app
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: suricata-app
+  type: ClusterIP

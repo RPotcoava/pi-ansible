@@ -1,0 +1,22 @@
+{
+  "id": "1671139414633",
+  "alias": "HOME: Reset lights override at midnight",
+  "description": "Reset the lights override switch at midnight",
+  "trigger": [
+    {
+      "platform": "time",
+      "at": "00:00:00"
+    }
+  ],
+  "condition": [],
+  "action": [
+    {
+      "service": "input_boolean.turn_off",
+      "data": {},
+      "target": {
+        "entity_id": "input_boolean.light_override"
+      }
+    }
+  ],
+  "mode": "single"
+}

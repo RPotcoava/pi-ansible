@@ -1,0 +1,69 @@
+{
+  "id": "purifier_running_with_window_open",
+  "alias": "AIR: Air Purifier Running while Window Open Alert",
+  "description": "Alerts if air purifier is running while room windows/doors are left open.",
+  "triggers": [
+    {
+      "trigger": "state",
+      "entity_id": "fan.mi_air_purifier_3_3h2",
+      "to": "on",
+      "for": {
+        "minutes": 2
+      }
+    },
+    {
+      "trigger": "state",
+      "entity_id": [
+        "binary_sensor.balcony_door",
+        "binary_sensor.door_window_sensor_158d00045cfcfd"
+      ],
+      "to": "on",
+      "for": {
+        "minutes": 2
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "state",
+      "entity_id": "fan.mi_air_purifier_3_3h2",
+      "state": "on"
+    },
+    {
+      "condition": "or",
+      "conditions": [
+        {
+          "condition": "state",
+          "entity_id": "binary_sensor.balcony_door",
+          "state": "on"
+        },
+        {
+          "condition": "state",
+          "entity_id": "binary_sensor.door_window_sensor_158d00045cfcfd",
+          "state": "on"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "action": "persistent_notification.create",
+      "data": {
+        "title": "\u26a0\ufe0f Bedroom Purifier Running with Window Open",
+        "message": "The bedroom air purifier is running, but the balcony door or window is currently OPEN. Please close the window so the purifier can clean the room without wasting energy.",
+        "notification_id": "purifier_window_warning"
+      }
+    },
+    {
+      "action": "notify.send_message",
+      "target": {
+        "entity_id": "notify.s24"
+      },
+      "data": {
+        "title": "Air Purifier Notice",
+        "message": "Bedroom purifier is running while the balcony door/window is OPEN. Please close it."
+      }
+    }
+  ],
+  "mode": "restart"
+}

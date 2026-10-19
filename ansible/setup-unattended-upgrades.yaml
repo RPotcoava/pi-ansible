@@ -1,0 +1,27 @@
+- name: Enable Unattended Security Upgrades
+  hosts: pi_nodes
+  become: yes
+  tasks:
+    - name: Install unattended-upgrades and dependencies
+      apt:
+        name:
+          - unattended-upgrades
+          - apt-listchanges
+        state: present
+        update_cache: yes
+
+    - name: Configure unattended-upgrades auto-run options
+      copy:
+        dest: /etc/apt/apt.conf.d/20auto-upgrades
+        content: |
+          APT::Periodic::Update-Package-Lists "1";
+          APT::Periodic::Unattended-Upgrade "1";
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Ensure unattended-upgrades service is enabled and running
+      systemd:
+        name: unattended-upgrades
+        state: started
+        enabled: yes

@@ -1,0 +1,89 @@
+{
+  "id": "system_record_alert_24h",
+  "alias": "SYSTEM: Record Alert to 24h Ticker",
+  "description": "Records alerts (water leaks, gas, smoke, vacuum errors) into 24-hour ticker buffer",
+  "triggers": [
+    {
+      "trigger": "state",
+      "entity_id": [
+        "binary_sensor.klippbok_water_leak_sensor_water_leak",
+        "binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture",
+        "binary_sensor.natgas_sensor_158d00035a8b85",
+        "binary_sensor.smoke_sensor_158d0002ad1027",
+        "binary_sensor.saros_z70_water_shortage",
+        "binary_sensor.saros_z70_dock_clean_water_box",
+        "binary_sensor.saros_z70_dock_dirty_water_box"
+      ],
+      "to": "on",
+      "id": "binary_alert"
+    },
+    {
+      "trigger": "state",
+      "entity_id": "sensor.saros_z70_vacuum_error",
+      "not_to": [
+        "none",
+        "no_error",
+        "unknown",
+        "unavailable",
+        ""
+      ],
+      "id": "vacuum_error"
+    },
+    {
+      "trigger": "state",
+      "entity_id": "sensor.bedroom_roborock_vacuum_cleaner_operational_error",
+      "not_to": [
+        "none",
+        "no_error",
+        "unknown",
+        "unavailable",
+        ""
+      ],
+      "id": "vacuum_error"
+    },
+    {
+      "trigger": "time",
+      "at": "04:00:00",
+      "id": "daily_reset"
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "choose": [
+        {
+          "conditions": [
+            {
+              "condition": "trigger",
+              "id": "daily_reset"
+            }
+          ],
+          "sequence": [
+            {
+              "action": "input_text.set_value",
+              "target": {
+                "entity_id": "input_text.recent_alerts_24h"
+              },
+              "data": {
+                "value": ""
+              }
+            }
+          ]
+        }
+      ],
+      "default": [
+        {
+          "action": "input_text.set_value",
+          "target": {
+            "entity_id": "input_text.recent_alerts_24h"
+          },
+          "data": {
+            "value": "{% set t = now().strftime(\"%H:%M\") %}\n{% if trigger.entity_id == \"binary_sensor.klippbok_water_leak_sensor_water_leak\" %}\n  {% set msg = \"\ud83d\udca7 [\" ~ t ~ \"] Living Room Water Leak\" %}\n{% elif trigger.entity_id == \"binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture\" %}\n  {% set msg = \"\ud83d\udca7 [\" ~ t ~ \"] BADRING Water Leak\" %}\n{% elif trigger.entity_id == \"binary_sensor.natgas_sensor_158d00035a8b85\" %}\n  {% set msg = \"\ud83d\udd25 [\" ~ t ~ \"] Kitchen Gas Leak\" %}\n{% elif trigger.entity_id == \"binary_sensor.smoke_sensor_158d0002ad1027\" %}\n  {% set msg = \"\ud83d\udd25 [\" ~ t ~ \"] Kitchen Smoke Detected\" %}\n{% elif trigger.entity_id == \"binary_sensor.saros_z70_water_shortage\" %}\n  {% set msg = \"\ud83d\udca7 [\" ~ t ~ \"] Saros Z70: No Clean Water\" %}\n{% elif trigger.entity_id == \"binary_sensor.saros_z70_dock_clean_water_box\" %}\n  {% set msg = \"\ud83d\udca7 [\" ~ t ~ \"] Saros Z70: Clean Water Tank\" %}\n{% elif trigger.entity_id == \"binary_sensor.saros_z70_dock_dirty_water_box\" %}\n  {% set msg = \"\u26a0\ufe0f [\" ~ t ~ \"] Saros Z70: Dirty Water Tank\" %}\n{% elif trigger.entity_id == \"sensor.saros_z70_vacuum_error\" %}\n  {% set msg = \"\u26a0\ufe0f [\" ~ t ~ \"] Saros Z70: \" ~ (trigger.to_state.state | replace(\"_\", \" \") | title) %}\n{% elif trigger.entity_id == \"sensor.bedroom_roborock_vacuum_cleaner_operational_error\" %}\n  {% set msg = \"\u26a0\ufe0f [\" ~ t ~ \"] Bedroom Vacuum: \" ~ (trigger.to_state.state | replace(\"_\", \" \") | title) %}\n{% else %}\n  {% set msg = \"\u26a0\ufe0f [\" ~ t ~ \"] \" ~ trigger.to_state.name %}\n{% endif %}\n{% set current = states(\"input_text.recent_alerts_24h\") %}\n{% if current in [\"unknown\", \"unavailable\", \"\", \"none\"] %}\n  {{ msg }}\n{% else %}\n  {{ (msg ~ \"   \u2022   \" ~ current)[:250] }}\n{% endif %}"
+          }
+        }
+      ]
+    }
+  ],
+  "mode": "queued",
+  "max": 10
+}

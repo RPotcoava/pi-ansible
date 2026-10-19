@@ -1,0 +1,44 @@
+{
+  "id": "livingroom_air_purifier_off_when_open_window",
+  "alias": "LV: Living Room Air Purifier OFF when open window",
+  "description": "Turns off living room air purifier when window has been open for 10 minutes.",
+  "triggers": [
+    {
+      "trigger": "state",
+      "entity_id": "binary_sensor.livingroom_window_sensor_1",
+      "to": "on",
+      "for": {
+        "minutes": 10
+      }
+    },
+    {
+      "trigger": "state",
+      "entity_id": "fan.zhimi_vb4_5851_air_purifier",
+      "to": "on"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "state",
+      "entity_id": "fan.zhimi_vb4_5851_air_purifier",
+      "state": "on"
+    },
+    {
+      "condition": "state",
+      "entity_id": "binary_sensor.livingroom_window_sensor_1",
+      "state": "on",
+      "for": {
+        "minutes": 10
+      }
+    }
+  ],
+  "actions": [
+    {
+      "action": "fan.turn_off",
+      "target": {
+        "entity_id": "fan.zhimi_vb4_5851_air_purifier"
+      }
+    }
+  ],
+  "mode": "restart"
+}

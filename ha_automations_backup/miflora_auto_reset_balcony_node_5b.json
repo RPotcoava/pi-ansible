@@ -1,0 +1,42 @@
+{
+  "id": "miflora_auto_reset_balcony_node_5b",
+  "alias": "FLOWER: Auto-Reset MiFlora on Node 5b (Balcony)",
+  "description": "Automatically restarts miflora.service on Node 5b if no flower sensor in Balcony groups (B1, B2, B3, B4) has provided readings for over 24 hours.",
+  "triggers": [
+    {
+      "trigger": "time_pattern",
+      "hours": "/1",
+      "minutes": "0"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "template",
+      "value_template": "{% set b_groups = ['sensor.mean_moisture_b1', 'sensor.mean_moisture_b2', 'sensor.mean_moisture_b3', 'sensor.mean_moisture_b4'] %}\n{% set b_sensors = expand(b_groups) | map(attribute='attributes.entity_id') | sum(start=[]) | unique | list %}\n{% set ns = namespace(latest=0) %}\n{% for s in expand(b_sensors) %}\n  {% if s.state not in ['unknown', 'unavailable'] %}\n    {% set ts = as_timestamp(s.last_updated, 0) %}\n    {% if ts > ns.latest %}\n      {% set ns.latest = ts %}\n    {% endif %}\n  {% endif %}\n{% endfor %}\n{{ (as_timestamp(now()) - ns.latest) >= 86400 }}"
+    }
+  ],
+  "actions": [
+    {
+      "action": "button.press",
+      "target": {
+        "entity_id": "button.miflora_daemon_raspberrypi5b_restart_miflora_node_5b"
+      }
+    },
+    {
+      "action": "persistent_notification.create",
+      "data": {
+        "title": "\ud83c\udf38 Balcony Flower Sensors: Node 5b Reset",
+        "message": "No readings received from Balcony flower sensors (B1-B4) for over 24 hours. Automatically restarted miflora.service on Node 5b.",
+        "notification_id": "miflora_reset_5b"
+      }
+    },
+    {
+      "action": "notify.mobile_app_home",
+      "data": {
+        "title": "MiFlora Node 5b Reset",
+        "message": "No readings from Balcony flower sensors for >24h. Automatically restarted miflora.service on Node 5b."
+      }
+    }
+  ],
+  "mode": "single"
+}

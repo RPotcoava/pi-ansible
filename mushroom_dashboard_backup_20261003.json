@@ -1,0 +1,1605 @@
+{
+  "views": [
+    {
+      "theme": "dark_orange",
+      "background": "center / cover no-repeat fixed url('https://live.staticflickr.com/3798/11051378005_50b62511bb_b.jpg')",
+      "title": "Home",
+      "type": "sidebar",
+      "icon": "mdi:home",
+      "badges": [],
+      "cards": [
+        {
+          "type": "custom:mushroom-chips-card",
+          "chips": [
+            {
+              "type": "entity",
+              "entity": "group.alllights",
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "lights"
+              },
+              "hold_action": {
+                "action": "none"
+              },
+              "double_tap_action": {
+                "action": "none"
+              },
+              "icon": "mdi:globe-light"
+            },
+            {
+              "type": "weather",
+              "entity": "weather.acasa",
+              "tap_action": {
+                "action": "more-info"
+              },
+              "show_conditions": true,
+              "show_temperature": true
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_temperature",
+              "icon": "mdi:thermometer",
+              "name": "Temperature"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_carbon_dioxide"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_volatile_organic_compound"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.speedtest_download"
+            }
+          ],
+          "alignment": "justify"
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-person-card",
+              "entity": "person.razvan",
+              "layout": "horizontal",
+              "fill_container": true,
+              "use_entity_picture": true,
+              "hide_state": false
+            },
+            {
+              "type": "custom:mushroom-person-card",
+              "entity": "person.maria",
+              "use_entity_picture": true,
+              "fill_container": true
+            },
+            {
+              "type": "custom:mushroom-person-card",
+              "entity": "person.roxana",
+              "use_entity_picture": true,
+              "fill_container": true
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "House",
+              "secondary": "",
+              "icon": "mdi:home",
+              "layout": "vertical",
+              "icon_color": "blue",
+              "entity": "zone.home",
+              "badge_color": "  blue",
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "house"
+              },
+              "fill_container": true
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Lights",
+              "secondary": "",
+              "icon": "mdi:lightbulb",
+              "layout": "vertical",
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "lights"
+              },
+              "icon_color": "amber",
+              "badge_color": "",
+              "fill_container": true
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Network",
+              "secondary": "",
+              "icon": "mdi:network",
+              "layout": "vertical",
+              "icon_color": "pink",
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "network"
+              },
+              "fill_container": true
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "input_boolean.heating",
+              "show_state": true,
+              "hold_action": {
+                "action": "toggle"
+              }
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "input_boolean.light_override"
+            },
+            {
+              "type": "entity",
+              "entity": "input_boolean.awake"
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Livingroom",
+              "secondary": "{{ states('climate.livingroom_wall_thermostat_1') }} \u00b0C",
+              "icon": "mdi:monitor",
+              "icon_color": "{% if is_state(\"group.ceilinglight\",'on') %}\norange\n{% endif %}",
+              "hold_action": {
+                "action": "toggle"
+              },
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "livingroom"
+              },
+              "double_tap_action": {
+                "action": "toggle"
+              },
+              "entity": "group.ceilinglight"
+            },
+            {
+              "type": "custom:mushroom-light-card",
+              "entity": "group.mblight",
+              "name": "Mariuca's Bedroom",
+              "fill_container": true,
+              "use_light_color": true,
+              "show_brightness_control": true,
+              "show_color_temp_control": true,
+              "show_color_control": true,
+              "collapsible_controls": true,
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "mariucas-bedroom"
+              },
+              "hold_action": {
+                "action": "toggle"
+              },
+              "icon": "mdi:teddy-bear",
+              "double_tap_action": {
+                "action": "toggle"
+              }
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Bedroom",
+              "secondary": "{{ states (\"sensor.mi_air_purifier_3_3h2_temperature\") }} \u00b0C",
+              "icon": "mdi:bed",
+              "icon_color": "{% if is_state(\"group.mblight\",'on') %}\norange\n{% endif %}",
+              "double_tap_action": {
+                "action": "toggle"
+              },
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "mariucas-bedroom"
+              },
+              "hold_action": {
+                "action": "toggle"
+              },
+              "entity": "group.mblight"
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Kitchen",
+              "secondary": "{{ states ('light.tradfri_driver') }}",
+              "icon": "mdi:bowl-mix",
+              "entity": "light.tradfri_driver",
+              "icon_color": "{% if is_state(\"light.tradfri_driver\",'on') %}\norange\n{% endif %}",
+              "double_tap_action": {
+                "action": "toggle"
+              },
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "kitchen"
+              },
+              "hold_action": {
+                "action": "toggle"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "dark_orange",
+      "type": "sidebar",
+      "path": "livingroom",
+      "icon": "mdi:television-classic",
+      "background": "center / cover no-repeat url(\"https://img.freepik.com/free-photo/gray-sofa-white-living-room-interior-with-copy-space-3d-rendering_43614-802.jpg?w=1480&t=st=1711020424~exp=1711021024~hmac=50b20291799457fa1cfca4c15e050af7a2af6c267f2a61f71d77850820471e8d\") fixed",
+      "cards": [
+        {
+          "type": "custom:mushroom-chips-card",
+          "chips": [
+            {
+              "type": "back"
+            },
+            {
+              "type": "entity",
+              "entity": "binary_sensor.livingroom_window_sensor_1",
+              "name": "Window",
+              "use_entity_picture": true
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_air_quality_index",
+              "use_entity_picture": true,
+              "icon": "mdi:bug"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_temperature",
+              "icon": "mdi:thermometer"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_humidity"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_carbon_dioxide",
+              "use_entity_picture": true
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_formaldehyde"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_pm2_5",
+              "icon": "mdi:water-percent"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_pm10"
+            },
+            {
+              "type": "entity",
+              "entity": "binary_sensor.everything_presence_livingroom_occupancy"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.livingroom_energy"
+            }
+          ],
+          "alignment": "center"
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "graph": "line",
+              "hours_to_show": 24,
+              "type": "sensor",
+              "entity": "sensor.mt15_mt29_temperature",
+              "detail": 1,
+              "name": "Temperature"
+            },
+            {
+              "graph": "line",
+              "hours_to_show": 24,
+              "type": "sensor",
+              "entity": "sensor.mt15_mt29_air_quality_index",
+              "detail": 1,
+              "name": "Air quality index"
+            },
+            {
+              "graph": "line",
+              "hours_to_show": 24,
+              "type": "sensor",
+              "entity": "sensor.mt15_mt29_humidity",
+              "detail": 1,
+              "name": "Humidity"
+            },
+            {
+              "graph": "line",
+              "hours_to_show": 24,
+              "type": "sensor",
+              "entity": "sensor.mt15_mt29_carbon_dioxide",
+              "detail": 1,
+              "name": "Carbon dioxide"
+            },
+            {
+              "graph": "line",
+              "hours_to_show": 24,
+              "type": "sensor",
+              "entity": "sensor.mt15_mt29_formaldehyde",
+              "detail": 1,
+              "name": "Formaldehyde"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_pm2_5",
+              "name": "PM2.5"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.mt15_mt29_pm10",
+              "name": "PM10"
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mean_moisture_lv1",
+              "detail": 1
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mean_moisture_lv2",
+              "detail": 1
+            },
+            {
+              "graph": "line",
+              "hours_to_show": 24,
+              "type": "sensor",
+              "entity": "sensor.mean_moisture_lv3",
+              "detail": 1
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "thermostat",
+              "entity": "climate.livingroom_wall_thermostat_1"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.chromecast"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.xboxx",
+              "theme": "dark_orange"
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture",
+                  "state_not": "off"
+                }
+              ],
+              "card": {
+                "type": "entity",
+                "entity": "binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture",
+                "state_color": true
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.klippbok_water_leak_sensor_water_leak",
+                  "state_not": "off"
+                }
+              ],
+              "card": {
+                "type": "entity",
+                "entity": "binary_sensor.klippbok_water_leak_sensor_water_leak",
+                "state_color": true
+              }
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Ceiling Lights",
+              "secondary": "{{states ('group.ceilinglight') }}",
+              "icon": "mdi:ceiling-light-multiple",
+              "layout": "vertical",
+              "entity": "group.ceilinglight",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "hold_action": {
+                "action": "toggle"
+              },
+              "double_tap_action": {
+                "action": "toggle"
+              },
+              "icon_color": "{% if is_state(\"group.ceilinglight\",'on') %}\norange\n{% endif %}",
+              "badge_color": "",
+              "fill_container": true
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Wall Lights",
+              "secondary": "{{ states ('group.walllight') }}",
+              "icon": "mdi:coach-lamp",
+              "entity": "group.walllight",
+              "icon_color": "{% if is_state(\"group.walllight\",'on') %}\norange\n{% endif %}",
+              "fill_container": true,
+              "tap_action": {
+                "action": "toggle"
+              },
+              "layout": "vertical"
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Floor Lamp",
+              "secondary": "{{ states ('switch.floor_lamp') }}",
+              "icon": "mdi:lamp",
+              "entity": "switch.floor_lamp",
+              "icon_color": "{% if is_state(\"switch.floor_lamp\",'on') %}\norange\n{% endif %}",
+              "fill_container": true,
+              "tap_action": {
+                "action": "toggle"
+              },
+              "layout": "vertical"
+            },
+            {
+              "type": "custom:mushroom-light-card",
+              "entity": "switch.lamp_switch",
+              "layout": "vertical",
+              "icon": "mdi:floor-lamp",
+              "hide_state": false,
+              "fill_container": true,
+              "use_light_color": false,
+              "show_brightness_control": false,
+              "show_color_control": false,
+              "show_color_temp_control": false,
+              "collapsible_controls": true,
+              "tap_action": {
+                "action": "toggle"
+              },
+              "hold_action": {
+                "action": "more-info"
+              },
+              "double_tap_action": {
+                "action": "toggle"
+              }
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Livingroom",
+              "secondary": "",
+              "icon": "mdi:lamps",
+              "layout": "vertical",
+              "entity": "group.alllivinglights",
+              "icon_color": "{% if is_state(\"group.alllivinglights\",'on') %}\norange\n{% endif %}",
+              "fill_container": true,
+              "tap_action": {
+                "action": "toggle"
+              },
+              "hold_action": {
+                "action": "more-info"
+              }
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "All",
+              "secondary": "",
+              "icon": "mdi:home",
+              "layout": "vertical",
+              "entity": "group.alllights",
+              "icon_color": "{% if is_state(\"group.alllights\",'on') %}\norange\n{% endif %}",
+              "badge_icon": "  mdi:lamp",
+              "fill_container": true,
+              "badge_color": "{% if is_state(\"group.alllights\",'on') %}\nred\n{% endif %}",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "hold_action": {
+                "action": "more-info"
+              }
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.living_room_flower_switch_1",
+                  "name": "FL SW 1",
+                  "icon": "mdi:water-pump",
+                  "show_state": true,
+                  "icon_height": "30px"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.living_room_flower_switch_2",
+                  "name": "FL SW 2",
+                  "icon": "mdi:flower",
+                  "icon_height": "30px",
+                  "show_state": true
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.tradfri_outlet_10",
+                  "name": "FL SW 3",
+                  "icon_height": "30px",
+                  "show_state": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "remote.main_room"
+                },
+                {
+                  "entity": "select.main_room_activities"
+                }
+              ],
+              "state_color": true
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.livingroom_window_sensor_1",
+                  "name": "Window"
+                },
+                {
+                  "entity": "light.mi_control_hub_light"
+                },
+                {
+                  "entity": "sensor.ups_load"
+                },
+                {
+                  "entity": "sensor.ups_input_voltage"
+                }
+              ],
+              "state_color": true
+            },
+            {
+              "type": "custom:mushroom-cover-card",
+              "entity": "cover.curtain_3_a832",
+              "primary_info": "state",
+              "secondary_info": "last-changed",
+              "show_position_control": true,
+              "show_tilt_position_control": true,
+              "show_buttons_control": true,
+              "fill_container": true,
+              "name": "Curtains"
+            },
+            {
+              "type": "custom:mushroom-entity-card",
+              "entity": "switch.server1_2",
+              "primary_info": "name",
+              "fill_container": true,
+              "secondary_info": "last-changed",
+              "name": "TrueNAS",
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "switch.turn_on",
+                "target": {
+                  "entity_id": "switch.server1_2"
+                }
+              },
+              "hold_action": {
+                "action": "perform-action",
+                "perform_action": "truenas.system_shutdown",
+                "target": {
+                  "entity_id": "sensor.uptime"
+                }
+              },
+              "double_tap_action": {
+                "action": "perform-action",
+                "perform_action": "switch.turn_on",
+                "target": {
+                  "entity_id": "switch.server1_2"
+                }
+              },
+              "layout": "vertical"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.rpi_cooling_fan_controller",
+              "show_current_as_primary": true
+            },
+            {
+              "type": "humidifier",
+              "entity": "humidifier.humidifier_773a",
+              "features": [
+                {
+                  "type": "humidifier-toggle"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "conditional",
+          "conditions": [
+            {
+              "condition": "state",
+              "entity": "light.twinkly",
+              "state_not": "unavailable"
+            }
+          ],
+          "card": {
+            "show_name": true,
+            "show_icon": true,
+            "type": "button",
+            "tap_action": {
+              "action": "toggle"
+            },
+            "entity": "light.twinkly"
+          }
+        }
+      ],
+      "badges": []
+    },
+    {
+      "theme": "dark_orange",
+      "title": "Mariuca's Bedroom",
+      "path": "mariucas-bedroom",
+      "icon": "mdi:teddy-bear",
+      "type": "sidebar",
+      "background": "center / cover no-repeat fixed url('https://www.theblockshop.com.au/media/wysiwyg/Blog_2023/Blog_-_2023-08-04T120935.926.jpg')",
+      "cards": [
+        {
+          "type": "custom:mushroom-chips-card",
+          "chips": [
+            {
+              "type": "back"
+            },
+            {
+              "type": "entity",
+              "entity": "binary_sensor.maria_s_bedroom_window_sensor_1",
+              "name": "Window",
+              "icon": "",
+              "use_entity_picture": true,
+              "content_info": "state"
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mi_air_purifier_3_3h_temperature",
+              "detail": 2,
+              "theme": "dark_orange",
+              "name": "Temperature"
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mi_air_purifier_3_3h_humidity",
+              "detail": 1,
+              "name": "Humidity"
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mi_air_purifier_3_3h_pm2_5",
+              "detail": 1,
+              "name": "pm2.5"
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-person-card",
+              "entity": "person.maria",
+              "use_entity_picture": true,
+              "fill_container": true
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-fan-card",
+              "entity": "fan.mi_air_purifier_3_3h",
+              "icon_animation": true,
+              "fill_container": true,
+              "name": "Air Purifier",
+              "show_percentage_control": true,
+              "show_oscillate_control": true,
+              "collapsible_controls": true
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.maria_s_bedroom_radiator_thermostat_1",
+              "name": "Heater"
+            },
+            {
+              "type": "light",
+              "entity": "light.tradfri_bulb_11"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "light.tradfri_bulb_12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "dark_orange",
+      "title": "Bedroom",
+      "path": "bedroom",
+      "icon": "mdi:bed",
+      "background": "center / cover no-repeat fixed url('https://demo.home-assistant.io/stub_config/bedroom.png')",
+      "cards": [
+        {
+          "type": "custom:mushroom-chips-card",
+          "chips": [
+            {
+              "type": "back"
+            },
+            {
+              "type": "entity",
+              "entity": "binary_sensor.balcony_door",
+              "use_entity_picture": true
+            },
+            {
+              "type": "entity",
+              "entity": "binary_sensor.everything_presence_one_d7267c_occupancy"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_temperature"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_humidity"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_carbon_dioxide"
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "hours_to_show": 48,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mi_air_purifier_3_3h2_temperature",
+              "detail": 1
+            },
+            {
+              "hours_to_show": 48,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mi_air_purifier_3_3h2_humidity",
+              "detail": 1
+            },
+            {
+              "hours_to_show": 48,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mi_air_purifier_3_3h2_pm2_5",
+              "detail": 2
+            }
+          ]
+        },
+        {
+          "type": "custom:mushroom-chips-card",
+          "chips": [
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_formaldehyde"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.smart_air_box_vocs"
+            }
+          ]
+        },
+        {
+          "type": "media-control",
+          "entity": "media_player.bedroom_tv"
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-fan-card",
+              "entity": "fan.mi_air_purifier_3_3h2",
+              "name": "Air Purifier",
+              "icon_animation": true,
+              "show_oscillate_control": true,
+              "show_percentage_control": true,
+              "collapsible_controls": true,
+              "fill_container": true
+            },
+            {
+              "type": "glance",
+              "entities": [
+                {
+                  "entity": "sensor.mi_air_purifier_3_3h2_filter_life_remaining"
+                },
+                {
+                  "entity": "sensor.mi_air_purifier_3_3h2_motor_speed"
+                },
+                {
+                  "entity": "number.mi_air_purifier_3_3h2_fan_level"
+                }
+              ]
+            },
+            {
+              "type": "custom:mushroom-cover-card",
+              "entity": "cover.curtain_3_65fc",
+              "layout": "vertical",
+              "fill_container": true,
+              "primary_info": "state",
+              "secondary_info": "last-changed"
+            }
+          ]
+        },
+        {
+          "type": "custom:mushroom-vacuum-card",
+          "entity": "vacuum.saros_z70",
+          "fill_container": true,
+          "commands": [
+            "start_pause",
+            "stop",
+            "locate",
+            "clean_spot",
+            "return_home",
+            "on_off"
+          ],
+          "tap_action": {
+            "action": "more-info"
+          },
+          "icon_animation": true
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "switch.maria_flower_sw",
+              "show_state": false
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "switch.bflowersw4"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "switch.lamp_switch",
+              "icon": "mdi:toggle-switch-variant-off"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "entity": "switch.floor_lamp",
+              "name": "B Flower 4",
+              "show_state": false
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "graph": "line",
+              "hours_to_show": 48,
+              "type": "sensor",
+              "entity": "sensor.mean_moisture_b1",
+              "detail": 2,
+              "name": "Moisture Balcony 1"
+            },
+            {
+              "graph": "line",
+              "hours_to_show": 48,
+              "type": "sensor",
+              "entity": "sensor.mean_moisture_b2",
+              "detail": 2,
+              "name": "Moisture Balcony 2"
+            },
+            {
+              "graph": "line",
+              "hours_to_show": 48,
+              "type": "sensor",
+              "entity": "sensor.mean_moisture_b3",
+              "detail": 2,
+              "name": "Moisture Balcony 3"
+            },
+            {
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.mean_moisture_b4",
+              "detail": 2
+            }
+          ]
+        },
+        {
+          "type": "media-control",
+          "entity": "media_player.tv_ue46d7000"
+        },
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "binary_sensor.balcony_3_liquid_level_moisture",
+              "name": "Moisture"
+            },
+            {
+              "entity": "sensor.balcony_3_liquid_level_battery"
+            }
+          ],
+          "title": "Balcony 3 Liquid Level",
+          "visibility": [
+            {
+              "condition": "state",
+              "entity": "binary_sensor.balcony_3_liquid_level_moisture",
+              "state_not": "on"
+            }
+          ],
+          "state_color": true
+        }
+      ]
+    },
+    {
+      "theme": "dark_orange",
+      "title": "Kitchen",
+      "path": "kitchen",
+      "background": "center / cover no-repeat fixed url('https://demo.home-assistant.io/stub_config/kitchen.png')",
+      "icon": "mdi:bowl-mix",
+      "cards": [
+        {
+          "type": "custom:mushroom-chips-card",
+          "chips": [
+            {
+              "type": "back"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.9in1_12in1_14in1_air_quality_index"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.9in1_12in1_14in1_humidity",
+              "name": "Humidity"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.9in1_12in1_14in1_temperature",
+              "name": "Temperature"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.9in1_12in1_14in1_carbon_dioxide"
+            }
+          ]
+        },
+        {
+          "type": "glance",
+          "entities": [
+            {
+              "entity": "binary_sensor.smoke_sensor_158d0002ad1027"
+            },
+            {
+              "entity": "binary_sensor.natgas_sensor_158d00035a8b85"
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "media-control",
+              "entity": "media_player.kitchen_display",
+              "theme": "transparentblue"
+            }
+          ]
+        },
+        {
+          "type": "custom:mushroom-chips-card",
+          "chips": [
+            {
+              "type": "entity",
+              "entity": "sensor.9in1_12in1_14in1_formaldehyde",
+              "use_entity_picture": true
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.9in1_12in1_14in1_pm2_5"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.9in1_12in1_14in1_pm10"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.kitchen_energy"
+            }
+          ]
+        },
+        {
+          "type": "horizontal-stack",
+          "cards": [
+            {
+              "type": "custom:mushroom-light-card",
+              "entity": "light.ikea_tradfri_driver_1",
+              "use_light_color": true,
+              "show_brightness_control": true,
+              "fill_container": true
+            },
+            {
+              "type": "custom:mushroom-light-card",
+              "entity": "light.tradfri_driver_2",
+              "fill_container": true,
+              "show_brightness_control": true,
+              "use_light_color": true
+            },
+            {
+              "type": "custom:mushroom-light-card",
+              "entity": "light.kitchen_wall_lights",
+              "fill_container": true,
+              "use_light_color": true,
+              "show_brightness_control": true
+            }
+          ]
+        },
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "switch.washer"
+            },
+            {
+              "entity": "sensor.washer_washer_job_state"
+            },
+            {
+              "entity": "sensor.washer_washer_machine_state"
+            },
+            {
+              "entity": "sensor.washer_washer_completion_time"
+            },
+            {
+              "entity": "sensor.washer_energy"
+            },
+            {
+              "entity": "sensor.washer_energy_meter"
+            },
+            {
+              "entity": "sensor.washer_power"
+            },
+            {
+              "entity": "sensor.washer_power_meter"
+            },
+            {
+              "entity": "sensor.washer_washer_machine_state"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "Backend-selected",
+      "title": "Batteries",
+      "path": "batteries",
+      "icon": "mdi:battery",
+      "background": "center / cover no-repeat fixed url('https://www.bruker.com/ja/applications/academia-materials-science/battery-research/_jcr_content/root/herostage/backgroundImageVPL.coreimg.82.1920.jpeg/1706003905464/alkaline-battery-aaa-size-with-selective-focus-on-single-battery-shutterstock-368817134.jpeg')",
+      "cards": [
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "sensor.flower_1_battery"
+            },
+            {
+              "entity": "sensor.flower_2_battery"
+            },
+            {
+              "entity": "sensor.xiao_soil_moisture_monitor_8fc2d4_battery_measurement"
+            },
+            {
+              "entity": "sensor.xiao_soil_moisture_monitor_8fca58_battery_measurement"
+            },
+            {
+              "entity": "sensor.flower_5_battery"
+            },
+            {
+              "entity": "sensor.flower_6_battery"
+            },
+            {
+              "entity": "sensor.flower_7_battery"
+            },
+            {
+              "entity": "sensor.flower_8_battery"
+            },
+            {
+              "entity": "sensor.flower_9_battery"
+            },
+            {
+              "entity": "sensor.flower_10_battery"
+            },
+            {
+              "entity": "sensor.flower_11_battery"
+            },
+            {
+              "entity": "sensor.flower_12_battery"
+            },
+            {
+              "entity": "sensor.flower_14_battery"
+            },
+            {
+              "entity": "sensor.flower_15_battery"
+            },
+            {
+              "entity": "sensor.flower_16_battery"
+            },
+            {
+              "entity": "sensor.flower_17_battery"
+            }
+          ],
+          "view_layout": {
+            "position": "main"
+          },
+          "state_color": true
+        },
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "sensor.flower_18_battery"
+            },
+            {
+              "entity": "sensor.flower_19_battery"
+            },
+            {
+              "entity": "sensor.flower_20_battery"
+            },
+            {
+              "entity": "sensor.flower_21_battery"
+            },
+            {
+              "entity": "sensor.flower_22_battery"
+            },
+            {
+              "entity": "sensor.flower_23_battery"
+            },
+            {
+              "entity": "sensor.flower_24_battery"
+            },
+            {
+              "entity": "sensor.flower_25_battery"
+            },
+            {
+              "entity": "sensor.flower_26_battery"
+            },
+            {
+              "entity": "sensor.flower_27_battery"
+            },
+            {
+              "entity": "sensor.flower_28_battery"
+            },
+            {
+              "entity": "sensor.flower_29_battery"
+            },
+            {
+              "entity": "sensor.flower_30_battery"
+            },
+            {
+              "entity": "sensor.flower_31_battery"
+            },
+            {
+              "entity": "sensor.flower_32_battery"
+            },
+            {
+              "entity": "sensor.flower_33_battery"
+            },
+            {
+              "entity": "sensor.flower_34_battery"
+            },
+            {
+              "entity": "sensor.flower_35_battery"
+            },
+            {
+              "entity": "sensor.flower_36_battery"
+            },
+            {
+              "entity": "sensor.flower_37_battery"
+            },
+            {
+              "entity": "sensor.flower_38_battery"
+            },
+            {
+              "entity": "sensor.flower_39_battery"
+            },
+            {
+              "entity": "sensor.flower_40_battery"
+            },
+            {
+              "entity": "sensor.flower_41_battery"
+            }
+          ],
+          "view_layout": {
+            "position": "main"
+          },
+          "state_color": true
+        }
+      ]
+    },
+    {
+      "icon": "mdi:flower",
+      "cards": [
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "sensor.flower_1_moisture"
+            },
+            {
+              "entity": "sensor.flower_2_moisture"
+            },
+            {
+              "entity": "sensor.xiao_soil_moisture_monitor_8fc2d4_soil_moisture_status"
+            },
+            {
+              "entity": "sensor.xiao_soil_moisture_monitor_8fca58_soil_moisture_status"
+            },
+            {
+              "entity": "sensor.flower_5_moisture"
+            },
+            {
+              "entity": "sensor.flower_6_moisture"
+            },
+            {
+              "entity": "sensor.flower_7_moisture"
+            },
+            {
+              "entity": "sensor.flower_8_moisture"
+            },
+            {
+              "entity": "sensor.flower_9_moisture"
+            },
+            {
+              "entity": "sensor.flower_10_moisture"
+            },
+            {
+              "entity": "sensor.flower_11_moisture"
+            },
+            {
+              "entity": "sensor.flower_12_moisture"
+            },
+            {
+              "entity": "sensor.flower_14_moisture"
+            },
+            {
+              "entity": "sensor.flower_15_moisture"
+            },
+            {
+              "entity": "sensor.flower_16_moisture"
+            },
+            {
+              "entity": "sensor.flower_17_moisture"
+            },
+            {
+              "entity": "sensor.flower_18_moisture"
+            },
+            {
+              "entity": "sensor.flower_19_moisture"
+            },
+            {
+              "entity": "sensor.flower_20_moisture"
+            },
+            {
+              "entity": "sensor.flower_21_moisture"
+            },
+            {
+              "entity": "sensor.flower_22_moisture"
+            }
+          ],
+          "state_color": true
+        },
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "sensor.flower_23_moisture"
+            },
+            {
+              "entity": "sensor.flower_24_moisture"
+            },
+            {
+              "entity": "sensor.flower_25_moisture"
+            },
+            {
+              "entity": "sensor.flower_26_moisture"
+            },
+            {
+              "entity": "sensor.flower_27_moisture"
+            },
+            {
+              "entity": "sensor.flower_28_moisture"
+            },
+            {
+              "entity": "sensor.flower_29_moisture"
+            },
+            {
+              "entity": "sensor.flower_30_moisture"
+            },
+            {
+              "entity": "sensor.flower_31_moisture"
+            },
+            {
+              "entity": "sensor.flower_32_moisture"
+            },
+            {
+              "entity": "sensor.flower_33_moisture"
+            },
+            {
+              "entity": "sensor.flower_34_moisture"
+            },
+            {
+              "entity": "sensor.flower_35_moisture"
+            },
+            {
+              "entity": "sensor.flower_36_moisture"
+            },
+            {
+              "entity": "sensor.flower_37_moisture"
+            },
+            {
+              "entity": "sensor.flower_38_moisture"
+            },
+            {
+              "entity": "sensor.flower_39_moisture"
+            },
+            {
+              "entity": "sensor.flower_40_moisture"
+            },
+            {
+              "entity": "sensor.flower_41_moisture"
+            }
+          ],
+          "state_color": true
+        },
+        {
+          "camera_view": "auto",
+          "type": "picture-glance",
+          "title": "Moisture",
+          "image": "https://demo.home-assistant.io/assets/teachingbirds/plants.png",
+          "entities": [
+            {
+              "entity": "sensor.flower_1_moisture"
+            },
+            {
+              "entity": "sensor.flower_2_moisture"
+            }
+          ],
+          "entity": "sensor.mean_moisture"
+        },
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "sensor.flower_1_fertility"
+            },
+            {
+              "entity": "sensor.flower_2_fertility"
+            },
+            {
+              "entity": "sensor.flower_5_fertility"
+            },
+            {
+              "entity": "sensor.flower_6_fertility"
+            },
+            {
+              "entity": "sensor.flower_7_fertility"
+            },
+            {
+              "entity": "sensor.flower_8_fertility"
+            },
+            {
+              "entity": "sensor.flower_9_fertility"
+            },
+            {
+              "entity": "sensor.flower_10_fertility"
+            },
+            {
+              "entity": "sensor.flower_11_fertility"
+            },
+            {
+              "entity": "sensor.flower_12_fertility"
+            },
+            {
+              "entity": "sensor.flower_13_fertility"
+            },
+            {
+              "entity": "sensor.flower_14_fertility"
+            },
+            {
+              "entity": "sensor.flower_15_fertility"
+            },
+            {
+              "entity": "sensor.flower_16_fertility"
+            }
+          ],
+          "state_color": true
+        },
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "sensor.flower_30_fertility"
+            },
+            {
+              "entity": "sensor.flower_31_fertility"
+            },
+            {
+              "entity": "sensor.flower_32_fertility"
+            },
+            {
+              "entity": "sensor.flower_33_fertility"
+            },
+            {
+              "entity": "sensor.flower_34_fertility"
+            },
+            {
+              "entity": "sensor.flower_35_fertility"
+            },
+            {
+              "entity": "sensor.flower_36_fertility"
+            },
+            {
+              "entity": "sensor.flower_37_fertility"
+            },
+            {
+              "entity": "sensor.flower_38_fertility"
+            },
+            {
+              "entity": "sensor.flower_39_fertility"
+            },
+            {
+              "entity": "sensor.flower_40_fertility"
+            },
+            {
+              "entity": "sensor.flower_41_fertility"
+            }
+          ]
+        },
+        {
+          "type": "entities",
+          "entities": [
+            {
+              "entity": "sensor.flower_17_fertility"
+            },
+            {
+              "entity": "sensor.flower_18_fertility"
+            },
+            {
+              "entity": "sensor.flower_19_fertility"
+            },
+            {
+              "entity": "sensor.flower_20_fertility"
+            },
+            {
+              "entity": "sensor.flower_21_fertility"
+            },
+            {
+              "entity": "sensor.flower_22_fertility"
+            },
+            {
+              "entity": "sensor.flower_23_fertility"
+            },
+            {
+              "entity": "sensor.flower_24_fertility"
+            },
+            {
+              "entity": "sensor.flower_25_fertility"
+            },
+            {
+              "entity": "sensor.flower_26_fertility"
+            },
+            {
+              "entity": "sensor.flower_27_fertility"
+            },
+            {
+              "entity": "sensor.flower_28_fertility"
+            },
+            {
+              "entity": "sensor.flower_29_fertility"
+            }
+          ],
+          "state_color": true
+        }
+      ],
+      "path": "Moisture",
+      "background": "center / cover no-repeat fixed url('https://demo.home-assistant.io/assets/teachingbirds/plants.png')",
+      "badges": [
+        {
+          "entity": "sensor.mean_moisture"
+        }
+      ],
+      "title": "Moisture"
+    }
+  ]
+}

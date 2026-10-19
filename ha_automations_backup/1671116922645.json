@@ -1,0 +1,34 @@
+{
+  "id": "1671116922645",
+  "alias": "HOME: Sunset Lights Set",
+  "description": "Sets the lights level to max and cold ",
+  "triggers": [
+    {
+      "event": "sunset",
+      "offset": "-02:00:00",
+      "trigger": "sun"
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "data": {
+        "value": 99
+      },
+      "target": {
+        "entity_id": "input_number.light_level"
+      },
+      "action": "input_number.set_value"
+    },
+    {
+      "data": {
+        "value": 4000
+      },
+      "target": {
+        "entity_id": "input_number.lights_color"
+      },
+      "action": "input_number.set_value"
+    }
+  ],
+  "mode": "single"
+}

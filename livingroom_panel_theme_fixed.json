@@ -1,0 +1,874 @@
+{
+  "views": [
+    {
+      "title": "Living Room",
+      "path": "living_room",
+      "icon": "mdi:sofa",
+      "type": "masonry",
+      "cards": [
+        {
+          "type": "vertical-stack",
+          "cards": [
+            {
+              "type": "custom:button-card",
+              "entity": "input_text.recent_alerts_24h",
+              "show_name": false,
+              "show_icon": false,
+              "show_state": false,
+              "tap_action": {
+                "action": "none"
+              },
+              "hold_action": {
+                "action": "none"
+              },
+              "triggers_update": [
+                "binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture",
+                "binary_sensor.klippbok_water_leak_sensor_water_leak",
+                "binary_sensor.natgas_sensor_158d00035a8b85",
+                "binary_sensor.saros_z70_dock_clean_water_box",
+                "binary_sensor.saros_z70_dock_dirty_water_box",
+                "binary_sensor.saros_z70_water_shortage",
+                "binary_sensor.shellyplugsg3_8cbfea943910_overheating",
+                "binary_sensor.shellyplugsg3_b08184a5b7e8_overheating",
+                "binary_sensor.shellypro4pm_doorbell_overheating",
+                "binary_sensor.shellypro4pm_lights_overheating",
+                "binary_sensor.shellypro4pm_outlets_overheating",
+                "binary_sensor.smoke_sensor_158d0002ad1027",
+                "binary_sensor.tv_shellyplugsg_overheating",
+                "input_boolean.bedroom_air_quality_alert",
+                "input_boolean.kitchen_air_quality_alert",
+                "input_text.recent_alerts_24h",
+                "sensor.bedroom_roborock_vacuum_cleaner_operational_error",
+                "sensor.cpu_temperature",
+                "sensor.everything_presence_livingroom_humidity",
+                "sensor.everything_presence_livingroom_illuminance",
+                "sensor.everything_presence_livingroom_temperature",
+                "sensor.mi_air_purifier_3_3h2_pm2_5",
+                "sensor.mt15_mt29_carbon_dioxide",
+                "sensor.mt15_mt29_formaldehyde",
+                "sensor.mt15_mt29_pm2_5",
+                "sensor.mt15_mt29_temperature",
+                "sensor.saros_z70_vacuum_error",
+                "weather.acasa_2"
+              ],
+              "styles": {
+                "card": [
+                  {
+                    "background": "var(--ha-card-background, var(--card-background-color, #ffffff))"
+                  },
+                  {
+                    "color": "var(--primary-text-color)"
+                  },
+                  {
+                    "backdrop-filter": "blur(12px)"
+                  },
+                  {
+                    "-webkit-backdrop-filter": "blur(12px)"
+                  },
+                  {
+                    "border-radius": "var(--ha-card-border-radius, 12px)"
+                  },
+                  {
+                    "border": "var(--ha-card-border-width, 1px) solid var(--ha-card-border-color, var(--divider-color, rgba(127, 127, 127, 0.2)))"
+                  },
+                  {
+                    "padding": "14px 16px 12px 16px"
+                  },
+                  {
+                    "box-shadow": "var(--ha-card-box-shadow, none)"
+                  }
+                ],
+                "grid": [
+                  {
+                    "grid-template-areas": "\"content\""
+                  },
+                  {
+                    "grid-template-columns": "1fr"
+                  }
+                ]
+              },
+              "custom_fields": {
+                "content": "[[[\n  let hr = new Date().getHours();\n  let greeting = hr >= 6 && hr < 12 ? 'Good Morning' :\n                 hr >= 12 && hr < 18 ? 'Good Afternoon' :\n                 hr >= 18 && hr < 22 ? 'Good Evening' : 'Good Night';\n\n  let rawTemp = states['sensor.everything_presence_livingroom_temperature']?.state;\n  let rawHum = states['sensor.everything_presence_livingroom_humidity']?.state;\n  let rawLux = states['sensor.everything_presence_livingroom_illuminance']?.state;\n\n  let temp = rawTemp && !isNaN(rawTemp) ? (Math.round(parseFloat(rawTemp) * 10) / 10) + '\u00b0C' : '--\u00b0C';\n  let hum = rawHum && !isNaN(rawHum) ? Math.round(parseFloat(rawHum)) + '%' : '--%';\n  let lux = rawLux && !isNaN(rawLux) ? Math.round(parseFloat(rawLux)) : '--';\n\n  // Weather widget data\n  let wState = states['weather.acasa_2']?.state || 'partlycloudy';\n  let wTemp = states['weather.acasa_2']?.attributes?.temperature || '--';\n  let iconMap = {\n    'sunny': '\u2600\ufe0f',\n    'clear-night': '\ud83c\udf19',\n    'cloudy': '\u2601\ufe0f',\n    'partlycloudy': '\u26c5',\n    'rainy': '\ud83c\udf27\ufe0f',\n    'pouring': '\ud83c\udf27\ufe0f',\n    'snowy': '\u2744\ufe0f',\n    'lightning': '\u26c8\ufe0f',\n    'lightning-rainy': '\u26c8\ufe0f',\n    'windy': '\ud83d\udca8',\n    'fog': '\ud83c\udf2b\ufe0f'\n  };\n  let wIcon = iconMap[wState] || '\u26c5';\n  let wCond = wState.replace(/-/g, ' ');\n\n  let active = [];\n\n  // Safety & Hazard alerts\n  if (states['binary_sensor.natgas_sensor_158d00035a8b85']?.state === 'on') {\n    active.push('\ud83d\udd25 [DANGER] Kitchen Gas Leak Detected!');\n  }\n  if (states['binary_sensor.smoke_sensor_158d0002ad1027']?.state === 'on') {\n    active.push('\ud83d\udd25 [DANGER] Kitchen Smoke Detected!');\n  }\n  if (states['binary_sensor.klippbok_water_leak_sensor_water_leak']?.state === 'on') {\n    active.push('\ud83d\udca7 [ACTIVE] Living Room Leak (KLIPPBOK)');\n  }\n  if (states['binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture']?.state === 'on') {\n    active.push('\ud83d\udca7 [ACTIVE] Water Leak (BADRING)');\n  }\n\n  // Electrical & Overheating\n  let shellyOverheats = [\n    ['binary_sensor.shellypro4pm_doorbell_overheating', 'Doorbell Shelly'],\n    ['binary_sensor.shellypro4pm_lights_overheating', 'Lights Shelly'],\n    ['binary_sensor.shellypro4pm_outlets_overheating', 'Outlets Shelly'],\n    ['binary_sensor.shellyplugsg3_8cbfea943910_overheating', 'Fridge Plug'],\n    ['binary_sensor.shellyplugsg3_b08184a5b7e8_overheating', 'Washers Plug'],\n    ['binary_sensor.tv_shellyplugsg_overheating', 'TV Plug']\n  ];\n  for (let [eid, label] of shellyOverheats) {\n    if (states[eid]?.state === 'on') {\n      active.push('\ud83d\udd25 [ELECTRICAL] ' + label + ' Overheating!');\n    }\n  }\n\n  let cpuTemp = parseFloat(states['sensor.cpu_temperature']?.state);\n  if (!isNaN(cpuTemp) && cpuTemp > 75) {\n    active.push('\ud83d\udd25 [HARDWARE] Server CPU Overheating (' + Math.round(cpuTemp) + '\u00b0C)');\n  }\n\n  // Air Quality Alerts - governed by 10-min cool-off input_booleans\n  if (states['input_boolean.kitchen_air_quality_alert']?.state === 'on') {\n    let lrCo2 = parseFloat(states['sensor.mt15_mt29_carbon_dioxide']?.state);\n    let lrPm25 = parseFloat(states['sensor.mt15_mt29_pm2_5']?.state);\n    let lrHcho = parseFloat(states['sensor.mt15_mt29_formaldehyde']?.state);\n    let reasons = [];\n    if (!isNaN(lrCo2) && lrCo2 > 1000) reasons.push('CO\u2082 ' + Math.round(lrCo2) + ' ppm');\n    if (!isNaN(lrPm25) && lrPm25 > 25) reasons.push('PM2.5 ' + Math.round(lrPm25) + ' \u00b5g/m\u00b3');\n    if (!isNaN(lrHcho) && lrHcho > 0.08) reasons.push('HCHO ' + lrHcho.toFixed(2) + ' mg/m\u00b3');\n    let detail = reasons.length > 0 ? reasons.join(', ') : 'Clearing (cooling off)...';\n    active.push('\u26a0\ufe0f [AIR QUALITY] Kitchen: ' + detail);\n  }\n\n  if (states['input_boolean.bedroom_air_quality_alert']?.state === 'on') {\n    let bedPm25 = parseFloat(states['sensor.mi_air_purifier_3_3h2_pm2_5']?.state);\n    active.push('\ud83d\udea8 [AIR QUALITY] Bedroom PM2.5 ' + (!isNaN(bedPm25) ? Math.round(bedPm25) + ' \u00b5g/m\u00b3' : 'Elevated'));\n  }\n\n  // Climate Extremes\n  let lrTempNum = parseFloat(rawTemp);\n  if (!isNaN(lrTempNum)) {\n    if (lrTempNum > 28) {\n      active.push('\ud83c\udf21\ufe0f [CLIMATE] Living Room Overheating (' + lrTempNum.toFixed(1) + '\u00b0C)');\n    } else if (lrTempNum < 18) {\n      active.push('\u2744\ufe0f [CLIMATE] Living Room Cold (' + lrTempNum.toFixed(1) + '\u00b0C)');\n    }\n  }\n\n  let lrHumNum = parseFloat(rawHum);\n  if (!isNaN(lrHumNum)) {\n    if (lrHumNum > 70) {\n      active.push('\ud83d\udca7 [CLIMATE] High Humidity in Living Room (' + Math.round(lrHumNum) + '%)');\n    } else if (lrHumNum < 25) {\n      active.push('\ud83c\udf35 [CLIMATE] Very Low Humidity in Living Room (' + Math.round(lrHumNum) + '%)');\n    }\n  }\n\n  // Robot Vacuum Alerts\n  let se = states['sensor.saros_z70_vacuum_error']?.state;\n  if (se && !['none', 'no_error', 'unknown', 'unavailable', ''].includes(se)) {\n    active.push('\ud83d\udd34 [ACTIVE] Saros Z70: ' + se.replace(/_/g, ' '));\n  }\n  if (states['binary_sensor.saros_z70_water_shortage']?.state === 'on') {\n    active.push('\ud83d\udd34 [ACTIVE] Saros Z70: Clean Water Empty');\n  }\n  if (states['binary_sensor.saros_z70_dock_clean_water_box']?.state === 'on') {\n    active.push('\ud83d\udd34 [ACTIVE] Saros Z70: Clean Water Box Alert');\n  }\n  if (states['binary_sensor.saros_z70_dock_dirty_water_box']?.state === 'on') {\n    active.push('\ud83d\udd34 [ACTIVE] Saros Z70: Dirty Water Box Alert');\n  }\n  let be = states['sensor.bedroom_roborock_vacuum_cleaner_operational_error']?.state;\n  if (be && !['none', 'no_error', 'unknown', 'unavailable', ''].includes(be)) {\n    active.push('\ud83d\udd34 [ACTIVE] Bedroom Vacuum: ' + be.replace(/_/g, ' '));\n  }\n\n  let past = states['input_text.recent_alerts_24h']?.state;\n  let total = [...active];\n  if (past && !['unknown', 'unavailable', 'none', ''].includes(past)) {\n    total.push(past);\n  }\n  let hasAlerts = total.length > 0;\n  let badgeBg = hasAlerts ? '#dc2626' : '#16a34a';\n  let badgeText = hasAlerts ? 'ALERTS (24H)' : 'SYSTEM OK';\n  let tickerBorder = hasAlerts ? '1px solid rgba(239, 68, 68, 0.5)' : '1px solid rgba(34, 197, 94, 0.3)';\n  let displayText = hasAlerts\n    ? total.join('   \u2022   ')\n    : '\ud83d\udfe2 All systems nominal   \u2022   No safety, climate, air quality, or device alerts';\n\n  return `\n    <div style=\"display: flex; flex-direction: column; width: 100%; font-family: var(--ha-card-font-family, inherit);\">\n      <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; width: 100%;\">\n        <div style=\"text-align: left;\">\n          <div style=\"font-size: 1.4rem; font-weight: 700; color: var(--primary-text-color); line-height: 1.2; letter-spacing: -0.01em;\">\n            ${greeting}, Razvan\n          </div>\n          <div style=\"font-size: 0.85rem; color: var(--secondary-text-color); margin-top: 3px; font-weight: 500;\">\n            Temp: ${temp} &nbsp;|&nbsp; Humidity: ${hum} &nbsp;|&nbsp; Lux: ${lux}\n          </div>\n        </div>\n        <div style=\"display: flex; align-items: center; gap: 8px; background: var(--secondary-background-color, rgba(127, 127, 127, 0.08)); padding: 5px 12px; border-radius: 10px; border: 1px solid var(--divider-color, rgba(127, 127, 127, 0.15)); flex-shrink: 0;\">\n          <span style=\"font-size: 1.35rem; line-height: 1;\">${wIcon}</span>\n          <div style=\"text-align: right; line-height: 1.15;\">\n            <div style=\"font-size: 0.95rem; font-weight: 700; color: var(--primary-text-color);\">${wTemp}\u00b0C</div>\n            <div style=\"font-size: 0.72rem; color: var(--secondary-text-color); text-transform: capitalize;\">${wCond}</div>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"display: flex; align-items: center; width: 100%; overflow: hidden; background: var(--secondary-background-color, rgba(127, 127, 127, 0.08)); border: ${tickerBorder}; border-radius: 8px; padding: 6px 10px; box-sizing: border-box;\">\n        <div style=\"background: ${badgeBg}; color: white; font-weight: 700; font-size: 0.72rem; padding: 3px 8px; border-radius: 5px; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; white-space: nowrap; margin-right: 10px; flex-shrink: 0;\">\n          <span style=\"display: inline-block; width: 6px; height: 6px; background: white; border-radius: 50%;\"></span>\n          ${badgeText}\n        </div>\n        <div class=\"ticker-wrap\" style=\"flex: 1; overflow: hidden; white-space: nowrap; position: relative;\">\n          <span class=\"ticker-text\" style=\"color: var(--primary-text-color); font-size: 0.86rem; font-weight: 500;\">\n            ${displayText}\n          </span>\n        </div>\n      </div>\n    </div>\n  `;\n]]]"
+              },
+              "extra_styles": "\n.ticker-wrap {\n  overflow: hidden;\n  white-space: nowrap;\n  position: relative;\n  width: 100%;\n}\n.ticker-text {\n  display: inline-block;\n  padding-left: 100%;\n  animation: marquee-anim 25s linear infinite;\n}\n.ticker-text:hover, .ticker-text:active {\n  animation-play-state: paused;\n  cursor: pointer;\n}\n@keyframes marquee-anim {\n  0% { transform: translateX(0); }\n  100% { transform: translateX(-100%); }\n}\n"
+            },
+            {
+              "type": "custom:mushroom-chips-card",
+              "alignment": "center",
+              "chips": [
+                {
+                  "type": "template",
+                  "entity": "binary_sensor.everything_presence_livingroom_occupancy",
+                  "icon": "mdi:motion-sensor",
+                  "icon_color": "{{ 'green' if is_state('binary_sensor.everything_presence_livingroom_occupancy', 'on') else 'grey' }}",
+                  "content": "Occupied"
+                },
+                {
+                  "type": "template",
+                  "entity": "binary_sensor.livingroom_window_sensor_1",
+                  "icon": "{{ 'mdi:window-open-variant' if is_state('binary_sensor.livingroom_window_sensor_1', 'on') else 'mdi:window-closed-variant' }}",
+                  "icon_color": "{{ 'red' if is_state('binary_sensor.livingroom_window_sensor_1', 'on') else 'blue' }}",
+                  "content": "Window"
+                },
+                {
+                  "type": "template",
+                  "entity": "sensor.mt15_mt29_carbon_dioxide",
+                  "icon": "mdi:molecule-co2",
+                  "icon_color": "{{ 'red' if states('sensor.mt15_mt29_carbon_dioxide') | float(0) > 1200 else 'orange' if states('sensor.mt15_mt29_carbon_dioxide') | float(0) > 1000 else 'green' }}",
+                  "content": "Kitchen CO\u2082: {{ states('sensor.mt15_mt29_carbon_dioxide') | round(0) }} ppm",
+                  "tap_action": {
+                    "action": "more-info"
+                  }
+                },
+                {
+                  "type": "template",
+                  "entity": "sensor.livingroom_energy",
+                  "icon": "mdi:flash",
+                  "icon_color": "amber",
+                  "content": "{{ states('sensor.livingroom_energy') | round(1) }} kWh"
+                }
+              ]
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "input_boolean.kitchen_air_quality_alert",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "{% set co2 = states('sensor.mt15_mt29_carbon_dioxide') | float(0) %}\n{% set pm25 = states('sensor.mt15_mt29_pm2_5') | float(0) %}\n{% set hcho = states('sensor.mt15_mt29_formaldehyde') | float(0) %}\n{% if co2 > 1200 %}\n  \u26a0\ufe0f AIR QUALITY: High CO\u2082 ({{ co2 | round(0) }} ppm)\n{% elif pm25 > 30 %}\n  \ud83d\udea8 AIR QUALITY: High PM2.5 ({{ pm25 | round(0) }} \u00b5g/m\u00b3)\n{% elif hcho > 0.08 %}\n  \u26a0\ufe0f AIR QUALITY: Elevated Formaldehyde ({{ hcho }} mg/m\u00b3)\n{% else %}\n  \ud83c\udf3f AIR QUALITY: Returning to Normal (Cool-off)\n{% endif %}",
+                "secondary": "{% set co2 = states('sensor.mt15_mt29_carbon_dioxide') | float(0) %}\n{% set pm25 = states('sensor.mt15_mt29_pm2_5') | float(0) %}\n{% set hcho = states('sensor.mt15_mt29_formaldehyde') | float(0) %}\n{% if co2 > 1200 %}\n  Kitchen CO\u2082 is elevated. Please OPEN windows to ventilate with fresh air.\n{% elif pm25 > 30 %}\n  Kitchen PM2.5 is high. {% if is_state('binary_sensor.livingroom_window_sensor_1', 'on') %}Window is open \u2014 purifier kept off for efficiency.{% else %}Window is closed \u2014 air purifier running.{% endif %}\n{% elif hcho > 0.08 %}\n  Formaldehyde exceeds recommended threshold (0.08 mg/m\u00b3). Ventilate with fresh air.\n{% else %}\n  Air quality is now safe. Alert will automatically clear after 10 minutes of clean air.\n{% endif %}",
+                "icon": "{% set co2 = states('sensor.mt15_mt29_carbon_dioxide') | float(0) %}\n{% set pm25 = states('sensor.mt15_mt29_pm2_5') | float(0) %}\n{% if co2 > 1200 %}\n  mdi:molecule-co2\n{% elif pm25 > 30 %}\n  mdi:air-filter\n{% else %}\n  mdi:chemical-weapon\n{% endif %}",
+                "icon_color": "{% set co2 = states('sensor.mt15_mt29_carbon_dioxide') | float(0) %}\n{% set pm25 = states('sensor.mt15_mt29_pm2_5') | float(0) %}\n{% set hcho = states('sensor.mt15_mt29_formaldehyde') | float(0) %}\n{% if co2 > 1200 or pm25 > 30 %}\n  red\n{% elif hcho > 0.08 %}\n  amber\n{% else %}\n  green\n{% endif %}",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "more-info"
+                },
+                "entity": "sensor.mt15_mt29_carbon_dioxide"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "input_boolean.bedroom_air_quality_alert",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "{% set pm25 = states('sensor.mi_air_purifier_3_3h2_pm2_5') | float(0) %}\n{% if pm25 > 25 %}\n  \ud83d\udea8 AIR QUALITY: Bedroom High PM2.5 ({{ pm25 | round(0) }} \u00b5g/m\u00b3)\n{% else %}\n  \ud83c\udf3f AIR QUALITY: Bedroom Clean (Cool-off)\n{% endif %}",
+                "secondary": "{% set pm25 = states('sensor.mi_air_purifier_3_3h2_pm2_5') | float(0) %}\n{% if pm25 > 25 %}\n  Bedroom particulate pollution is elevated. Purifier running.\n{% else %}\n  Bedroom air quality is safe. Alert will automatically clear after 10 minutes.\n{% endif %}",
+                "icon": "mdi:air-filter",
+                "icon_color": "{{ 'red' if states('sensor.mi_air_purifier_3_3h2_pm2_5') | float(0) > 25 else 'green' }}",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "more-info"
+                },
+                "entity": "sensor.mi_air_purifier_3_3h2_pm2_5"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "numeric_state",
+                  "entity": "sensor.everything_presence_livingroom_temperature",
+                  "above": 28
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "\ud83c\udf21\ufe0f CLIMATE ALERT: Living Room Overheating",
+                "secondary": "Temperature is {{ states('sensor.everything_presence_livingroom_temperature') | round(1) }}\u00b0C. Check heating or cooling.",
+                "icon": "mdi:thermometer-alert",
+                "icon_color": "red",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "more-info"
+                },
+                "entity": "sensor.everything_presence_livingroom_temperature"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "numeric_state",
+                  "entity": "sensor.everything_presence_livingroom_temperature",
+                  "below": 18
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "\u2744\ufe0f CLIMATE ALERT: Living Room Cold",
+                "secondary": "Temperature is {{ states('sensor.everything_presence_livingroom_temperature') | round(1) }}\u00b0C. Check heating.",
+                "icon": "mdi:snowflake-alert",
+                "icon_color": "blue",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "more-info"
+                },
+                "entity": "sensor.everything_presence_livingroom_temperature"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.shellypro4pm_outlets_overheating",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "\ud83d\udd25 ELECTRICAL DANGER: Shelly Outlets Overheating!",
+                "secondary": "Outlets circuit is overheating! Check immediately!",
+                "icon": "mdi:fire-alert",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.shellypro4pm_lights_overheating",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "\ud83d\udd25 ELECTRICAL DANGER: Shelly Lights Overheating!",
+                "secondary": "Lights circuit is overheating! Check immediately!",
+                "icon": "mdi:fire-alert",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.shellyplugsg3_8cbfea943910_overheating",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "\ud83d\udd25 ELECTRICAL DANGER: Fridge Plug Overheating!",
+                "secondary": "Fridge smart plug is overheating! Check immediately!",
+                "icon": "mdi:fire-alert",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.klippbok_water_leak_sensor_water_leak",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "KLIPPBOK: Water Leak Detected!",
+                "secondary": "Check location immediately!",
+                "icon": "mdi:water-alert",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.klippbok_water_leak_sensor_water_leak",
+                  "state": "unavailable"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "KLIPPBOK Leak Sensor Offline",
+                "secondary": "Sensor is unavailable (battery drained?)",
+                "icon": "mdi:water-off",
+                "icon_color": "orange",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "BADRING: Water Leak Detected!",
+                "secondary": "Check location immediately!",
+                "icon": "mdi:water-alert",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.ikea_of_sweden_badring_water_leakage_sensor_moisture",
+                  "state": "unavailable"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "BADRING Leak Sensor Offline",
+                "secondary": "Sensor is unavailable (battery drained?)",
+                "icon": "mdi:water-off",
+                "icon_color": "orange",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.natgas_sensor_158d00035a8b85",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Kitchen Gas Leak Detected!",
+                "secondary": "Danger! Check kitchen immediately!",
+                "icon": "mdi:gas-cylinder",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.natgas_sensor_158d00035a8b85",
+                  "state": "unavailable"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Kitchen Gas Detector Offline",
+                "secondary": "Sensor is unavailable",
+                "icon": "mdi:alert-circle-outline",
+                "icon_color": "orange",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.smoke_sensor_158d0002ad1027",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Kitchen Smoke Detected!",
+                "secondary": "Danger! Check kitchen immediately!",
+                "icon": "mdi:smoke-detector-alert",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "binary_sensor.smoke_sensor_158d0002ad1027",
+                  "state": "unavailable"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Kitchen Smoke Detector Offline",
+                "secondary": "Sensor is unavailable",
+                "icon": "mdi:alert-circle-outline",
+                "icon_color": "orange",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "numeric_state",
+                  "entity": "sensor.curtain_3_9a96_battery",
+                  "below": 20
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Left Curtain Battery Low",
+                "secondary": "Battery level is {{ states('sensor.curtain_3_9a96_battery') }}%",
+                "icon": "mdi:battery-alert",
+                "icon_color": "orange",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "sensor.curtain_3_9a96_battery",
+                  "state": "unavailable"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Left Curtain Battery Offline",
+                "secondary": "Curtain sensor is offline",
+                "icon": "mdi:battery-off",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "numeric_state",
+                  "entity": "sensor.curtain_3_a832_battery",
+                  "below": 20
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Right Curtain Battery Low",
+                "secondary": "Battery level is {{ states('sensor.curtain_3_a832_battery') }}%",
+                "icon": "mdi:battery-alert",
+                "icon_color": "orange",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "sensor.curtain_3_a832_battery",
+                  "state": "unavailable"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Right Curtain Battery Offline",
+                "secondary": "Curtain sensor is offline",
+                "icon": "mdi:battery-off",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "numeric_state",
+                  "entity": "sensor.cpu_temperature",
+                  "above": 80
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "RPI: CPU OVERHEATING!",
+                "secondary": "Temperature is {{ states('sensor.cpu_temperature') }}\u00b0C",
+                "icon": "mdi:cpu-64-bit",
+                "icon_color": "red",
+                "layout": "horizontal"
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "switch.tradfri_outlet_10",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "BFlowerSw3 is ON",
+                "secondary": "Tap to turn OFF",
+                "icon": "mdi:flower",
+                "icon_color": "green",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "call-service",
+                  "service": "switch.turn_off",
+                  "target": {
+                    "entity_id": "switch.tradfri_outlet_10"
+                  }
+                }
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "switch.living_room_flower_switch_2",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Flower Switch 2 is ON",
+                "secondary": "Tap to turn OFF",
+                "icon": "mdi:flower",
+                "icon_color": "green",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "call-service",
+                  "service": "switch.turn_off",
+                  "target": {
+                    "entity_id": "switch.living_room_flower_switch_2"
+                  }
+                }
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "switch.living_room_flower_switch_1",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "Flower Switch 1 is ON",
+                "secondary": "Tap to turn OFF",
+                "icon": "mdi:flower",
+                "icon_color": "green",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "call-service",
+                  "service": "switch.turn_off",
+                  "target": {
+                    "entity_id": "switch.living_room_flower_switch_1"
+                  }
+                }
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "switch.server1_2",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:mushroom-template-card",
+                "primary": "TrueNAS is ON",
+                "secondary": "Tap to turn OFF",
+                "icon": "mdi:server",
+                "icon_color": "green",
+                "layout": "horizontal",
+                "tap_action": {
+                  "action": "call-service",
+                  "service": "switch.turn_off",
+                  "target": {
+                    "entity_id": "switch.server1_2"
+                  }
+                }
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "sun.sun",
+                  "state": "above_horizon"
+                }
+              ],
+              "card": {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "custom:mushroom-title-card",
+                    "title": "Daytime Controls",
+                    "subtitle": "Curtains and climate optimal for daytime"
+                  },
+                  {
+                    "type": "custom:mushroom-cover-card",
+                    "entity": "cover.livingroom_curtain",
+                    "name": "Main Curtains",
+                    "show_position_control": true,
+                    "show_tilt_position_control": false
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "condition": "state",
+                        "entity": "input_boolean.heating",
+                        "state": "on"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mushroom-climate-card",
+                      "entity": "climate.livingroom_wall_thermostat_1",
+                      "name": "Wall Heating",
+                      "hvac_modes": [
+                        "off",
+                        "heat"
+                      ],
+                      "show_temperature_control": true
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "sun.sun",
+                  "state": "below_horizon"
+                }
+              ],
+              "card": {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "type": "custom:mushroom-title-card",
+                    "title": "Evening Lighting",
+                    "subtitle": "Lights configured for sunset/night"
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.wall_lights",
+                        "name": "Wall Lights",
+                        "use_light_color": true,
+                        "show_brightness_control": true
+                      },
+                      {
+                        "type": "custom:mushroom-light-card",
+                        "entity": "light.ceiling_lights",
+                        "name": "Ceiling",
+                        "use_light_color": true,
+                        "show_brightness_control": true
+                      }
+                    ]
+                  },
+                  {
+                    "type": "horizontal-stack",
+                    "cards": [
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "switch.floor_lamp",
+                        "name": "Floor Lamp",
+                        "icon": "mdi:floor-lamp",
+                        "icon_color": "amber",
+                        "tap_action": {
+                          "action": "toggle"
+                        }
+                      },
+                      {
+                        "type": "custom:mushroom-entity-card",
+                        "entity": "switch.coffee_table_lamp",
+                        "name": "Coffee Table",
+                        "icon": "mdi:lamp",
+                        "icon_color": "amber",
+                        "tap_action": {
+                          "action": "toggle"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "condition": "state",
+                        "entity": "remote.main_room",
+                        "state": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Watch Digi TV",
+                          "secondary": "Harmony Activity",
+                          "icon": "mdi:television",
+                          "icon_color": "blue",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.turn_on_tv"
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Play Xbox",
+                          "secondary": "Harmony Activity",
+                          "icon": "mdi:microsoft-xbox",
+                          "icon_color": "green",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "remote.turn_on",
+                            "target": {
+                              "entity_id": "remote.main_room"
+                            },
+                            "data": {
+                              "activity": "Joaca XBOX"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "condition": "state",
+                        "entity": "remote.main_room",
+                        "state": "on"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Power Off TV",
+                      "secondary": "Current: {{ state_attr('remote.main_room', 'current_activity') }}",
+                      "icon": "mdi:power",
+                      "icon_color": "red",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "remote.turn_off",
+                        "target": {
+                          "entity_id": "remote.main_room"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "custom:mushroom-title-card",
+              "title": "Quick Actions"
+            },
+            {
+              "type": "grid",
+              "columns": 2,
+              "square": false,
+              "cards": [
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "All Lights Off",
+                  "secondary": "Living Room Only",
+                  "icon": "mdi:lightbulb-group-off",
+                  "icon_color": "red",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "homeassistant.turn_off",
+                    "target": {
+                      "entity_id": "group.alllivinglights"
+                    }
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Auto Heating",
+                  "secondary": "Toggle schedule",
+                  "icon": "mdi:calendar-sync",
+                  "icon_color": "blue",
+                  "tap_action": {
+                    "action": "toggle",
+                    "entity": "automation.lv_turn_on_heating_if_someone_in_livingroom_for_more_than_5_mins"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Open Curtains",
+                  "secondary": "All Covers",
+                  "icon": "mdi:arrow-up-bold-circle-outline",
+                  "icon_color": "green",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "cover.open_cover",
+                    "target": {
+                      "entity_id": "cover.livingroom_curtain"
+                    }
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Close Curtains",
+                  "secondary": "All Covers",
+                  "icon": "mdi:arrow-down-bold-circle-outline",
+                  "icon_color": "blue",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "cover.close_cover",
+                    "target": {
+                      "entity_id": "cover.livingroom_curtain"
+                    }
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Heating System",
+                  "secondary": "{{ 'Enabled' if is_state('input_boolean.heating', 'on') else 'Disabled' }}",
+                  "icon": "mdi:heating-coil",
+                  "icon_color": "{{ 'orange' if is_state('input_boolean.heating', 'on') else 'grey' }}",
+                  "tap_action": {
+                    "action": "toggle",
+                    "entity": "input_boolean.heating"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "background": {
+        "opacity": 50,
+        "alignment": "center",
+        "size": "cover",
+        "repeat": "no-repeat",
+        "attachment": "fixed",
+        "image": "/api/image/serve/b818d72c69b5a828352d06af8767f742/original"
+      }
+    }
+  ]
+}

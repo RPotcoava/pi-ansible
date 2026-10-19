@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shinobi
+  namespace: default
+  labels:
+    app: shinobi
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: shinobi
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: shinobi
+    spec:
+      initContainers:
+      - name: wait-for-mariadb
+        image: busybox:1.36
+        imagePullPolicy: IfNotPresent
+        command:
+        - sh
+        - -c
+        - |
+          echo "Waiting for MariaDB to be available at mariadb-service:3306..."
+          until nc -z -w 2 mariadb-service 3306; do
+            echo "MariaDB is not available yet, retrying in 3s..."
+            sleep 3
+          done
+          echo "MariaDB is ready and accepting connections!"
+      - name: copy-config
+        image: busybox
+        imagePullPolicy: Always
+        command:
+        - sh
+        - -c
+        - cp /config/conf.json /shinobi-videos/conf.json
+        volumeMounts:
+        - mountPath: /config
+          name: shinobi-config-volume
+        - mountPath: /shinobi-videos
+          name: shinobi-videos
+      containers:
+      - name: shinobi
+        image: registry.gitlab.com/shinobi-systems/shinobi:dev-arm64v8
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: ADMIN_PASSWORD
+          value: shinobi
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /config
+          name: shinobi-videos
+      volumes:
+      - name: shinobi-config-volume
+        configMap:
+          name: shinobi-config
+          defaultMode: 420
+      - name: shinobi-videos
+        persistentVolumeClaim:
+          claimName: shinobi-pvc

@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # Paperless-ngx worker (CPU-heavy OCR consumer)
+  # Wakes up on TrueNAS, processes documents, and shuts down when done.
+  paperless-worker:
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.11
+    container_name: paperless-worker
+    command: ["/sbin/docker-entrypoint.sh", "celery", "worker", "--loglevel=INFO"]
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - PAPERLESS_REDIS=redis://${K8S_REDIS_IP}:6379
+      - PAPERLESS_DBENGINE=postgresql
+      - PAPERLESS_DBHOST=${K8S_POSTGRES_IP}
+      - PAPERLESS_DBNAME=dms_db
+      - PAPERLESS_DBUSER=dms_user
+      - PAPERLESS_DBPASS=${DB_POSTGRES_PASSWORD}
+      - PAPERLESS_URL=http://paperless.local
+    volumes:
+      # Local paths on TrueNAS Scale pools that mirror the NFS shares
+      - /mnt/pool/paperless/data:/usr/src/paperless/data
+      - /mnt/pool/paperless/media:/usr/src/paperless/media
+      - /mnt/pool/paperless/consume:/usr/src/paperless/consume
+
+  # Immich Machine Learning Service (CPU/GPU-heavy face/object detection)
+  # Listens on port 3003 for API calls from K8s Immich Server.
+  immich-machine-learning:
+    image: ghcr.io/immich-app/immich-machine-learning:v1.105.1
+    container_name: immich-machine-learning
+    restart: unless-stopped
+    ports:
+      - "3003:3003"
+    environment:
+      - IMMICH_HOST=0.0.0.0
+      - IMMICH_PORT=3003
+    volumes:
+      # Local volume to cache machine learning models on TrueNAS
+      - /mnt/pool/immich/model-cache:/cache
+
+  # Immich Microservices (CPU-heavy background jobs & video transcoding)
+  immich-microservices:
+    image: ghcr.io/immich-app/immich-server:v1.105.1
+    container_name: immich-microservices
+    command: ["start.sh", "microservices"]
+    restart: unless-stopped
+    environment:
+      - DB_HOSTNAME=${K8S_POSTGRES_IP}
+      - DB_DATABASE_NAME=dms_db
+      - DB_USERNAME=dms_user
+      - DB_PASSWORD=${DB_POSTGRES_PASSWORD}
+      - REDIS_HOSTNAME=${K8S_REDIS_IP}
+      - JWT_SECRET=${IMMICH_JWT_SECRET}
+    volumes:
+      # Local path on TrueNAS Scale pools that mirror the NFS shares
+      - /mnt/pool/immich/upload:/usr/src/app/upload

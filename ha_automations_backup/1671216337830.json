@@ -1,0 +1,48 @@
+{
+  "id": "1671216337830",
+  "alias": "LV: Set Wall Lights to desired color",
+  "description": "Sets the LV Wall Lights Color to desired updated value",
+  "triggers": [
+    {
+      "entity_id": [
+        "input_number.lights_color"
+      ],
+      "trigger": "state"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "and",
+      "conditions": [
+        {
+          "condition": "state",
+          "entity_id": "group.walllight",
+          "state": "on"
+        },
+        {
+          "condition": "state",
+          "entity_id": "input_boolean.light_override",
+          "state": "off"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "data": {
+        "transition": 3,
+        "color_temp_kelvin": "{{ states(\"input_number.lights_color\") | int }}",
+        "brightness_pct": "{{ states(\"input_number.light_level\") | int }}"
+      },
+      "target": {
+        "entity_id": [
+          "light.tradfri_bulb_9",
+          "light.tradfri_bulb_10",
+          "light.kitchen_wall_lights"
+        ]
+      },
+      "action": "light.turn_on"
+    }
+  ],
+  "mode": "single"
+}

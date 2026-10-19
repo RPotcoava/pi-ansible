@@ -1,0 +1,168 @@
+{
+  "id": "air_quality_alert_bedroom",
+  "alias": "AIR: Bedroom Air Quality Alert & Purifier Management",
+  "description": "Monitors Bedroom PM2.5 and CO2. Sets alert when bad, clears alert after 10 minutes of clean air.",
+  "triggers": [
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mi_air_purifier_3_3h2_pm2_5",
+      "above": 25,
+      "for": {
+        "minutes": 1
+      },
+      "id": "pm25_high"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.smart_air_box_carbon_dioxide",
+      "above": 1200,
+      "for": {
+        "minutes": 2
+      },
+      "id": "co2_high"
+    },
+    {
+      "trigger": "state",
+      "entity_id": "binary_sensor.balcony_door",
+      "to": "off",
+      "id": "door_closed"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.mi_air_purifier_3_3h2_pm2_5",
+      "below": 20,
+      "for": {
+        "minutes": 10
+      },
+      "id": "air_clean_pm25"
+    },
+    {
+      "trigger": "numeric_state",
+      "entity_id": "sensor.smart_air_box_carbon_dioxide",
+      "below": 1000,
+      "for": {
+        "minutes": 10
+      },
+      "id": "air_clean_co2"
+    }
+  ],
+  "actions": [
+    {
+      "choose": [
+        {
+          "conditions": [
+            {
+              "condition": "template",
+              "value_template": "{{ states('sensor.mi_air_purifier_3_3h2_pm2_5') | float(0) <= 20 and (states('sensor.smart_air_box_carbon_dioxide') in ['unavailable', 'unknown'] or states('sensor.smart_air_box_carbon_dioxide') | float(0) <= 1000) and is_state('input_boolean.bedroom_air_quality_alert', 'on') }}"
+            }
+          ],
+          "sequence": [
+            {
+              "action": "input_boolean.turn_off",
+              "target": {
+                "entity_id": "input_boolean.bedroom_air_quality_alert"
+              }
+            },
+            {
+              "action": "persistent_notification.dismiss",
+              "data": {
+                "notification_id": "bedroom_air_alert"
+              }
+            },
+            {
+              "action": "input_text.set_value",
+              "target": {
+                "entity_id": "input_text.recent_alerts_24h"
+              },
+              "data": {
+                "value": "{% set current = states('input_text.recent_alerts_24h') %}\n{% if current not in ['unknown', 'unavailable', '', 'none'] %}\n  {% set items = current.split('   \u2022   ') %}\n  {% set ns = namespace(rem=[]) %}\n  {% for item in items %}\n    {% if 'Bedroom High' not in item and 'Bedroom PM2.5' not in item %}\n      {% set ns.rem = ns.rem + [item] %}\n    {% endif %}\n  {% endfor %}\n  {{ ns.rem | join('   \u2022   ') }}\n{% else %}\n  {{ '' }}\n{% endif %}"
+              }
+            }
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "condition": "template",
+              "value_template": "{{ states('sensor.mi_air_purifier_3_3h2_pm2_5') | float(0) > 25 or states('sensor.smart_air_box_carbon_dioxide') | float(0) > 1200 }}"
+            }
+          ],
+          "sequence": [
+            {
+              "action": "input_boolean.turn_on",
+              "target": {
+                "entity_id": "input_boolean.bedroom_air_quality_alert"
+              }
+            },
+            {
+              "variables": {
+                "pm25": "{{ states('sensor.mi_air_purifier_3_3h2_pm2_5') | float(0) }}",
+                "co2": "{{ states('sensor.smart_air_box_carbon_dioxide') | float(0) }}",
+                "door_open_10m": "{{ is_state('binary_sensor.balcony_door', 'on') and (now() - states.binary_sensor.balcony_door.last_changed).total_seconds() >= 600 }}",
+                "alert_msg": "{% if pm25 > 25 %}\n\ud83d\udea8 Bedroom PM2.5 is high ({{ pm25 | round(0) }} \u00b5g/m\u00b3). {% if door_open_10m %}Balcony door open > 10m; purifier turned off for efficiency.{% else %}Purifier turned on to Auto mode.{% endif %}\n{% elif co2 > 1200 %}\n\u26a0\ufe0f Bedroom CO2 is high ({{ co2 | round(0) }} ppm). Please OPEN windows to ventilate with fresh air.\n{% else %}\nAir quality warning in Bedroom.\n{% endif %}"
+              }
+            },
+            {
+              "choose": [
+                {
+                  "conditions": [
+                    {
+                      "condition": "template",
+                      "value_template": "{{ door_open_10m }}"
+                    }
+                  ],
+                  "sequence": [
+                    {
+                      "action": "fan.turn_off",
+                      "target": {
+                        "entity_id": "fan.mi_air_purifier_3_3h2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "conditions": [
+                    {
+                      "condition": "template",
+                      "value_template": "{{ pm25 > 25 and not door_open_10m }}"
+                    }
+                  ],
+                  "sequence": [
+                    {
+                      "action": "fan.turn_on",
+                      "target": {
+                        "entity_id": "fan.mi_air_purifier_3_3h2"
+                      },
+                      "data": {
+                        "preset_mode": "Auto"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "persistent_notification.create",
+              "data": {
+                "title": "\ud83d\udea8 Bedroom Air Quality Alert",
+                "message": "{{ alert_msg }}",
+                "notification_id": "bedroom_air_alert"
+              }
+            },
+            {
+              "action": "notify.send_message",
+              "target": {
+                "entity_id": "notify.s24"
+              },
+              "data": {
+                "title": "Bedroom Air Quality Alert",
+                "message": "{{ alert_msg }}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "mode": "restart"
+}

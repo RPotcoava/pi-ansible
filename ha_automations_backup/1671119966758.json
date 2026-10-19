@@ -1,0 +1,39 @@
+{
+  "id": "1671119966758",
+  "alias": "HOME: Warms the Lights",
+  "description": "Decreases lights color temperature in the evening",
+  "trigger": [
+    {
+      "platform": "time",
+      "at": "21:00:00"
+    }
+  ],
+  "condition": [],
+  "action": [
+    {
+      "repeat": {
+        "count": "18",
+        "sequence": [
+          {
+            "service": "input_number.decrement",
+            "data": {},
+            "target": {
+              "entity_id": [
+                "input_number.lights_color"
+              ]
+            }
+          },
+          {
+            "delay": {
+              "hours": 0,
+              "minutes": 3,
+              "seconds": 0,
+              "milliseconds": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "mode": "single"
+}

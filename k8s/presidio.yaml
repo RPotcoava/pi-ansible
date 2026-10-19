@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: presidio
+  namespace: default
+  labels:
+    app: presidio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: presidio
+  template:
+    metadata:
+      labels:
+        app: presidio
+    spec:
+      containers:
+      - name: presidio-analyzer
+        image: ghcr.io/data-privacy-stack/presidio-analyzer:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: PORT
+          value: "5002"
+        ports:
+        - containerPort: 5002
+          name: analyzer
+        resources:
+          requests:
+            cpu: 50m
+            memory: 300Mi
+          limits:
+            cpu: 1000m
+            memory: 1500Mi
+      - name: presidio-anonymizer
+        image: ghcr.io/data-privacy-stack/presidio-anonymizer:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: PORT
+          value: "5001"
+        ports:
+        - containerPort: 5001
+          name: anonymizer
+        resources:
+          requests:
+            cpu: 20m
+            memory: 80Mi
+          limits:
+            cpu: 200m
+            memory: 250Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: presidio-service
+  namespace: default
+  labels:
+    app: presidio
+spec:
+  type: ClusterIP
+  selector:
+    app: presidio
+  ports:
+  - name: analyzer
+    port: 5002
+    targetPort: 5002
+  - name: anonymizer
+    port: 5001
+    targetPort: 5001

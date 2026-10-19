@@ -1,0 +1,1313 @@
+Oct  7 07:05:03 kernel: [266634.117605] wlan: [0:I:ANY] No non preferred channel report
+Oct  7 15:08:13 WAN Connection: Fail to connect with some issues.
+Oct  7 15:08:13 WAN Connection: WAN was restored.
+Oct  7 18:40:34 kernel: [308366.084303] wlan: [0:I:ANY] No non preferred channel report
+Oct  7 18:40:35 kernel: [308366.219924] wlan: [0:I:ANY] No non preferred channel report
+Oct  7 19:26:24 kernel: [311115.832926] wlan: [0:I:ANY] No non preferred channel report
+Oct  7 20:33:25 dnsmasq[4904]: possible DNS-rebind attack detected: detect.ffc.adobeoobe.com
+Oct  7 20:38:40 dnsmasq[4904]: possible DNS-rebind attack detected: detect.ffc.adobeoobe.com
+Oct  8 02:02:07 kernel: [334858.933512] wlan: [0:I:ANY] No non preferred channel report
+Oct  8 03:20:31 kernel: [339563.473374] wlan: [0:I:ANY] No non preferred channel report
+Oct  8 05:00:07 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7731)]update_enable : 1 , update_time : 5:0
+Oct  8 05:00:07 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7819)]do webs_update
+Oct  8 05:01:36 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7837)]retrieve firmware information
+Oct  8 05:01:36 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7852)]fimrware update check first time
+Oct  8 05:01:36 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7883)]no need to upgrade firmware
+Oct  8 07:04:18 kernel: [352990.274607] wlan: [0:I:ANY] No non preferred channel report
+Oct  8 08:41:25 kernel: [358817.495791] wlan: [0:I:ANY] No non preferred channel report
+Oct  8 12:42:15 kernel: [373267.626953] eth2: PHY Link is down
+Oct  8 12:42:15 kernel: [373267.627513] eth1: PHY Link is down
+Oct  8 12:42:19 kernel: [373271.627223] eth2: PHY Link up speed: 1000
+Oct  8 12:42:19 kernel: [373271.627562] eth1: PHY Link up speed: 1000
+Oct  8 12:42:25 kernel: [373277.036698] eth4: PHY Link up speed: 10000
+Oct  8 12:42:33 kernel: [373285.036664] eth4: PHY Link is down
+Oct  8 12:42:34 kernel: [373286.646918] eth2: PHY Link is down
+Oct  8 12:42:34 kernel: [373286.647483] eth1: PHY Link is down
+Oct  8 12:42:36 kernel: [373288.647340] eth2: PHY Link up speed: 1000
+Oct  8 12:42:36 kernel: [373288.648655] eth1: PHY Link up speed: 1000
+Oct  8 12:42:48 kernel: [373300.036687] eth4: PHY Link up speed: 10000
+Oct  8 12:43:00 dnsmasq[4904]: possible DNS-rebind attack detected: dns.msftncsi.com
+Oct  8 12:46:38 kernel: [373530.787211] eth2: PHY Link is down
+Oct  8 12:46:38 kernel: [373530.787518] eth1: PHY Link is down
+Oct  8 12:46:40 kernel: [373532.787268] eth2: PHY Link up speed: 1000
+Oct  8 12:46:40 kernel: [373532.787625] eth1: PHY Link up speed: 1000
+Oct  8 12:48:17 dnsmasq[4904]: possible DNS-rebind attack detected: fyc5mja4mz5s0vmz1txx.syncthing.net
+Oct  8 12:48:49 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  8 12:48:50 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  8 13:07:32 kernel: [374785.586928] eth1: PHY Link is down
+Oct  8 13:07:32 kernel: [374785.587227] eth2: PHY Link is down
+Oct  8 13:07:34 kernel: [374787.586964] eth1: PHY Link up speed: 100
+Oct  8 13:07:34 kernel: [374787.587586] eth2: PHY Link up speed: 100
+Oct  9 05:00:05 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7731)]update_enable : 1 , update_time : 5:0
+Oct  9 05:00:05 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7819)]do webs_update
+Oct  9 05:00:19 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7837)]retrieve firmware information
+Oct  9 05:00:19 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7852)]fimrware update check first time
+Oct  9 05:00:19 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7883)]no need to upgrade firmware
+Oct  9 05:00:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7731)]update_enable : 1 , update_time : 5:0
+Oct  9 05:00:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7819)]do webs_update
+Oct  9 05:00:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7837)]retrieve firmware information
+Oct  9 05:00:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7857)]fimrware update check once
+Oct  9 05:01:20 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7819)]do webs_update
+Oct  9 05:01:20 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7837)]retrieve firmware information
+Oct  9 05:01:20 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7857)]fimrware update check once
+Oct  9 05:01:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7819)]do webs_update
+Oct  9 05:01:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7837)]retrieve firmware information
+Oct  9 05:01:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7852)]fimrware update check first time
+Oct  9 05:01:50 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7883)]no need to upgrade firmware
+Oct  9 07:05:48 kernel: [439481.611041] wlan: [0:I:ANY] No non preferred channel report
+Oct  9 08:20:24 kernel: [443956.931623] wlan: [0:I:ANY] No non preferred channel report
+Oct  9 15:59:31 kernel: [471505.209085] wlan: [0:I:ANY] No non preferred channel report
+Oct  9 16:35:21 kernel: [473654.455959] wlan: [0:I:ANY] No non preferred channel report
+Oct  9 16:37:28 kernel: [473781.044153] wlan: [22587:I:ANY] son_bs_stats_update_cb: 1993: son_bs_stats_update_cb ctrl peer is null
+Oct  9 17:55:10 kernel: [478443.907547] eth1: PHY Link is down
+Oct  9 17:55:11 kernel: [478444.427299] eth2: PHY Link is down
+Oct  9 17:55:14 kernel: [478447.907587] eth1: PHY Link up speed: 1000
+Oct  9 17:55:15 kernel: [478448.427422] eth2: PHY Link up speed: 1000
+Oct  9 18:00:25 kernel: [478758.687306] eth2: PHY Link is down
+Oct  9 18:00:26 kernel: [478759.117681] eth1: PHY Link is down
+Oct  9 18:00:27 kernel: [478760.687317] eth2: PHY Link up speed: 1000
+Oct  9 18:00:28 kernel: [478761.117659] eth1: PHY Link up speed: 1000
+Oct  9 18:01:11 dnsmasq[4904]: possible DNS-rebind attack detected: fyc5mja4mz5s0vmz1txx.syncthing.net
+Oct  9 18:01:32 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 18:01:33 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 18:26:12 WAN Connection: Fail to connect with some issues.
+Oct  9 18:26:14 WAN Connection: WAN was restored.
+Oct  9 18:28:41 WAN Connection: Fail to connect with some issues.
+Oct  9 18:28:43 WAN Connection: WAN was restored.
+Oct  9 18:41:42 kernel: [481235.287609] thermal thermal_zone0: failed to read out thermal zone (-110)
+Oct  9 19:02:37 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 19:07:02 WAN Connection: Fail to connect with some issues.
+Oct  9 19:07:04 WAN Connection: WAN was restored.
+Oct  9 19:11:38 kernel: [483031.947299] eth1: PHY Link is down
+Oct  9 19:11:39 kernel: [483032.357316] eth2: PHY Link is down
+Oct  9 19:11:40 kernel: [483033.947462] eth1: PHY Link up speed: 100
+Oct  9 19:11:41 kernel: [483034.363089] eth2: PHY Link up speed: 100
+Oct  9 19:16:56 kernel: [483349.127319] eth1: PHY Link is down
+Oct  9 19:16:56 kernel: [483349.487325] eth2: PHY Link is down
+Oct  9 19:16:57 kernel: [483350.487346] eth2: PHY Link up speed: 1000
+Oct  9 19:16:58 kernel: [483351.127364] eth1: PHY Link up speed: 1000
+Oct  9 19:17:59 dnsmasq[4904]: possible DNS-rebind attack detected: fyc5mja4mz5s0vmz1txx.syncthing.net
+Oct  9 19:18:23 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 19:18:24 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 19:34:09 dnsmasq[4904]: possible DNS-rebind attack detected: fyc5mja4mz5s0vmz1txx.syncthing.net
+Oct  9 19:34:31 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 19:34:32 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 19:34:38 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 20:29:58 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 21:19:46 kernel: [490719.192176] wlan: [0:I:ANY] No non preferred channel report
+Oct  9 21:19:46 kernel: [490719.315045] wlan: [0:I:ANY] No non preferred channel report
+Oct  9 21:27:33 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 22:29:27 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct  9 22:58:46 kernel: [496659.697391] eth1: PHY Link is down
+Oct  9 22:58:46 kernel: [496660.217349] eth2: PHY Link is down
+Oct  9 22:58:47 kernel: [496661.217378] eth2: PHY Link up speed: 100
+Oct  9 22:58:48 kernel: [496661.697658] eth1: PHY Link up speed: 100
+Oct 10 03:20:37 kernel: [512370.834489] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 05:00:24 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7731)]update_enable : 1 , update_time : 5:0
+Oct 10 05:00:24 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7819)]do webs_update
+Oct 10 05:01:15 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7837)]retrieve firmware information
+Oct 10 05:01:15 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7852)]fimrware update check first time
+Oct 10 05:01:15 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7883)]no need to upgrade firmware
+Oct 10 07:03:34 kernel: [525748.504869] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 12:41:59 kernel: [546054.116454] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 14:30:04 kernel: [552538.437585] eth1: PHY Link is down
+Oct 10 14:30:04 kernel: [552538.437876] eth2: PHY Link is down
+Oct 10 14:30:08 kernel: [552542.437610] eth2: PHY Link up speed: 1000
+Oct 10 14:30:08 kernel: [552542.437942] eth1: PHY Link up speed: 1000
+Oct 10 14:35:22 kernel: [552856.617537] eth2: PHY Link is down
+Oct 10 14:35:22 kernel: [552856.697902] eth1: PHY Link is down
+Oct 10 14:35:24 kernel: [552858.617769] eth2: PHY Link up speed: 1000
+Oct 10 14:35:24 kernel: [552858.697605] eth1: PHY Link up speed: 1000
+Oct 10 14:36:54 dnsmasq[4904]: possible DNS-rebind attack detected: fyc5mja4mz5s0vmz1txx.syncthing.net
+Oct 10 14:37:15 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 14:37:16 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 14:40:17 kernel: [553151.717573] eth2: PHY Link is down
+Oct 10 14:40:17 kernel: [553151.797531] eth1: PHY Link is down
+Oct 10 14:40:18 kernel: [553152.718712] eth2: PHY Link up speed: 100
+Oct 10 14:40:18 kernel: [553152.797617] eth1: PHY Link up speed: 100
+Oct 10 14:42:09 kernel: [553263.807605] eth2: PHY Link is down
+Oct 10 14:42:10 kernel: [553263.887560] eth1: PHY Link is down
+Oct 10 14:42:13 kernel: [553267.807645] eth2: PHY Link up speed: 1000
+Oct 10 14:42:14 kernel: [553267.887590] eth1: PHY Link up speed: 1000
+Oct 10 14:47:28 kernel: [553581.937553] eth2: PHY Link is down
+Oct 10 14:47:28 kernel: [553582.017533] eth1: PHY Link is down
+Oct 10 14:47:30 kernel: [553583.937906] eth2: PHY Link up speed: 1000
+Oct 10 14:47:30 kernel: [553584.017581] eth1: PHY Link up speed: 1000
+Oct 10 14:48:51 dnsmasq[4904]: possible DNS-rebind attack detected: fyc5mja4mz5s0vmz1txx.syncthing.net
+Oct 10 14:49:13 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 14:49:14 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 14:49:20 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 15:41:53 kernel: [556847.147556] eth2: PHY Link is down
+Oct 10 15:41:53 kernel: [556847.147858] eth1: PHY Link is down
+Oct 10 15:41:55 kernel: [556849.148388] eth2: PHY Link up speed: 100
+Oct 10 15:41:55 kernel: [556849.148730] eth1: PHY Link up speed: 100
+Oct 10 15:50:35 kernel: [557369.387547] eth1: PHY Link is down
+Oct 10 15:50:35 kernel: [557369.387867] eth2: PHY Link is down
+Oct 10 15:50:39 kernel: [557373.387597] eth1: PHY Link up speed: 1000
+Oct 10 15:50:39 kernel: [557373.387927] eth2: PHY Link up speed: 1000
+Oct 10 15:55:53 kernel: [557687.497661] eth1: PHY Link is down
+Oct 10 15:55:53 kernel: [557687.497980] eth2: PHY Link is down
+Oct 10 15:55:54 kernel: [557688.501481] eth2: PHY Link up speed: 1000
+Oct 10 15:55:55 kernel: [557689.498254] eth1: PHY Link up speed: 1000
+Oct 10 15:57:33 dnsmasq[4904]: possible DNS-rebind attack detected: fyc5mja4mz5s0vmz1txx.syncthing.net
+Oct 10 15:57:53 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 15:57:55 dnsmasq[4904]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+May  5 08:05:19 INIT: firmware version: 3.0.0.4_388_33812-gab9863d
+May  5 08:05:19 kernel: klogd started: BusyBox v1.25.1 (2025-10-18 16:41:48 CST)
+May  5 08:05:19 kernel: [    0.000000] Linux version 4.4.60 (root@asus) (gcc version 4.6.3 20120201 (prerelease) (Linaro GCC 4.6-2012.02) ) #1 SMP PREEMPT Sat Oct 18 16:44:09 CST 2025
+May  5 08:05:19 kernel: [    0.000000] Ignoring memory range 0x40000000 - 0x42000000
+May  5 08:05:19 kernel: [    0.000000] Kernel command line: console=ttyMSM0,115200n8 rootfstype=squashfs root=/dev/mtdblock4  swiotlb=1 coherent_pool=2M ubi.mtd=UBI_DEV 
+May  5 08:05:19 kernel: [    0.000000] Virtual kernel memory layout:
+May  5 08:05:19 kernel: [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+May  5 08:05:19 kernel: [    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+May  5 08:05:19 kernel: [    0.000000]     vmalloc : 0xbe800000 - 0xff800000   (1040 MB)
+May  5 08:05:19 kernel: [    0.000000]     lowmem  : 0x80000000 - 0xbe000000   ( 992 MB)
+May  5 08:05:19 kernel: [    0.000000]     pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+May  5 08:05:19 kernel: [    0.000000]     modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+May  5 08:05:19 kernel: [    0.000000]       .text : 0x80208000 - 0x808fa774   (7114 kB)
+May  5 08:05:19 kernel: [    0.000000]       .init : 0x808fb000 - 0x8093c000   ( 260 kB)
+May  5 08:05:19 kernel: [    0.000000]       .data : 0x8093c000 - 0x8097b018   ( 253 kB)
+May  5 08:05:19 kernel: [    0.000000]        .bss : 0x8097e000 - 0x809e7274   ( 421 kB)
+May  5 08:05:19 kernel: [    0.231560] irq: no irq domain found for /soc/smp2p-wcss/slave-kernel !
+May  5 08:05:19 kernel: [    0.234027] irq: no irq domain found for /soc/smp2p-wcss/slave-kernel !
+May  5 08:05:19 kernel: [    0.257790] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257797] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257802] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257807] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257812] IPC logging disabled
+May  5 08:05:19 kernel: [    0.292016] SCSI subsystem initialized
+May  5 08:05:19 kernel: [    0.313898] Key type asymmetric registered
+May  5 08:05:19 kernel: [    0.313915] Asymmetric key parser 'x509' registered
+May  5 08:05:19 kernel: [    0.321305] msm_rpm_log_probe: OK
+May  5 08:05:19 kernel: [    0.322676] TZ SMMU State: SMMU Stage2 Enabled
+May  5 08:05:19 kernel: [    0.322730] TZ Log : Will warn on Access Violation, as paniconaccessviolation is not set
+May  5 08:05:19 kernel: [    0.332970] nand: device found, Manufacturer ID: 0xef, Chip ID: 0xaa
+May  5 08:05:19 kernel: [    0.332987] nand: 256 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+May  5 08:05:19 kernel: [    0.333235] 2 ofpart partitions found on MTD device qcom_nand.0
+May  5 08:05:19 kernel: [    0.333243] Creating 2 MTD partitions on "qcom_nand.0":
+May  5 08:05:19 kernel: [    0.333254] 0x000000000000-0x0000003e0000 : "Bootloader"
+May  5 08:05:19 kernel: [    0.337091] 0x000000400000-0x000010000000 : "UBI_DEV"
+May  5 08:05:19 kernel: [    0.539231] mdio-gpio soc:mdio1: failed to get alias id
+May  5 08:05:19 kernel: [    0.983027] Unable to create IPC log context!
+May  5 08:05:19 kernel: [    0.983337] Skip QCA8074V1 in V2 platform
+May  5 08:05:19 kernel: [    0.993836] qcom_ice_get_device_tree_data: No vdd-hba-supply regulator, assuming not needed
+May  5 08:05:19 kernel: [    0.996398] sps_register_bam_device : unable to create IPC Logging 0 for bam 0x08b04000
+May  5 08:05:19 kernel: [    0.996408] sps_register_bam_device : unable to create IPC Logging 1 for bam 0x08b04000sps_register_bam_device : unable to create IPC Logging 2 for bam 0x08b04000
+May  5 08:05:19 kernel: [    0.996423] sps_register_bam_device : unable to create IPC Logging 3 for bam 0x08b04000sps_register_bam_device : unable to create IPC Logging 4 for bam 0x08b04000
+May  5 08:05:19 kernel: [    1.007703] Bridge firewalling registered
+May  5 08:05:19 kernel: [    1.008065] Registering SWP/SWPB emulation handler
+May  5 08:05:19 kernel: [    1.019263] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 800000 KHz
+May  5 08:05:19 kernel: [    1.019413] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 1017600 KHz
+May  5 08:05:19 kernel: [    1.019702] ubi0: attaching mtd1
+May  5 08:05:19 kernel: [    1.184589] random: nonblocking pool is initialized
+May  5 08:05:19 kernel: [    1.979394] ubi0: scanning is finished
+May  5 08:05:19 kernel: [    1.985240] ubi0: attached mtd1 (name "UBI_DEV", size 252 MiB)
+May  5 08:05:19 kernel: [    1.985245] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+May  5 08:05:19 kernel: [    1.985248] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+May  5 08:05:19 kernel: [    1.985251] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+May  5 08:05:19 kernel: [    1.985254] ubi0: good PEBs: 2015, bad PEBs: 1, corrupted PEBs: 0
+May  5 08:05:19 kernel: [    1.985257] ubi0: user volume: 5, internal volumes: 1, max. volumes count: 128
+May  5 08:05:19 kernel: [    1.985260] ubi0: max/mean erase counter: 4560/3215, WL threshold: 4096, image sequence number: 2056650053
+May  5 08:05:19 kernel: [    1.985264] ubi0: available PEBs: 0, total reserved PEBs: 2015, PEBs reserved for bad PEB handling: 39
+May  5 08:05:19 kernel: [    1.985272] ubi0: background thread "ubi_bgt0d" started, PID 193
+May  5 08:05:19 kernel: [    1.985771] gluebi_create: Hook read/write method of Factory.
+May  5 08:05:19 kernel: [    1.986136] gluebi_create: Hook read/write method of Factory2.
+May  5 08:05:19 kernel: [    2.024726] [Factory-0]: OK (ver: 10795)
+May  5 08:05:19 kernel: [    2.062852] [Factory2-0]: OK (ver: 10795)
+May  5 08:05:19 kernel: [    2.062856] Select [Factory-0]
+May  5 08:05:19 kernel: [    2.063652] Creating 1 MTD partitions on "linux":
+May  5 08:05:19 kernel: [    2.063657] 0x0000002d2188-0x000006406000 : "rootfs"
+May  5 08:05:19 kernel: [    2.063958] mtd: device 6 (rootfs) set to be root filesystem
+May  5 08:05:19 kernel: [    2.068985] Override root device as 31:6
+May  5 08:05:19 kernel: [    2.706067] offset 0x2f000 elapse 20ms
+May  5 08:05:19 kernel: [    3.015558] Load vstat C:0 U:231 P:416 T:437568
+May  5 08:05:19 kernel: [    3.793692] bled: GPIO#20: netdev eth5 nr_users 1.
+May  5 08:05:19 kernel: [    3.796431] bled: GPIO#47: switch ports mask        0.
+May  5 08:05:19 kernel: [    3.796650] bled: GPIO#36: netdev eth4 nr_users 1.
+May  5 08:05:19 kernel: [    3.796870] bled: GPIO#35: switch ports mask        0.
+May  5 08:05:19 kernel: [    3.797091] bled: GPIO#18: netdev ath1 nr_users 1.
+May  5 08:05:19 kernel: [    3.797311] bled: GPIO#19: netdev ath0 nr_users 1.
+May  5 08:05:19 kernel: [    6.719521] ssdk_switch_device_num_init[1168]:INFO:ess-switch dts node number: 2
+May  5 08:05:19 kernel: [    6.719546] ssdk_dt_get_switch_node[979]:INFO:ess-switch DT exist!
+May  5 08:05:19 kernel: [    6.719551] ssdk_dt_parse_access_mode[865]:INFO:switch_access_mode: local bus
+May  5 08:05:19 kernel: [    6.719555] ssdk_dt_parse_access_mode[878]:INFO:switchreg_base_addr: 0x3a000000
+May  5 08:05:19 kernel: [    6.719558] ssdk_dt_parse_access_mode[879]:INFO:switchreg_size: 0x1000000
+May  5 08:05:19 kernel: [    6.719561] ssdk_dt_parse_mac_mode[297]:INFO:mac mode = 0xb
+May  5 08:05:19 kernel: [    6.719565] ssdk_dt_parse_mac_mode[306]:INFO:mac mode1 = 0xe
+May  5 08:05:19 kernel: [    6.719568] ssdk_dt_parse_mac_mode[315]:INFO:mac mode2 = 0xd
+May  5 08:05:19 kernel: [    6.719582] ssdk_dt_parse_phy_info[619]:INFO:[PORT 5] phy-i2c-mode
+May  5 08:05:19 kernel: [    6.719586] ssdk_dt_parse_phy_info[673]:INFO:[PORT 5] media type is sfp
+May  5 08:05:19 kernel: [    6.719614] ssdk_dt_parse_uniphy[334]:INFO:ess-uniphy DT exist!
+May  5 08:05:19 kernel: [    6.719742] ssdk_dt_parse_intf_mac[810]:INFO:dp1 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.719762] ssdk_dt_parse_intf_mac[810]:INFO:dp2 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.719782] ssdk_dt_parse_intf_mac[810]:INFO:dp3 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.719802] ssdk_dt_parse_intf_mac[810]:INFO:dp4 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.719821] ssdk_dt_parse_intf_mac[810]:INFO:dp5 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.719840] ssdk_dt_parse_intf_mac[810]:INFO:dp6 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.719853] ssdk_plat_init start
+May  5 08:05:19 kernel: [    6.797536] ssdk_gcc_clock_init[1044]:INFO:SSDK gcc clock init successfully!
+May  5 08:05:19 kernel: [    6.797934] ssdk_probe[2122]:INFO:ess_rst doesn't exist!
+May  5 08:05:19 kernel: [    6.798982] HPPE initializing...
+May  5 08:05:19 kernel: [    6.799570] malibu_phy_api_ops_init[2848]:INFO:qca probe malibu phy driver succeeded!
+May  5 08:05:19 kernel: [    6.809326] aquantia_phy_api_ops_init[2180]:INFO:qca probe aquantia phy driver succeeded!
+May  5 08:05:19 kernel: [    6.810730] sfp_phy_init[312]:INFO:sfp phy init for port 0x20!
+May  5 08:05:19 kernel: [    6.812364] sfp_phy_probe[74]:INFO:sfp phy is probed!
+May  5 08:05:19 kernel: [    6.812405] regi_init[3664]:INFO:Initializing HPPE!!
+May  5 08:05:19 kernel: [    7.025325] ssdk_ppe_reset_init[1276]:INFO:ppe reset successfully!
+May  5 08:05:19 kernel: [    7.028642] qca_hppe_portctrl_hw_init[110]:INFO:Hawkeye PPE port initializing
+May  5 08:05:19 kernel: [    9.325358] ssdk_switch_register[1816]:INFO:Chip version 0x1500
+May  5 08:05:19 kernel: [    9.325372] ssdk_switch_register[1842]:INFO:polling is selected
+May  5 08:05:19 kernel: [    9.325378] regi_init[3668]:INFO:Initializing HPPE Done!!
+May  5 08:05:19 kernel: [    9.325431] ssdk_dt_get_switch_node[979]:INFO:ess-switch DT exist!
+May  5 08:05:19 kernel: [    9.325438] ssdk_dt_parse_access_mode[865]:INFO:switch_access_mode: mdio
+May  5 08:05:19 kernel: [    9.325441] ssdk_dt_parse_mac_mode[297]:INFO:mac mode = 0x12
+May  5 08:05:19 kernel: [    9.325445] ssdk_dt_parse_mac_mode[306]:INFO:mac mode1 = 0xff
+May  5 08:05:19 kernel: [    9.325448] ssdk_dt_parse_mac_mode[315]:INFO:mac mode2 = 0xf
+May  5 08:05:19 kernel: [    9.325468] ssdk_dt_parse[1070]:INFO:switch node is qca83xx!
+May  5 08:05:19 kernel: [    9.325472] ssdk_plat_init start
+May  5 08:05:19 kernel: [    9.412821] f1_phy_api_ops_init[1517]:INFO:qca probe f1 phy driver succeeded!
+May  5 08:05:19 kernel: [    9.412827] qca803x_phy_api_ops_init[2174]:INFO:qca probe qca803x phy driver succeeded!
+May  5 08:05:19 kernel: [    9.413180] regi_init[3653]:INFO:Initializing ISISC!!
+May  5 08:05:19 kernel: [    9.413185] qca_ar8327_gpio_reset[3567]:INFO:reset_gpio node does not exist
+May  5 08:05:19 kernel: [    9.413462] ssdk_switch_register[1816]:INFO:Chip version 0x1302
+May  5 08:05:19 kernel: [    9.413483] qca_link_polling_select[1427]:INFO:the interrupt number is:90
+May  5 08:05:19 kernel: [    9.413486] ssdk_switch_register[1852]:INFO:interrupt is selected
+May  5 08:05:19 kernel: [   10.337320] SFP EEPROM VENDOR [QSFPTEK] OUI [00-40-20] PN [QT-SFP-10G-T] REV [03]
+May  5 08:05:19 kernel: [   10.337324] SFP EEPROM Byte  0:  3, SFP/SFP+
+May  5 08:05:19 kernel: [   10.337329] SFP EEPROM Byte  C: 67, 10300 Mbps
+May  5 08:05:19 kernel: [   10.337331] SFP EEPROM Byte  8:  4, Passive Cable
+May  5 08:05:19 kernel: [   10.337336] SFP EEPROM Byte 12:  1, 50um OM4 cable max. length 10m
+May  5 08:05:19 kernel: [   10.337338] SFP EEPROM 00: 03 04 21 00 00 00 00 00-04 00 00 00 67 00 00 00-00 00 01 00 51 53 46 50-54 45 4B 20 20 20 20 20    ..!.........g.......QSFPTEK     
+May  5 08:05:19 kernel: [   10.337377] SFP EEPROM 01: 20 20 20 20 00 00 40 20-51 54 2D 53 46 50 2D 31-30 47 2D 54 20 20 20 20-30 33 20 20 00 00 00 66        ..@ QT-SFP-10G-T    03  ...f
+May  5 08:05:19 kernel: [   10.337416] SFP EEPROM 02: 00 00 00 00 51 54 36 32-34 30 33 31 34 34 34 38-20 20 20 20 32 34 30 33-32 32 20 20 00 00 00 96    ....QT6240314448    240322  ....
+May  5 08:05:19 kernel: [   10.337454] SFP EEPROM 03: 00 00 08 41 C8 67 C2 75-26 39 63 BF 9B AC 1F 03-F9 47 47 00 00 00 00 00-00 00 00 00 4A 5D 9C 84    ...A.g.u&9c......GG.........J]..
+May  5 08:05:19 kernel: [   10.337493] SFP EEPROM 04: 43 4F 50 51 41 41 36 4A-41 42 33 37 2D 30 39 36-31 2D 30 33 56 30 33 20-01 00 46 00 00 00 00 CF    COPQAA6JAB37-0961-03V03 ..F.....
+May  5 08:05:19 kernel: [   10.337531] SFP EEPROM 05: 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00    ................................
+May  5 08:05:19 kernel: [   10.337569] SFP EEPROM 06: 53 46 50 2D 48 31 30 47-42 2D 43 55 31 4D 20 20-20 20 20 20 30 39 00 00-00 00 00 00 00 00 00 B6    SFP-H10GB-CU1M      09..........
+May  5 08:05:19 kernel: [   10.337608] SFP EEPROM 07: 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00    ................................
+May  5 08:05:19 kernel: [   10.337823] sfp_phy_interface_get_mode_status[683]:INFO:sfp module speed: 10300 interface_mode_status 8 (limit 0)
+May  5 08:05:19 kernel: [   11.125325] regi_init[3658]:INFO:Initializing ISISC Done!!
+May  5 08:05:19 kernel: [   11.125369] regi_init[3728]:INFO:qca-ssdk module init succeeded!
+May  5 08:05:19 kernel: [   11.325264] nss_driver - fw of size 742876  bytes copied to load addr: 40000000, nss_id : 0
+May  5 08:05:19 kernel: [   11.326767] Supported Frequencies - 
+May  5 08:05:19 kernel: [   11.326780] 748.8 MHz 1.4976 GHz 
+May  5 08:05:19 kernel: [   11.326784] 1.6896 GHz <1>[   11.326788] 
+May  5 08:05:19 kernel: [   11.326900] 7f346140: set sdma bc704700
+May  5 08:05:19 kernel: [   11.326989] 7f346140: meminfo init succeed
+May  5 08:05:19 kernel: [   11.356223] node size 2 # items 4
+May  5 08:05:19 kernel: [   11.356236] memory: 40000000 1073741824 (avl 916688896) items 4 active_cores 2
+May  5 08:05:19 kernel: [   11.356258] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+May  5 08:05:19 kernel: [   11.356264] 7f346140: nss core 0 booted successfully
+May  5 08:05:19 kernel: [   11.370249] nss_driver - fw of size 289400  bytes copied to load addr: 40800000, nss_id : 1
+May  5 08:05:19 kernel: [   11.371021] Supported Frequencies - 
+May  5 08:05:19 kernel: [   11.371030] 748.8 MHz 1.4976 GHz 
+May  5 08:05:19 kernel: [   11.371036] 1.6896 GHz <1>[   11.371039] 
+May  5 08:05:19 kernel: [   11.371154] 7f34a680: set sdma bc704c00
+May  5 08:05:19 kernel: [   11.371242] 7f34a680: meminfo init succeed
+May  5 08:05:19 kernel: [   11.375000] node size 2 # items 4
+May  5 08:05:19 kernel: [   11.375012] memory: 40000000 1073741824 (avl 916840448) items 4 active_cores 2
+May  5 08:05:19 kernel: [   11.375046] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+May  5 08:05:19 kernel: [   11.375058] 7f34a680: nss core 1 booted successfully
+May  5 08:05:19 kernel: [   11.388394] QCA Hy-Fi multicast installation successfully
+May  5 08:05:19 kernel: [   11.395933] nat46: module (version 8ff2ae59ec9840a7b8b45f976c51cae80abe0226) loaded.
+May  5 08:05:19 kernel: [   11.406817] QCA multicast snooping installed successfully
+May  5 08:05:19 kernel: [   11.631441] diag: IPC Logging disabled
+May  5 08:05:19 kernel: [   11.631944] TRACK: P[0]	PMask[4]
+May  5 08:05:19 kernel: [   11.631951] TRACK: P[1]	PMask[4]
+May  5 08:05:19 kernel: [   11.631954] TRACK: P[2]	PMask[4]
+May  5 08:05:19 kernel: [   11.632069] TRACK: P[3]	PMask[4]
+May  5 08:05:19 kernel: [   11.643043] <NSS-CRYPTO>:module loaded Build_ID - 10/18/25, 17:41:53 SoC=ipq807x
+May  5 08:05:19 kernel: [   11.646408] crypto bench loaded - Build_ID - 10/18/25, 17:41:53
+May  5 08:05:19 kernel: [   11.999619] mem_manager: module license 'Proprietary' taints kernel.
+May  5 08:05:19 kernel: [   11.999631] Disabling lock debugging due to kernel taint
+May  5 08:05:19 kernel: [   13.339630] wlan: [591:E:CONFIG] cfg_uint_item_handler: 171: gScanProbeRepeatTime=50 - Out of range [0, 30]; Using 50
+May  5 08:05:19 kernel: [   14.884972] wlan: [615:I:ANY] =======ol_if_register_wifi3_0==========
+May  5 08:05:19 kernel: [   14.884989] wlan: [615:I:ANY] osif_nss_register_module: 90: NSS wifi ops registered for target_type:1 with soc_ops:7fa4ff4c
+May  5 08:05:19 kernel: [   14.885011] wlan: [615:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 2 bus_type 1
+May  5 08:05:19 kernel: [   15.874732] wlan: [615:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 3 bus_type 1
+May  5 08:05:19 kernel: [   15.874745] wlan: [615:I:ANY] ol_ath_check_fw_ready: 614: Waiting for FW ready device fffe
+May  5 08:05:19 kernel: [   15.876602] diag: In diag_send_feature_mask_update, control channel is not open, p: 2, 7f4ab944
+May  5 08:05:19 kernel: [   15.975342] wlan: [615:I:ANY] ol_ath_check_fw_ready: 624: FW ready received for device fffe
+May  5 08:05:19 kernel: [   15.976292] wlan: [615:I:ANY] pld_ahb_wlan_enable: 691: cnss_mode: Cold boot calibration
+May  5 08:05:19 kernel: [   16.053027] wlan: [615:I:ANY] Coldboot calibration wait started
+May  5 08:05:19 kernel: [   16.353112] wlan: [615:I:ANY] Coldboot calibration wait ended
+May  5 08:05:19 kernel: [   16.354761] wlan: [615:I:ANY] ol_ath_do_cold_boot_calibration: 598: Coldboot calib successful: radio_id 0x65534
+May  5 08:05:19 kernel: [   16.355297] wlan: [615:I:ANY] init_ath_pci_3_0: 179: ^A6ath_ol_pci_wifi3.0 :  (Atheros/multi-bss)
+May  5 08:05:19 kernel: [   16.357982] wlan: [666:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 0 bus_type 1
+May  5 08:05:19 kernel: [   16.383904] wlan: [666:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 1 bus_type 1
+May  5 08:05:19 kernel: [   16.765406] wlan: [674:I:ANY] =======ol_if_register_wifi3_0==========
+May  5 08:05:19 kernel: [   16.765421] wlan: [674:I:ANY] osif_nss_register_module: 90: NSS wifi ops registered for target_type:1 with soc_ops:7fc74f4c
+May  5 08:05:19 kernel: [   16.765450] wlan: [674:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 2 bus_type 1
+May  5 08:05:19 kernel: [   17.218667] wlan: [674:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 3 bus_type 1
+May  5 08:05:19 kernel: [   17.218680] wlan: [674:I:ANY] ol_ath_check_fw_ready: 614: Waiting for FW ready device fffe
+May  5 08:05:19 kernel: [   17.285351] cpr3_irq_handler: apc: UP: new_volt=960000 uV, last_volt=952000 uV
+May  5 08:05:19 kernel: [   17.325340] wlan: [674:I:ANY] ol_ath_check_fw_ready: 624: FW ready received for device fffe
+May  5 08:05:19 kernel: [   17.325588] wlan: [674:I:ANY] pld_ahb_wlan_enable: 699: cnss_mode: Mission mode 
+May  5 08:05:19 kernel: [   17.334294] wlan: [674:I:ANY] qca_napi_create: 364: qca_napi_create: napi instance 0 created on pipe 4
+May  5 08:05:19 kernel: [   17.334400] wlan: [674:I:ANY] __ol_ath_attach: 3922: Allocated soc ba140500
+May  5 08:05:19 kernel: [   17.352533] wlan: [674:E:CONFIG] cfg_uint_item_handler: 171: dp_int_timer_threshold_tx=1000 - Out of range [8, 100]; Using 1000
+May  5 08:05:19 kernel: [   17.352833] wlan: [674:I:ANY] osif_nss_wifi_soc_setup: 192: nss-wifili:#1 register wifili function for soc 
+May  5 08:05:19 kernel: [   17.352841] wlan: [674:I:ANY] osif_nss_wifi_soc_setup: 204: nss register id -1 nss config 1 Target Type 18 
+May  5 08:05:19 kernel: [   17.352858] wlan: [674:I:ANY] __ol_ath_attach: 4129: dev name soc0
+May  5 08:05:19 kernel: [   17.353029] wlan: [674:I:ANY] ol_ath_soc_attach: 7200: WMI attached. wmi_handle bc118000 
+May  5 08:05:19 kernel: [   17.353129] wlan: [674:I:ANY] htc_wmi_init: 6210: htc_wmi_init() HT Create . ba188000
+May  5 08:05:19 kernel: [   17.353135] wlan: [674:I:ANY] htc_wmi_init: 6217: htc_wmi_init() Skipping BMI Done. 
+May  5 08:05:19 kernel: [   17.353140] wlan: [674:I:ANY] htc_wmi_init: 6274: [htc_wmi_init:6274] host_enable 0 nss_nwifi_offload 0
+May  5 08:05:19 kernel: [   17.356835] wlan: [674:I:ANY] ol_target_init_complete: 6396: CDP soc attach success
+May  5 08:05:19 kernel: [   17.356849] wlan: [674:I:ANY] ol_target_init_complete: 6403: Soc attach success NSS config 0 
+May  5 08:05:19 kernel: [   17.356899] wlan: [674:I:ANY] htc_set_async_ep: 428: htc_handle ba188000, ep 2, value 1
+May  5 08:05:19 kernel: [   17.356943] wlan: [674:I:ANY] htc_set_async_ep: 428: htc_handle ba188000, ep 3, value 1
+May  5 08:05:19 kernel: [   17.357573] wlan: [718:I:TIF] HE_CAP Info = 1a08010d
+May  5 08:05:19 kernel: [   17.357579] wlan: [718:I:TIF] Num HW modes = 1
+May  5 08:05:19 kernel: [   17.357582] wlan: [718:I:TIF] Num PHY = 2
+May  5 08:05:19 kernel: [   17.357588] wlan: [718:I:TIF] Preferred HW Mode = 1 Num Radios = 2
+May  5 08:05:19 kernel: [   17.357595] wlan: [718:I:TIF] init_deinit_add_11ax_modes: 1784: Adding 11ax regulatory modes,
+May  5 08:05:19 kernel: [   17.357600] wlan: [718:I:TIF] init_deinit_add_11ax_modes: 1788:  phy_id = 0 wireless modes = f97f9001
+May  5 08:05:19 kernel: [   17.357603] wlan: [718:I:TIF] init_deinit_add_11ax_modes: 1784: Adding 11ax regulatory modes,
+May  5 08:05:19 kernel: [   17.357607] wlan: [718:I:TIF] init_deinit_add_11ax_modes: 1788:  phy_id = 1 wireless modes = 680680c
+May  5 08:05:19 kernel: [   17.357612] wlan: [718:I:TIF] init_deinit_add_11ax_modes: 1811: hw_mode_id = 1 phy_id = 0 wireless modes = f97f9001
+May  5 08:05:19 kernel: [   17.357617] wlan: [718:I:TIF] init_deinit_add_11ax_modes: 1811: hw_mode_id = 1 phy_id = 1 wireless modes = 680688c
+May  5 08:05:19 kernel: [   17.357835] wlan: [718:I:dfs] WLAN_DEBUG_DFS_ALWAYS : wlan_dfs_pdev_obj_create_notification: 421: dfs_offload 1
+May  5 08:05:19 kernel: [   17.357840] wlan: [718:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_agile_soc_obj_init: 2846: dfs->dfs_psoc_idx: 0 
+May  5 08:05:19 kernel: [   17.357844] wlan: [718:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_agile_soc_obj_init: 2852: dfs_soc_obj->num_dfs_privs: 1 
+May  5 08:05:19 kernel: [   17.357999] wlan: [718:E:QDF] SOC0_PDEV0 creation failed
+May  5 08:05:19 kernel: [   17.358004] wlan: [718:E:DIRECT_BUF_RX] target_if_direct_buf_pdev_debugfs_init: 325: error while creating direct_buf debugfs dir
+May  5 08:05:19 kernel: [   17.358035] wlan: [718:I:dfs] WLAN_DEBUG_DFS_ALWAYS : wlan_dfs_pdev_obj_create_notification: 393: Do not allocate DFS object for 2G, pdev_id = 1
+May  5 08:05:19 kernel: [   17.358069] wlan: [718:I:ANY] init_deinit_update_pdev_tgt_info: 1347: pdev id:0 wmi_handle:bc118000
+May  5 08:05:19 kernel: [   17.367053] wlan: [718:I:ANY] init_deinit_update_pdev_tgt_info: 1403: Pdev = 0 Number of peers = 529 vdevs = 17
+May  5 08:05:19 kernel: [   17.367067] wlan: [718:I:TIF] init_deinit_update_pdev_tgt_info: 1406: CDP PDEV ATTACH success
+May  5 08:05:19 kernel: [   17.367203] wlan: [718:I:ANY] init_deinit_update_pdev_tgt_info: 1347: pdev id:1 wmi_handle:b949b000
+May  5 08:05:19 kernel: [   17.371776] wlan: [718:I:ANY] init_deinit_update_pdev_tgt_info: 1403: Pdev = 1 Number of peers = 529 vdevs = 17
+May  5 08:05:19 kernel: [   17.371789] wlan: [718:I:TIF] init_deinit_update_pdev_tgt_info: 1406: CDP PDEV ATTACH success
+May  5 08:05:19 kernel: [   17.472121] wlan: [718:I:ANY] copy_fw_abi_version_tlv: 6960: copy_fw_abi_version_tlv: INIT_CMD version: 1, 0, 0x5f414351, 0x4c4d, 0x0, 0x0
+May  5 08:05:19 kernel: [   17.694136] wlan: [396:I:ANY] ready_extract_init_status_tlv: 9002: ready_extract_init_status_tlv:0
+May  5 08:05:19 kernel: [   17.694146] wlan: [396:I:ANY] dp_peer_map_attach_wifi3: 9830: dp_peer_map_attach_wifi3 max_peers 1109, max_ast_index: 4112
+May  5 08:05:19 kernel: [   17.694301] wlan: [674:I:ANY] ol_ath_connect_htc: 1219: WMI is ready
+May  5 08:05:19 kernel: [   17.751752] wlan: [674:E:TIF] target_if_lro_hash_config: 254: pdev with id 0 is NULL
+May  5 08:05:19 kernel: [   17.759269] wlan: [674:E:TIF] target_if_lro_hash_config: 254: pdev with id 1 is NULL
+May  5 08:05:19 kernel: [   17.760770] wlan: [674:I:ANY] ol_ath_soc_attach: 7291: connect HTC
+May  5 08:05:19 kernel: [   17.760775] wlan: [674:I:ANY] ol_ath_soc_attach: 7292: bypasswmi : 0
+May  5 08:05:19 kernel: [   17.760801] wlan: [674:I:ANY] ol_ath_soc_attach: 7366: ol_ath_soc_attach() UMAC attach . 
+May  5 08:05:19 kernel: [   17.761209] wlan: [674:I:ANY] __ol_ath_attach: 4242: pdev_netdev name wifi0
+May  5 08:05:19 kernel: [   17.761218] wlan: [674:I:ANY] __ol_ath_attach: 4289: Skip txrx_pdev_attach_target
+May  5 08:05:19 kernel: [   17.761224] wlan: [674:I:ANY] __ol_ath_attach: 4315: BURSTING enabled by default
+May  5 08:05:19 kernel: [   17.761662] wlan: [674:I:ANY] ol_ath_pdev_attach: 9153: interface_id 0
+May  5 08:05:19 kernel: [   17.761866] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7520:  phy id = 0 Modes supported
+May  5 08:05:19 kernel: [   17.761872] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7527:  11b = 0 11g = 0 11a = 1 11n = 1 11ac = 1 11ax = 1
+May  5 08:05:19 kernel: [   17.761878] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7536:  Reg cap - phy_id = 0 supp_bnd = 2, modes = f97f9001, lo_2g = 0, hi_2g = 0 lo_g5 = 4900, hi_5g = 6100
+May  5 08:05:19 kernel: [   17.761882] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1349: wireless_modes = f97f9001 before update
+May  5 08:05:19 kernel: [   17.761886] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1365: Wireless_modes = f97f9001 after update
+May  5 08:05:19 kernel: [   17.762069] wlan: [674:I:ANY] ol_ath_update_ext_caps: 1947: 11ax 5G supported case
+May  5 08:05:19 kernel: [   17.762955] wlan: [674:I:ANY] ol_resmgr_create: 223: OL Resmgr Init-ed
+May  5 08:05:19 kernel: [   17.763249] wlan: [674:I:ANY] acfg_attach: 3519: acfg_attach: 3519: Netlink socket created:ad088800
+May  5 08:05:19 kernel: [   17.763261] wlan: [674:I:ANY] ol_ath_stats_attach: 2320: periodic_chan_stats: 1
+May  5 08:05:19 kernel: [   17.767134] wlan: [674:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 25
+May  5 08:05:19 kernel: [   17.767180] wlan: [0:I:ANY] ol_ath_pdev_attach: 9497: Set global_ic[1], ptr:7f7a770c
+May  5 08:05:19 kernel: [   17.767191] wlan: [0:I:ANY] dp_lag_soc_enable: 102: pdev(b949ae04) Enabling DBDC Repeater 1 
+May  5 08:05:19 kernel: [   17.767222] wlan: [0:I:ANY] dp_lag_pdev_set_primary_radio: 55: pdev(b949ae04) is_primary 1 
+May  5 08:05:19 kernel: [   17.767243] wlan: [0:E:NSS] [nss-wifili]: NSS Wifili DBDC Repeater enable message passed
+May  5 08:05:19 kernel: [   17.767251] wlan: [674:I:ANY] ol_ath_twt_enable_command: 7951: TWT is disable in INI. Do not send enable cmd to FW
+May  5 08:05:19 kernel: [   17.768961] wlan: [674:I:ANY] ol_ath_ucfg_set_rx_pkt_protocol_tagging: 2097: Set RX packet type TAG, opcode : 0, pkt_type : 18, metadata : 0xca0,pdev_id = 0, REO dest ring = 5
+May  5 08:05:19 kernel: [   17.768961] 
+May  5 08:05:19 kernel: [   17.768999] wlan: [674:I:ANY] ol_ath_pri20_cfg_blockchanlist_parse: 546: cfg block channel list is empty
+May  5 08:05:19 kernel: [   17.769006] wlan: [674:I:ANY] ol_ath_configure_cong_ctrl_max_msdus: 3850: pdev_idx = 0 tx_desc_limit = 32768
+May  5 08:05:19 kernel: [   17.769029] wlan: [674:I:ANY] osif_wrap_attach: 239: osif wrap attached
+May  5 08:05:19 kernel: [   17.769034] wlan: [674:I:ANY] osif_wrap_devt_init: 201: osif wrap dev table init done
+May  5 08:05:19 kernel: [   17.769039] wlan: [674:I:ANY] osif_wrap_attach: 247:  Wrap Attached: Wrap_com =bc119200 ic->ic_wrap_com=bc119200 &wrap_com->wc_devt=bc119200
+May  5 08:05:19 kernel: [   17.769058] wlan: [674:I:ANY] __ol_ath_attach: 4485: needed_headroom reservation 60
+May  5 08:05:19 kernel: [   17.769064] wlan: [674:I:ANY] ol_ath_enable_fraglist: 3274: Enabled Fraglist bit for the radio wifi0 features 41 
+May  5 08:05:19 kernel: [   17.769345] wlan: [674:I:ANY] ieee80211_cfg80211_radio_attach: 11842: ic: 0xb5960500, wdev: 0xb5977cf0, wiphy: 0xad089560, netdev: 0xb5960000 
+May  5 08:05:19 kernel: [   17.770046] wlan: [674:I:ANY] __ol_ath_attach: 4242: pdev_netdev name wifi1
+May  5 08:05:19 kernel: [   17.770068] wlan: [674:I:ANY] __ol_ath_attach: 4289: Skip txrx_pdev_attach_target
+May  5 08:05:19 kernel: [   17.770077] wlan: [674:I:ANY] __ol_ath_attach: 4315: BURSTING enabled by default
+May  5 08:05:19 kernel: [   17.770187] wlan: [674:I:ANY] ol_ath_pdev_attach: 9153: interface_id 1
+May  5 08:05:19 kernel: [   17.770228] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7520:  phy id = 1 Modes supported
+May  5 08:05:19 kernel: [   17.770234] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7527:  11b = 1 11g = 1 11a = 0 11n = 1 11ac = 1 11ax = 1
+May  5 08:05:19 kernel: [   17.770240] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7536:  Reg cap - phy_id = 1 supp_bnd = 1, modes = 680680c, lo_2g = 2312, hi_2g = 2732 lo_g5 = 0, hi_5g = 0
+May  5 08:05:19 kernel: [   17.770245] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1349: wireless_modes = 680680c before update
+May  5 08:05:19 kernel: [   17.770259] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1365: Wireless_modes = 680680c after update
+May  5 08:05:19 kernel: [   17.770265] wlan: [674:I:ANY] ol_ath_update_ext_caps: 1955: 11ax 2G supported case
+May  5 08:05:19 kernel: [   17.770316] wlan: [674:E:dfs] WLAN_DEBUG_DFS_ALWAYS : tgt_dfs_set_fw_adfs_support: 936: dfs is NULL
+May  5 08:05:19 kernel: [   17.770463] wlan: [674:I:ANY] ol_resmgr_create: 223: OL Resmgr Init-ed
+May  5 08:05:19 kernel: [   17.770610] wlan: [674:I:ANY] acfg_attach: 3494: Offload using existing sock ad088800
+May  5 08:05:19 kernel: [   17.770624] wlan: [674:I:ANY] ol_ath_stats_attach: 2320: periodic_chan_stats: 1
+May  5 08:05:19 kernel: [   17.770914] wlan: [674:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 11
+May  5 08:05:19 kernel: [   17.770943] wlan: [0:I:ANY] ol_ath_pdev_attach: 9497: Set global_ic[2], ptr:7f7a770c
+May  5 08:05:19 kernel: [   17.770957] wlan: [0:I:ANY] dp_lag_soc_enable: 102: pdev(b949b604) Enabling DBDC Repeater 1 
+May  5 08:05:19 kernel: [   17.770987] wlan: [0:I:ANY] dp_lag_pdev_set_primary_radio: 55: pdev(b949b604) is_primary 0 
+May  5 08:05:19 kernel: [   17.771002] wlan: [674:I:ANY] ol_ath_twt_enable_command: 7951: TWT is disable in INI. Do not send enable cmd to FW
+May  5 08:05:19 kernel: [   17.771046] wlan: [0:E:NSS] [nss-wifili]: NSS Wifili DBDC Repeater enable message passed
+May  5 08:05:19 kernel: [   17.772900] wlan: [674:I:ANY] ol_ath_ucfg_set_rx_pkt_protocol_tagging: 2097: Set RX packet type TAG, opcode : 0, pkt_type : 18, metadata : 0xca0,pdev_id = 1, REO dest ring = 5
+May  5 08:05:19 kernel: [   17.772900] 
+May  5 08:05:19 kernel: [   17.772949] wlan: [674:I:ANY] ol_ath_pri20_cfg_blockchanlist_parse: 546: cfg block channel list is empty
+May  5 08:05:19 kernel: [   17.772956] wlan: [674:I:ANY] ol_ath_configure_cong_ctrl_max_msdus: 3850: pdev_idx = 1 tx_desc_limit = 32768
+May  5 08:05:19 kernel: [   17.772970] wlan: [674:I:ANY] osif_wrap_attach: 239: osif wrap attached
+May  5 08:05:19 kernel: [   17.772974] wlan: [674:I:ANY] osif_wrap_devt_init: 201: osif wrap dev table init done
+May  5 08:05:19 kernel: [   17.772980] wlan: [674:I:ANY] osif_wrap_attach: 247:  Wrap Attached: Wrap_com =bc118200 ic->ic_wrap_com=bc118200 &wrap_com->wc_devt=bc118200
+May  5 08:05:19 kernel: [   17.772999] wlan: [674:I:ANY] __ol_ath_attach: 4485: needed_headroom reservation 60
+May  5 08:05:19 kernel: [   17.773004] wlan: [674:I:ANY] ol_ath_enable_fraglist: 3274: Enabled Fraglist bit for the radio wifi1 features 41 
+May  5 08:05:19 kernel: [   17.773023] wlan: [674:I:ANY] wlan_cfg80211_init: 11716: Number of 2G channels: 11 
+May  5 08:05:19 kernel: [   17.773213] wlan: [674:I:ANY] ieee80211_cfg80211_radio_attach: 11842: ic: 0xb59a0500, wdev: 0xb59b7cf0, wiphy: 0xad08b160, netdev: 0xb59a0000 
+May  5 08:05:19 kernel: [   17.773907] wlan: [674:I:Dynamic Mode Change] ol_ath_check_and_reconfig_hw_mode: 3819: Running with HW mode = 1
+May  5 08:05:19 kernel: [   17.774329] wlan: [674:E:QLD] qld_register: 108: Handle or address is NULL
+May  5 08:05:19 kernel: [   17.774397] wlan: [674:I:ANY] wlan_pdev_operation: 730: num_radios=1, wifi_radios[0].sc = b5960500_radio_type = 2
+May  5 08:05:19 kernel: [   17.774412] wlan: [674:I:ANY] wlan_pdev_operation: 730: num_radios=2, wifi_radios[1].sc = b59a0500_radio_type = 2
+May  5 08:05:19 kernel: [   17.774441] wlan: [674:I:ANY] init_ath_pci_3_0: 179: ^A6ath_ol_pci_wifi3.0 :  (Atheros/multi-bss)
+May  5 08:05:19 kernel: [   17.863618] wlan: [746:I:ANY] osif_nss_register_module: 90: NSS wifi ops registered for target_type:0 with soc_ops:7fd0b364
+May  5 08:05:19 kernel: [   17.863982] wlan: [746:I:ANY] init_ath_pci_2_0: 143: ^A6ath_ol_pci_2_0:  (Atheros/multi-bss)
+May  5 08:05:19 kernel: [   20.179662] wlan: [796:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 13
+May  5 08:05:19 kernel: [   20.179719] wlan: [796:I:ANY] number of channels: 2G = 13 5G = 0, 6G = 0
+May  5 08:05:19 kernel: [   20.283671] wlan: [824:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 19
+May  5 08:05:19 kernel: [   20.283779] wlan: [824:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=58
+May  5 08:05:19 kernel: [   20.283784] wlan: [824:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=106
+May  5 08:05:19 kernel: [   20.283788] wlan: [824:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=122
+May  5 08:05:19 kernel: [   20.284698] wlan: [824:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 19
+May  5 08:05:19 kernel: [   20.284747] wlan: [824:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=58
+May  5 08:05:19 kernel: [   20.284751] wlan: [824:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=106
+May  5 08:05:19 kernel: [   20.284755] wlan: [824:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=122
+May  5 08:05:19 kernel: [   20.284803] wlan: [824:I:ANY] number of channels: 2G = 0 5G = 19, 6G = 0
+May  5 08:05:19 kernel: [   20.402295] wlan: [847:I:ANY] wlan_cfg80211_add_virtual_intf: 334: proprietary mode 6 for interface: ath1 : clone params: 0x00000001 
+May  5 08:05:19 kernel: [   20.402338] wlan: [847:I:ANY] osifp_create_wlan_vap: 9638: VDEV Create 24:4b:fe:64:a8:48
+May  5 08:05:19 kernel: [   20.402375] wlan: [847:I:ANY] wlan_vap_create: 1599: devhandle=0xb59a0500, opmode=IEEE80211_M_HOSTAP, flags=0x1
+May  5 08:05:19 kernel: [   20.402663] wlan: [847:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:19 kernel: [   20.402689] wlan: [847:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:1|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:19 kernel: [   20.402693] wlan: [847:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x7b
+May  5 08:05:19 kernel: [   20.402709] wlan: [847:I:ANY] ol_ath_vap_set_param: 2268: VDEV params:AC/VHT sounding mode:HE|SU/MU sounding mode:SU|Trig/Non-Trig sounding mode:Non-Trigged
+May  5 08:05:19 kernel: [   20.402740] wlan: [847:I:ANY] MBO Initialized
+May  5 08:05:19 kernel: [   20.402744] wlan: [847:I:ANY] OCE Initialized
+May  5 08:05:19 kernel: [   20.402759] wlan: [847:I:ANY] osif_nss_ol_vap_create: 1478: NSS wifi offload VAP create IF 30 nss_id -1 
+May  5 08:05:19 kernel: [   20.402765] wlan: [847:I:ANY] NSS radio_if 29
+May  5 08:05:19 kernel: [   20.402801] wlan: [0:I:ANY] osif_nss_vdev_cfg_callback: 1203: VDEV configuration success: 0
+May  5 08:05:19 kernel: [   20.402813] wlan: [847:I:ANY] osif_nss_ol_vap_create: 1590: vap create b71b1500 : if_num 30 
+May  5 08:05:19 kernel: [   20.403043] wlan: [847:I:ANY] osif_create_vap_complete: 9846: TX Checksum:1|SG:1|TSO:1|LRO:0
+May  5 08:05:19 kernel: [   20.403048] wlan: [847:I:ANY] WLAN-NSS: VAP NSS ops initialized 
+May  5 08:05:19 kernel: [   20.403939] wlan: [847:I:ANY] VAP device ath1 created osifp: (b71b1500) os_if: (a9910000)
+May  5 08:05:19 kernel: [   21.412296] wlan: [859:I:ANY] wlan_cfg80211_add_virtual_intf: 334: proprietary mode 6 for interface: ath0 : clone params: 0x00000001 
+May  5 08:05:19 kernel: [   21.412331] wlan: [859:I:ANY] osifp_create_wlan_vap: 9638: VDEV Create 24:4b:fe:64:a8:4c
+May  5 08:05:19 kernel: [   21.412368] wlan: [859:I:ANY] wlan_vap_create: 1599: devhandle=0xb5960500, opmode=IEEE80211_M_HOSTAP, flags=0x1
+May  5 08:05:19 kernel: [   21.412574] wlan: [859:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:19 kernel: [   21.412605] wlan: [859:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:1|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:19 kernel: [   21.412610] wlan: [859:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x7b
+May  5 08:05:19 kernel: [   21.412619] wlan: [859:I:ANY] ol_ath_vap_set_param: 2268: VDEV params:AC/VHT sounding mode:HE|SU/MU sounding mode:SU|Trig/Non-Trig sounding mode:Non-Trigged
+May  5 08:05:19 kernel: [   21.412651] wlan: [859:I:ANY] MBO Initialized
+May  5 08:05:19 kernel: [   21.412655] wlan: [859:I:ANY] OCE Initialized
+May  5 08:05:19 kernel: [   21.412670] wlan: [859:I:ANY] osif_nss_ol_vap_create: 1478: NSS wifi offload VAP create IF 31 nss_id -1 
+May  5 08:05:19 kernel: [   21.412676] wlan: [859:I:ANY] NSS radio_if 28
+May  5 08:05:19 kernel: [   21.412760] wlan: [0:I:ANY] osif_nss_vdev_cfg_callback: 1203: VDEV configuration success: 0
+May  5 08:05:19 kernel: [   21.412771] wlan: [859:I:ANY] osif_nss_ol_vap_create: 1590: vap create b7a97500 : if_num 31 
+May  5 08:05:19 kernel: [   21.412984] wlan: [859:I:ANY] osif_create_vap_complete: 9846: TX Checksum:1|SG:1|TSO:1|LRO:0
+May  5 08:05:19 kernel: [   21.412989] wlan: [859:I:ANY] WLAN-NSS: VAP NSS ops initialized 
+May  5 08:05:19 kernel: [   21.413673] wlan: [859:I:ANY] VAP device ath0 created osifp: (b7a97500) os_if: (a9aa8000)
+May  5 08:05:19 kernel: [   22.422220] wlan: [872:I:ANY] wlan_cfg80211_add_virtual_intf: 334: proprietary mode 6 for interface: ath101 : clone params: 0x00000001 
+May  5 08:05:19 kernel: [   22.422255] wlan: [872:I:ANY] osifp_create_wlan_vap: 9638: VDEV Create 2a:4b:fe:64:a8:48
+May  5 08:05:19 kernel: [   22.422292] wlan: [872:I:ANY] wlan_vap_create: 1599: devhandle=0xb59a0500, opmode=IEEE80211_M_HOSTAP, flags=0x1
+May  5 08:05:19 kernel: [   22.422509] wlan: [872:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:19 kernel: [   22.422535] wlan: [872:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:1|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:19 kernel: [   22.422539] wlan: [872:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x7b
+May  5 08:05:19 kernel: [   22.422558] wlan: [872:I:ANY] ol_ath_vap_set_param: 2268: VDEV params:AC/VHT sounding mode:HE|SU/MU sounding mode:SU|Trig/Non-Trig sounding mode:Non-Trigged
+May  5 08:05:19 kernel: [   22.422587] wlan: [872:I:ANY] MBO Initialized
+May  5 08:05:19 kernel: [   22.422590] wlan: [872:I:ANY] OCE Initialized
+May  5 08:05:19 kernel: [   22.422612] wlan: [872:I:ANY] osif_nss_ol_vap_create: 1478: NSS wifi offload VAP create IF 32 nss_id -1 
+May  5 08:05:19 kernel: [   22.422617] wlan: [872:I:ANY] NSS radio_if 29
+May  5 08:05:19 kernel: [   22.422718] wlan: [0:I:ANY] osif_nss_vdev_cfg_callback: 1203: VDEV configuration success: 0
+May  5 08:05:19 kernel: [   22.422729] wlan: [872:I:ANY] osif_nss_ol_vap_create: 1590: vap create a98c5500 : if_num 32 
+May  5 08:05:19 kernel: [   22.422936] wlan: [872:I:ANY] osif_create_vap_complete: 9846: TX Checksum:1|SG:1|TSO:1|LRO:0
+May  5 08:05:19 kernel: [   22.422940] wlan: [872:I:ANY] WLAN-NSS: VAP NSS ops initialized 
+May  5 08:05:19 kernel: [   22.423640] wlan: [872:I:ANY] VAP device ath101 created osifp: (a98c5500) os_if: (aa778000)
+May  5 08:05:19 kernel: [   23.496413] UBIFS (ubi0:5): background thread "ubifs_bgt0_5" started, PID 905
+May  5 08:05:19 kernel: [   23.523283] UBIFS (ubi0:5): recovery needed
+May  5 08:05:19 kernel: [   24.426391] UBIFS (ubi0:5): recovery completed
+May  5 08:05:19 kernel: [   24.426449] UBIFS (ubi0:5): UBIFS: mounted UBI device 0, volume 5, name "jffs2"
+May  5 08:05:19 kernel: [   24.426456] UBIFS (ubi0:5): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+May  5 08:05:19 kernel: [   24.426463] UBIFS (ubi0:5): FS size: 142974976 bytes (136 MiB, 1126 LEBs), journal size 9023488 bytes (8 MiB, 72 LEBs)
+May  5 08:05:19 kernel: [   24.426467] UBIFS (ubi0:5): reserved for root: 0 bytes (0 KiB)
+May  5 08:05:19 kernel: [   24.426475] UBIFS (ubi0:5): media format: w4/r0 (latest is w4/r0), UUID 8F81CF9E-1672-4C25-B261-44577F80E254, small LPT model
+May  5 08:05:19 kernel: [   30.796172] msm-usb-ssphy-qmp 78000.ssphy: QMP PHY initialization timeout
+May  5 08:05:19 kernel: [   30.796180] msm-usb-ssphy-qmp 78000.ssphy: USB3_PHY_PCS_STATUS:68686868
+May  5 08:05:19 kernel: [   31.006879] msm-usb-ssphy-qmp 58000.ssphy: QMP PHY initialization timeout
+May  5 08:05:19 kernel: [   31.006889] msm-usb-ssphy-qmp 58000.ssphy: USB3_PHY_PCS_STATUS:68686868
+May  5 08:05:20 kernel: [   31.815775] wlan: [1105:I:ANY] ol_ath_set_config_param: 1664: set TXBF_SND_PERIOD: value 100 wmi_status 0
+May  5 08:05:20 kernel: [   31.968583] wlan: [0:I:ANY] ol_ath_set_config_param: 2416: Disconnect_timeout value: 10
+May  5 08:05:20 kernel: [   32.010943] wlan: [0:I:ANY] ol_ath_set_config_param: 2422: Reconfiguration_timeout value:60
+May  5 08:05:20 kernel: [   32.135955] eth0: PHY Link up speed: 1000
+May  5 08:05:20 kernel: [   32.145406] eth4: PHY Link up speed: 10000
+May  5 08:05:21 kernel: [   32.916622] wlan: [1318:I:ANY] ol_ath_set_config_param: 1664: set TXBF_SND_PERIOD: value 100 wmi_status 0
+May  5 08:05:21 kernel: [   33.104693] wlan: [0:I:ANY] ol_ath_set_config_param: 2416: Disconnect_timeout value: 10
+May  5 08:05:21 kernel: [   33.153611] wlan: [0:I:ANY] ol_ath_set_config_param: 2422: Reconfiguration_timeout value:60
+May  5 08:05:23 avahi-daemon[1649]: WARNING: No NSS support for mDNS detected, consider installing nss-mdns!
+May  5 08:05:23 RT-AX89X: start https:8443
+May  5 08:05:23 RT-AX89X: start httpd:80
+May  5 08:05:23 httpd: Succeed to init SSL certificate...8443
+May  5 08:05:23 httpd: S:RT-AX89X-A848 Server Certificate, I:RT-AX89X-A848 Root Certificate 20250114091710, 2025/3/17 ~ 2045/3/18
+May  5 08:05:24 disk monitor: be idle
+May  5 08:05:24 avahi-daemon[1649]: Alias name "RT-AX89X" successfully established.
+May  5 08:05:24 avahi-daemon[1649]: Alias name "findasus" successfully established.
+May  5 08:05:24 hour monitor: daemon is starting
+May  5 08:05:25 lldpd[1732]: cannot get ethtool link information with GLINKSETTINGS (requires 4.9+): Operation not permitted
+May  5 08:05:26 kernel: [   38.135715] eth1: PHY Link up speed: 1000
+May  5 08:05:26 kernel: [   38.145737] eth2: PHY Link up speed: 1000
+May  5 08:05:27 kernel: [   38.703635] wlan: [1847:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:27 kernel: [   39.215543] wlan: [1891:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:27 kernel: [   39.215559] wlan: [1891:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x73
+May  5 08:05:27 WAN Connection: WAN(0) link down.
+May  5 08:05:28 kernel: [   39.489341] wlan: [1900:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:28 kernel: [   39.489356] wlan: [1900:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x53
+May  5 08:05:28 kernel: [   39.760333] wlan: [1971:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:0|dl_muofdma_bfer:0
+May  5 08:05:28 kernel: [   39.760352] wlan: [1971:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x13
+May  5 08:05:28 kernel: [   39.797521] wlan: [1989:I:ANY] DES SSID SET=fireless
+May  5 08:05:29 kernel: [   40.731340] wlan: [1481:I:ANY] wlan_cfg80211_do_acs: 3717: vap-0(ath1):ACS Params
+May  5 08:05:29 kernel: [   40.731355] wlan: [1481:I:ANY] wlan_cfg80211_do_acs: 3720: ht_enabled:1|ht40_enabled:1|vht_enabled:1|hw_mode:29|chwidth:40|
+May  5 08:05:29 pppd[2097]: pppd 2.4.7 started by rpotcoava, uid 0
+May  5 08:05:29 syslog: module phy-qcom-dwc3 not found in modules.dep
+May  5 08:05:29 syslog: module scsi_mod not found in modules.dep
+May  5 08:05:29 syslog: module scsi_wait_scan not found in modules.dep
+May  5 08:05:29 kernel: [   41.093947] wlan: [2096:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:29 syslog: module jbd not found in modules.dep
+May  5 08:05:29 syslog: module ext3 not found in modules.dep
+May  5 08:05:30 : fwver: 3.0.0.4_388_33812-gab9863d (sn: /ha:24:4B:FE:64:A8:49 )
+May  5 08:05:30 : bootcode:RT-AX89U-02-02-02-02
+May  5 08:05:30 ahs: [read_json]Update ahs JSON file.
+May  5 08:05:30 kernel: [   41.608379] wlan: [2184:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   41.608390] wlan: [2184:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x73
+May  5 08:05:30 kernel: [   41.662123] wlan: [2194:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   41.662135] wlan: [2194:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x53
+May  5 08:05:30 kernel: [   41.728110] wlan: [2204:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:0|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   41.728127] wlan: [2204:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x13
+May  5 08:05:30 kernel: [   41.737708] wlan: [2238:I:ANY] DES SSID SET=fireless
+May  5 08:05:30 kernel: [   42.063966] wlan: [1481:I:ANY] wlan_cfg80211_do_acs: 3717: vap-1(ath0):ACS Params
+May  5 08:05:30 kernel: [   42.063980] wlan: [1481:I:ANY] wlan_cfg80211_do_acs: 3720: ht_enabled:1|ht40_enabled:0|vht_enabled:1|hw_mode:31|chwidth:20|
+May  5 08:05:30 kernel: [   42.155826] eth5: PHY Link up speed: 1000
+May  5 08:05:30 kernel: [   42.243009] wlan: [2331:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:30 kernel: [   42.374424] wlan: [2349:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   42.374453] wlan: [2349:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x73
+May  5 08:05:30 kernel: [   42.436828] wlan: [2358:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   42.436840] wlan: [2358:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x53
+May  5 08:05:31 kernel: [   42.498098] wlan: [2367:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:0|dl_muofdma_bfer:0
+May  5 08:05:31 kernel: [   42.498110] wlan: [2367:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x13
+May  5 08:05:31 kernel: [   42.504473] wlan: [2371:I:ANY] DES SSID SET=FGuest
+May  5 08:05:31 kernel: [   42.714857] wlan: [1481:I:ANY] wlan_cfg80211_do_acs: 3717: vap-2(ath101):ACS Params
+May  5 08:05:31 kernel: [   42.714871] wlan: [1481:I:ANY] wlan_cfg80211_do_acs: 3720: ht_enabled:1|ht40_enabled:1|vht_enabled:1|hw_mode:29|chwidth:40|
+May  5 08:05:32 WAN Connection: Fail to connect with some issues.
+May  5 08:05:33 kernel: [   44.754790] wlan: [594:I:ANY] vap-0(ath1): ACS result PCH 11 freq 2462, SCH 7 freq 2442, hw_mode 1 chwidth 40, vht_seg0 9 freq 2452, vht_seg1 0 freq 0
+May  5 08:05:33 kernel: [   44.754864] wlan: [594:I:ANY] vap-2(ath101): ACS result PCH 11 freq 2462, SCH 7 freq 2442, hw_mode 1 chwidth 40, vht_seg0 9 freq 2452, vht_seg1 0 freq 0
+May  5 08:05:33 kernel: [   44.771729] wlan: [1481:I:ANY] DES SSID SET=fireless
+May  5 08:05:33 kernel: [   44.771746] wlan: [1481:I:ANY] wlan_cfg80211_chan_to_phymode: 1238: band:0 width: 2 channel_cfreq: 2462 center_freq1: 2452 chandef.center_freq2: 0 flags: 384 
+May  5 08:05:33 kernel: [   44.771849] wlan: [1481:I:ANY] ieee80211_ucfg_set_freq_internal: 553: Channel is configured already!!
+May  5 08:05:33 kernel: [   44.790084] wlan: [1481:I:ANY] DES SSID SET=FGuest
+May  5 08:05:33 kernel: [   44.790100] wlan: [1481:I:ANY] wlan_cfg80211_set_phymode: 1214: desired hw mode: 27
+May  5 08:05:33 kernel: [   44.790205] wlan: [1481:I:ANY] ieee80211_ucfg_set_freq_internal: 553: Channel is configured already!!
+May  5 08:05:33 kernel: [   44.872648] wlan: [0:I:CMN_MLME] vdev[0] ieee chan:11 freq:2462
+May  5 08:05:33 kernel: [   44.872835] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.872835] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.872835] Disabling FD
+May  5 08:05:33 kernel: [   44.872933] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.872933] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.872933] Disabling FD
+May  5 08:05:33 kernel: [   44.872970] wlan: [0:I:ANY] vdev[0]: Mgt Rate:1000(kbps)
+May  5 08:05:33 kernel: [   44.872997] wlan: [0:I:ANY] vdev[0]: Mgt Rate:1000(kbps)
+May  5 08:05:33 kernel: [   44.874935] wlan: [0:I:CMN_MLME] vdev[2] ieee chan:11 freq:2462
+May  5 08:05:33 kernel: [   44.875080] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.875080] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.875080] Disabling FD
+May  5 08:05:33 kernel: [   44.875178] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.875178] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.875178] Disabling FD
+May  5 08:05:33 kernel: [   44.875210] wlan: [0:I:ANY] vdev[2]: Mgt Rate:1000(kbps)
+May  5 08:05:33 kernel: [   44.875235] wlan: [0:I:ANY] vdev[2]: Mgt Rate:1000(kbps)
+May  5 08:05:34 roamast: ROAMING Start...
+May  5 08:05:35 rc_service: rc 2640:notify_rc restart_qca_lbd
+May  5 08:05:35 QCA LBD: daemon is stopped
+May  5 08:05:35 mcastds: Entering evloopRun
+May  5 08:05:35 pppd[2097]: Connected to 3c:ec:ef:e1:b9:40 via interface eth5
+May  5 08:05:35 pppd[2097]: Connect: ppp0 <--> eth5
+May  5 08:05:35 kernel: [   47.396209] wlan: [1481:I:ANY] wlan_cfg80211_set_ap_chanwidth: 569: wlan_cfg80211_set_ap_chanwidth: freq:2462 hw_value:11 ch_width:1 
+May  5 08:05:36 Mastiff: init
+May  5 08:05:36 kernel: [   48.043226] wlan: [594:I:ANY] vap-1(ath0): ACS result PCH 100 freq 5500, SCH 108 freq 5540, hw_mode 2 chwidth 160, vht_seg0 114 freq 5570, vht_seg1 0 freq 0
+May  5 08:05:36 kernel: [   48.059509] wlan: [1481:I:ANY] DES SSID SET=fireless
+May  5 08:05:36 kernel: [   48.059523] wlan: [1481:I:ANY] wlan_cfg80211_set_phymode: 1214: desired hw mode: 31
+May  5 08:05:36 kernel: [   48.059637] wlan: [1481:I:ANY] ieee80211_switch_to_intercac_chan: 414: Use intermediate channel in VHT80 mode
+May  5 08:05:36 kernel: [   48.370151] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_agile_precac_start: 4682:  setting true to cur_precac_dfs_index = 0, dfs: b5988000
+May  5 08:05:36 kernel: [   48.370165] wlan: [0:I:ANY] dfs_agile_precac_start: 4692: Initiated agile precac
+May  5 08:05:36 kernel: [   48.370172] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 0 ms
+May  5 08:05:36 kernel: [   48.370247] wlan: [0:I:CMN_MLME] vdev[1] ieee chan:48 freq:5240
+May  5 08:05:36 kernel: [   48.370477] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:36 kernel: [   48.370477] FD Interval should be a factor of BI.
+May  5 08:05:36 kernel: [   48.370477] Disabling FD
+May  5 08:05:36 kernel: [   48.370576] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:36 kernel: [   48.370576] FD Interval should be a factor of BI.
+May  5 08:05:36 kernel: [   48.370576] Disabling FD
+May  5 08:05:36 kernel: [   48.370618] wlan: [0:I:ANY] vdev[1]: Mgt Rate:6000(kbps)
+May  5 08:05:36 kernel: [   48.370649] wlan: [0:I:ANY] vdev[1]: Mgt Rate:6000(kbps)
+May  5 08:05:36 kernel: [   48.375354] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_precac_timeout: 2154: Pre-cac expired, Agile Precac chan 0 curr time 4294715
+May  5 08:05:36 kernel: [   48.375395] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3242: current operating channel(s) to be excluded = [5210] [0]
+May  5 08:05:36 kernel: [   48.375404] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3259: Channel picked for preCAC = 5610
+May  5 08:05:36 kernel: [   48.375412] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 3600000 ms
+May  5 08:05:36 kernel: [   48.375423] wlan: [0:I:ANY] dfs_prepare_agile_precac_chan: 822: ADFS channel set request sent for pdev: b94f6c00 ch_freq: 5610
+May  5 08:05:37 kernel: [   48.475189] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:38 pppd[2097]: PAP authentication succeeded
+May  5 08:05:38 pppd[2097]: peer from calling number 3C:EC:EF:E1:B9:40 authorized
+May  5 08:05:38 pppd[2097]: local  IP address 86.124.25.57
+May  5 08:05:38 pppd[2097]: remote IP address 10.0.3.188
+May  5 08:05:38 pppd[2097]: primary   DNS address 100.100.1.1
+May  5 08:05:38 pppd[2097]: secondary DNS address 100.100.0.1
+May  5 08:05:39 kernel: [   50.629480] nf_conntrack_rtsp v0.7 loading
+May  5 08:05:39 kernel: [   50.634365] nf_nat_rtsp v0.7 loading
+May  5 08:05:39 wan: finish adding multi routes
+May  5 08:05:40 kernel: [   52.044752] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:40 kernel: [   52.045920] wlan: [1481:I:ANY] wlan_cfg80211_set_ap_chanwidth: 569: wlan_cfg80211_set_ap_chanwidth: freq:5240 hw_value:48 ch_width:3 
+May  5 08:05:42 kernel: [   54.002858] wlan: [1481:I:ANY] wlan_cfg80211_set_ap_chanwidth: 569: wlan_cfg80211_set_ap_chanwidth: freq:2462 hw_value:11 ch_width:1 
+May  5 08:05:43 WAN Connection: WAN was restored.
+May  5 08:05:44 kernel: [   56.315524] eth5: PHY Link is down
+May  5 08:05:45 kernel: [   56.569863] SHN Release Version: 2.0.6 6be3752-newgpl-32bit
+May  5 08:05:45 kernel: [   56.569876] UDB Core Version: 0.2.20
+May  5 08:05:45 kernel: [   56.775474] Registered DNS Req parsing
+May  5 08:05:45 kernel: [   56.775548] pcc register
+May  5 08:05:45 kernel: [   56.775611] wlan: [3503:I:ANY] ol_ath_vap_set_param: 1334: Now supported MCAST RATE is 1000(kbps) and rate code: 0x10000103
+May  5 08:05:45 kernel: [   56.775639] sizeof forward pkt param = 192
+May  5 08:05:45 kernel: [   56.776516] wlan: [3502:I:ANY] ol_ath_vap_set_param: 1334: Now supported MCAST RATE is 1000(kbps) and rate code: 0x10000103
+May  5 08:05:45 kernel: [   56.800669] wlan: [3508:I:ANY] ol_ath_vap_set_param: 1334: Now supported MCAST RATE is 6000(kbps) and rate code: 0x10000003
+May  5 08:05:45 BWDPI: fun bitmap = 4bf
+May  5 08:05:45 ntp: start NTP update
+May  5 08:05:47 kernel: [   58.515403] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:47 kernel: [   58.839935] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:47 zcip client: configured 169.254.245.187
+May  5 08:05:47 A.QoS: qos_count=0, qos_check=0
+May  5 08:05:47 A.QoS: set_qos_on fails
+May  5 08:05:47 A.QoS: restart A.QoS because set_qos_conf / set_qos_on / setup rule fail
+May  5 08:05:47 kernel: [   58.970673] ERR[qos_start:3363] qos_ops is not registered!
+May  5 08:05:47 kernel: [   58.970685] ioctl_iqos_op_switch(1) fail!
+May  5 08:05:48 WAN Connection: Fail to connect with some issues.
+May  5 08:05:48 kernel: [   59.936102] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:48 A.QoS: qos_count=0, qos_check=1
+May  5 08:05:51 rc_service: ip-up 2880:notify_rc stop_samba
+May  5 08:05:51 rc_service: ip-up 2880:notify_rc start_samba
+May  5 08:05:51 rc_service: waitting "stop_samba" via ip-up ...
+May  5 08:05:51 Samba Server: smb daemon is stopped
+May  5 08:05:52 wan_up: Restart DDNS
+May  5 08:05:53 reboot scheduler: [timecheck] NTP sync error
+May  5 08:05:54 WAN Connection: WAN(0) link down.
+May  5 08:05:54 hour monitor: ntp sync fail, will retry after 120 sec
+May  5 08:06:19 kernel: [   91.336167] eth5: PHY Link up speed: 1000
+May  5 08:06:23 reboot scheduler: [timecheck] NTP sync error
+May  5 08:06:23 WAN Connection: WAN(0) link up.
+May  5 08:06:23 rc_service: wanduck 1542:notify_rc restart_wan_if 0
+May  5 08:06:30 pppd[12552]: pppd 2.4.7 started by rpotcoava, uid 0
+May  5 08:06:30 WAN Connection: Fail to connect with some issues.
+May  5 08:06:31 pppd[12552]: Connected to 3c:ec:ef:d8:37:9c via interface eth5
+May  5 08:06:31 pppd[12552]: Connect: ppp0 <--> eth5
+May  5 08:06:34 pppd[12552]: PAP authentication succeeded
+May  5 08:06:34 pppd[12552]: peer from calling number 3C:EC:EF:D8:37:9C authorized
+May  5 08:06:34 pppd[12552]: local  IP address 86.124.25.57
+May  5 08:06:34 pppd[12552]: remote IP address 10.0.3.9
+May  5 08:06:34 pppd[12552]: primary   DNS address 100.100.1.1
+May  5 08:06:34 pppd[12552]: secondary DNS address 100.100.0.1
+May  5 08:06:35 wan: finish adding multi routes
+May  5 08:06:36 WAN Connection: WAN was restored.
+May  5 08:06:37 dnsmasq[5219]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+May  5 08:06:37 kernel: [  109.326190] pcc unregister
+May  5 08:06:38 kernel: [  109.470787] udb_core lock_num = 39
+May  5 08:06:38 ntp: start NTP update
+Oct 10 16:49:41 rc_service: ntp 2988:notify_rc restart_diskmon
+Oct 10 16:49:41 disk_monitor: Finish
+Oct 10 16:49:41 disk monitor: be idle
+Oct 10 16:49:46 kernel: [  115.091107] SHN Release Version: 2.0.6 6be3752-newgpl-32bit
+Oct 10 16:49:46 kernel: [  115.091120] UDB Core Version: 0.2.20
+Oct 10 16:49:46 kernel: [  115.185405] Registered DNS Req parsing
+Oct 10 16:49:46 kernel: [  115.185447] pcc register
+Oct 10 16:49:46 kernel: [  115.185467] sizeof forward pkt param = 192
+Oct 10 16:49:46 BWDPI: fun bitmap = 4bf
+Oct 10 16:49:47 A.QoS: qos_count=0, qos_check=0
+Oct 10 16:49:50 rc_service: ip-up 13069:notify_rc stop_samba
+Oct 10 16:49:50 rc_service: ip-up 13069:notify_rc start_samba
+Oct 10 16:49:50 rc_service: waitting "stop_samba" via ip-up ...
+Oct 10 16:49:50 Samba Server: smb daemon is stopped
+Oct 10 16:49:51 wan_up: Restart DDNS
+Oct 10 16:49:51 zcip client: configured 169.254.245.187
+Oct 10 16:50:03 crond[1645]: time disparity of 4435724 minutes detected
+Oct 10 16:51:26 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7775)]periodic_check AM 3:19
+Oct 10 16:51:26 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7819)]do webs_update
+Oct 10 16:51:37 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7837)]retrieve firmware information
+Oct 10 16:51:37 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7852)]fimrware update check first time
+Oct 10 16:51:37 WATCHDOG: [FAUPGRADE][auto_firmware_check:(7883)]no need to upgrade firmware
+Oct 10 16:53:55 kernel: [  363.834001] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 16:59:54 dnsmasq[15835]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 17:00:18 kernel: [  746.285380] cpr3_irq_handler: apc: UP: new_volt=952000 uV, last_volt=944000 uV
+Oct 10 17:00:41 disk_monitor: Got SIGALRM...
+Oct 10 17:48:40 kernel: [ 3648.384416] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 0 ms
+Oct 10 17:48:40 kernel: [ 3648.385353] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_precac_timeout: 2154: Pre-cac expired, Agile Precac chan 5610 curr time 3348
+Oct 10 17:48:40 kernel: [ 3648.385384] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3242: current operating channel(s) to be excluded = [5210] [0]
+Oct 10 17:48:40 kernel: [ 3648.385393] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3259: Channel picked for preCAC = 5530
+Oct 10 17:48:40 kernel: [ 3648.385400] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 360000 ms
+Oct 10 17:48:40 kernel: [ 3648.385410] wlan: [0:I:ANY] dfs_prepare_agile_precac_chan: 822: ADFS channel set request sent for pdev: b94f6c00 ch_freq: 5530
+Oct 10 17:54:40 kernel: [ 4008.394414] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 0 ms
+Oct 10 17:54:40 kernel: [ 4008.395351] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_precac_timeout: 2154: Pre-cac expired, Agile Precac chan 5530 curr time 3708
+Oct 10 17:54:40 kernel: [ 4008.395377] wlan: [0:I:ANY] ieee80211_autochan_switch_chan_change_csa: 1295: Change channel to desired channel freq[5500] and mode to[31]
+Oct 10 17:54:40 kernel: [ 4008.935481] wlan: [0:E:CMN_MLME] mlme_vdev_multivdev_restart_fw_send_cb: 1775: (vdev-id:1) des chan(100)
+Oct 10 17:54:40 kernel: [ 4008.978186] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_agile_precac_start: 4682:  setting true to cur_precac_dfs_index = 0, dfs: b5988000
+Oct 10 17:54:40 kernel: [ 4008.978201] wlan: [0:I:ANY] dfs_agile_precac_start: 4692: Initiated agile precac
+Oct 10 17:54:40 kernel: [ 4008.978208] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 0 ms
+Oct 10 17:54:40 kernel: [ 4008.978294] wlan: [0:I:CMN_MLME] vdev[1] ieee chan:100 freq:5500
+Oct 10 17:54:40 kernel: [ 4008.978585] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+Oct 10 17:54:40 kernel: [ 4008.978585] FD Interval should be a factor of BI.
+Oct 10 17:54:40 kernel: [ 4008.978585] Disabling FD
+Oct 10 17:54:40 kernel: [ 4008.978694] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+Oct 10 17:54:40 kernel: [ 4008.978694] FD Interval should be a factor of BI.
+Oct 10 17:54:40 kernel: [ 4008.978694] Disabling FD
+Oct 10 17:54:40 kernel: [ 4008.978738] wlan: [0:I:ANY] vdev[1]: Mgt Rate:6000(kbps)
+Oct 10 17:54:40 kernel: [ 4008.978755] wlan: [0:I:ANY] ol_ath_vap_set_param: 1334: Now supported MCAST RATE is 6000(kbps) and rate code: 0x10000003
+Oct 10 17:54:40 kernel: [ 4008.985361] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_precac_timeout: 2154: Pre-cac expired, Agile Precac chan 5530 curr time 3708
+Oct 10 17:54:40 kernel: [ 4008.985392] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3242: current operating channel(s) to be excluded = [5530] [5610]
+Oct 10 17:54:40 kernel: [ 4008.985402] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3259: Channel picked for preCAC = 5290
+Oct 10 17:54:40 kernel: [ 4008.985410] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 360000 ms
+Oct 10 17:54:40 kernel: [ 4008.985419] wlan: [0:I:ANY] dfs_prepare_agile_precac_chan: 822: ADFS channel set request sent for pdev: b94f6c00 ch_freq: 5290
+Oct 10 17:54:46 kernel: [ 4014.647293] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 17:56:19 dnsmasq[15835]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 17:59:50 kernel: [ 4318.456786] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 18:00:41 kernel: [ 4369.528177] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 0 ms
+Oct 10 18:00:41 kernel: [ 4369.535360] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_precac_timeout: 2154: Pre-cac expired, Agile Precac chan 5290 curr time 4069
+Oct 10 18:00:41 kernel: [ 4369.535392] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3242: current operating channel(s) to be excluded = [5530] [5610]
+Oct 10 18:00:41 kernel: [ 4369.535401] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3259: Channel picked for preCAC = 0
+Oct 10 18:00:41 kernel: [ 4369.535409] wlan: [0:I:ANY] dfs_prepare_agile_precac_chan: 808: No preCAC required channels left in current pdev: b94f6c00
+Oct 10 18:00:41 kernel: [ 4369.535416] wlan: [0:I:ANY] dfs_prepare_agile_precac_chan: 832: No channels in preCAC required list
+Oct 10 18:52:41 kernel: [ 7489.621736] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 18:54:27 dnsmasq[15835]: possible DNS-rebind attack detected: 172-16-2-2.abcdefghijklmnopqrstuvwxyz012345.plex.direct
+Oct 10 19:24:24 HTTPD: [LOGIN][https][Web] success (192.168.0.213)
+May  5 08:05:19 INIT: firmware version: 3.0.0.4_388_33812-gab9863d
+May  5 08:05:19 kernel: klogd started: BusyBox v1.25.1 (2025-10-18 16:41:48 CST)
+May  5 08:05:19 kernel: [    0.000000] Linux version 4.4.60 (root@asus) (gcc version 4.6.3 20120201 (prerelease) (Linaro GCC 4.6-2012.02) ) #1 SMP PREEMPT Sat Oct 18 16:44:09 CST 2025
+May  5 08:05:19 kernel: [    0.000000] Ignoring memory range 0x40000000 - 0x42000000
+May  5 08:05:19 kernel: [    0.000000] Kernel command line: console=ttyMSM0,115200n8 rootfstype=squashfs root=/dev/mtdblock4  swiotlb=1 coherent_pool=2M ubi.mtd=UBI_DEV 
+May  5 08:05:19 kernel: [    0.000000] Virtual kernel memory layout:
+May  5 08:05:19 kernel: [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+May  5 08:05:19 kernel: [    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+May  5 08:05:19 kernel: [    0.000000]     vmalloc : 0xbe800000 - 0xff800000   (1040 MB)
+May  5 08:05:19 kernel: [    0.000000]     lowmem  : 0x80000000 - 0xbe000000   ( 992 MB)
+May  5 08:05:19 kernel: [    0.000000]     pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+May  5 08:05:19 kernel: [    0.000000]     modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+May  5 08:05:19 kernel: [    0.000000]       .text : 0x80208000 - 0x808fa774   (7114 kB)
+May  5 08:05:19 kernel: [    0.000000]       .init : 0x808fb000 - 0x8093c000   ( 260 kB)
+May  5 08:05:19 kernel: [    0.000000]       .data : 0x8093c000 - 0x8097b018   ( 253 kB)
+May  5 08:05:19 kernel: [    0.000000]        .bss : 0x8097e000 - 0x809e7274   ( 421 kB)
+May  5 08:05:19 kernel: [    0.000000] Invalid signature of oopsbuf: 44-60-60-50-00-00-24-00 (len 0)
+May  5 08:05:19 kernel: [    0.231574] irq: no irq domain found for /soc/smp2p-wcss/slave-kernel !
+May  5 08:05:19 kernel: [    0.234038] irq: no irq domain found for /soc/smp2p-wcss/slave-kernel !
+May  5 08:05:19 kernel: [    0.257797] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257803] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257808] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257813] IPC logging disabled
+May  5 08:05:19 kernel: [    0.257818] IPC logging disabled
+May  5 08:05:19 kernel: [    0.292019] SCSI subsystem initialized
+May  5 08:05:19 kernel: [    0.313898] Key type asymmetric registered
+May  5 08:05:19 kernel: [    0.313915] Asymmetric key parser 'x509' registered
+May  5 08:05:19 kernel: [    0.321307] msm_rpm_log_probe: OK
+May  5 08:05:19 kernel: [    0.322677] TZ SMMU State: SMMU Stage2 Enabled
+May  5 08:05:19 kernel: [    0.322730] TZ Log : Will warn on Access Violation, as paniconaccessviolation is not set
+May  5 08:05:19 kernel: [    0.332985] nand: device found, Manufacturer ID: 0xef, Chip ID: 0xaa
+May  5 08:05:19 kernel: [    0.333002] nand: 256 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+May  5 08:05:19 kernel: [    0.333252] 2 ofpart partitions found on MTD device qcom_nand.0
+May  5 08:05:19 kernel: [    0.333260] Creating 2 MTD partitions on "qcom_nand.0":
+May  5 08:05:19 kernel: [    0.333270] 0x000000000000-0x0000003e0000 : "Bootloader"
+May  5 08:05:19 kernel: [    0.337094] 0x000000400000-0x000010000000 : "UBI_DEV"
+May  5 08:05:19 kernel: [    0.538847] mdio-gpio soc:mdio1: failed to get alias id
+May  5 08:05:19 kernel: [    0.982645] Unable to create IPC log context!
+May  5 08:05:19 kernel: [    0.982952] Skip QCA8074V1 in V2 platform
+May  5 08:05:19 kernel: [    0.993080] qcom_ice_get_device_tree_data: No vdd-hba-supply regulator, assuming not needed
+May  5 08:05:19 kernel: [    0.995619] sps_register_bam_device : unable to create IPC Logging 0 for bam 0x08b04000
+May  5 08:05:19 kernel: [    0.995629] sps_register_bam_device : unable to create IPC Logging 1 for bam 0x08b04000sps_register_bam_device : unable to create IPC Logging 2 for bam 0x08b04000
+May  5 08:05:19 kernel: [    0.995644] sps_register_bam_device : unable to create IPC Logging 3 for bam 0x08b04000sps_register_bam_device : unable to create IPC Logging 4 for bam 0x08b04000
+May  5 08:05:19 kernel: [    1.006938] Bridge firewalling registered
+May  5 08:05:19 kernel: [    1.007298] Registering SWP/SWPB emulation handler
+May  5 08:05:19 kernel: [    1.018505] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 800000 KHz
+May  5 08:05:19 kernel: [    1.018654] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 1017600 KHz
+May  5 08:05:19 kernel: [    1.018949] ubi0: attaching mtd1
+May  5 08:05:19 kernel: [    1.183575] random: nonblocking pool is initialized
+May  5 08:05:19 kernel: [    1.978367] ubi0: scanning is finished
+May  5 08:05:19 kernel: [    1.984212] ubi0: attached mtd1 (name "UBI_DEV", size 252 MiB)
+May  5 08:05:19 kernel: [    1.984217] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+May  5 08:05:19 kernel: [    1.984220] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+May  5 08:05:19 kernel: [    1.984223] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+May  5 08:05:19 kernel: [    1.984226] ubi0: good PEBs: 2015, bad PEBs: 1, corrupted PEBs: 0
+May  5 08:05:19 kernel: [    1.984229] ubi0: user volume: 5, internal volumes: 1, max. volumes count: 128
+May  5 08:05:19 kernel: [    1.984232] ubi0: max/mean erase counter: 4560/3215, WL threshold: 4096, image sequence number: 2056650053
+May  5 08:05:19 kernel: [    1.984235] ubi0: available PEBs: 0, total reserved PEBs: 2015, PEBs reserved for bad PEB handling: 39
+May  5 08:05:19 kernel: [    1.984244] ubi0: background thread "ubi_bgt0d" started, PID 193
+May  5 08:05:19 kernel: [    1.984716] gluebi_create: Hook read/write method of Factory.
+May  5 08:05:19 kernel: [    1.985077] gluebi_create: Hook read/write method of Factory2.
+May  5 08:05:19 kernel: [    2.023681] [Factory-0]: OK (ver: 10798)
+May  5 08:05:19 kernel: [    2.061807] [Factory2-0]: OK (ver: 10798)
+May  5 08:05:19 kernel: [    2.061810] Select [Factory-0]
+May  5 08:05:19 kernel: [    2.062607] Creating 1 MTD partitions on "linux":
+May  5 08:05:19 kernel: [    2.062612] 0x0000002d2188-0x000006406000 : "rootfs"
+May  5 08:05:19 kernel: [    2.062913] mtd: device 6 (rootfs) set to be root filesystem
+May  5 08:05:19 kernel: [    2.067941] Override root device as 31:6
+May  5 08:05:19 kernel: [    2.704879] offset 0x2f000 elapse 10ms
+May  5 08:05:19 kernel: [    3.015564] Load vstat C:0 U:233 P:417 T:436529
+May  5 08:05:19 kernel: [    3.802456] bled: GPIO#20: netdev eth5 nr_users 1.
+May  5 08:05:19 kernel: [    3.805109] bled: GPIO#47: switch ports mask        0.
+May  5 08:05:19 kernel: [    3.805329] bled: GPIO#36: netdev eth4 nr_users 1.
+May  5 08:05:19 kernel: [    3.805575] bled: GPIO#35: switch ports mask        0.
+May  5 08:05:19 kernel: [    3.805794] bled: GPIO#18: netdev ath1 nr_users 1.
+May  5 08:05:19 kernel: [    3.806013] bled: GPIO#19: netdev ath0 nr_users 1.
+May  5 08:05:19 kernel: [    6.733148] ssdk_switch_device_num_init[1168]:INFO:ess-switch dts node number: 2
+May  5 08:05:19 kernel: [    6.733174] ssdk_dt_get_switch_node[979]:INFO:ess-switch DT exist!
+May  5 08:05:19 kernel: [    6.733179] ssdk_dt_parse_access_mode[865]:INFO:switch_access_mode: local bus
+May  5 08:05:19 kernel: [    6.733183] ssdk_dt_parse_access_mode[878]:INFO:switchreg_base_addr: 0x3a000000
+May  5 08:05:19 kernel: [    6.733185] ssdk_dt_parse_access_mode[879]:INFO:switchreg_size: 0x1000000
+May  5 08:05:19 kernel: [    6.733189] ssdk_dt_parse_mac_mode[297]:INFO:mac mode = 0xb
+May  5 08:05:19 kernel: [    6.733192] ssdk_dt_parse_mac_mode[306]:INFO:mac mode1 = 0xe
+May  5 08:05:19 kernel: [    6.733196] ssdk_dt_parse_mac_mode[315]:INFO:mac mode2 = 0xd
+May  5 08:05:19 kernel: [    6.733210] ssdk_dt_parse_phy_info[619]:INFO:[PORT 5] phy-i2c-mode
+May  5 08:05:19 kernel: [    6.733214] ssdk_dt_parse_phy_info[673]:INFO:[PORT 5] media type is sfp
+May  5 08:05:19 kernel: [    6.733241] ssdk_dt_parse_uniphy[334]:INFO:ess-uniphy DT exist!
+May  5 08:05:19 kernel: [    6.733369] ssdk_dt_parse_intf_mac[810]:INFO:dp1 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.733389] ssdk_dt_parse_intf_mac[810]:INFO:dp2 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.733408] ssdk_dt_parse_intf_mac[810]:INFO:dp3 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.733428] ssdk_dt_parse_intf_mac[810]:INFO:dp4 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.733447] ssdk_dt_parse_intf_mac[810]:INFO:dp5 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.733467] ssdk_dt_parse_intf_mac[810]:INFO:dp6 MAC 24:4b:fe:64:a8:4d
+May  5 08:05:19 kernel: [    6.733479] ssdk_plat_init start
+May  5 08:05:19 kernel: [    6.807545] ssdk_gcc_clock_init[1044]:INFO:SSDK gcc clock init successfully!
+May  5 08:05:19 kernel: [    6.807941] ssdk_probe[2122]:INFO:ess_rst doesn't exist!
+May  5 08:05:19 kernel: [    6.809018] HPPE initializing...
+May  5 08:05:19 kernel: [    6.809611] malibu_phy_api_ops_init[2848]:INFO:qca probe malibu phy driver succeeded!
+May  5 08:05:19 kernel: [    6.819319] aquantia_phy_api_ops_init[2180]:INFO:qca probe aquantia phy driver succeeded!
+May  5 08:05:19 kernel: [    6.820734] sfp_phy_init[312]:INFO:sfp phy init for port 0x20!
+May  5 08:05:19 kernel: [    6.822377] sfp_phy_probe[74]:INFO:sfp phy is probed!
+May  5 08:05:19 kernel: [    6.822431] regi_init[3664]:INFO:Initializing HPPE!!
+May  5 08:05:19 kernel: [    7.035330] ssdk_ppe_reset_init[1276]:INFO:ppe reset successfully!
+May  5 08:05:19 kernel: [    7.038658] qca_hppe_portctrl_hw_init[110]:INFO:Hawkeye PPE port initializing
+May  5 08:05:19 kernel: [    9.335363] ssdk_switch_register[1816]:INFO:Chip version 0x1500
+May  5 08:05:19 kernel: [    9.335376] ssdk_switch_register[1842]:INFO:polling is selected
+May  5 08:05:19 kernel: [    9.335382] regi_init[3668]:INFO:Initializing HPPE Done!!
+May  5 08:05:19 kernel: [    9.335437] ssdk_dt_get_switch_node[979]:INFO:ess-switch DT exist!
+May  5 08:05:19 kernel: [    9.335443] ssdk_dt_parse_access_mode[865]:INFO:switch_access_mode: mdio
+May  5 08:05:19 kernel: [    9.335447] ssdk_dt_parse_mac_mode[297]:INFO:mac mode = 0x12
+May  5 08:05:19 kernel: [    9.335450] ssdk_dt_parse_mac_mode[306]:INFO:mac mode1 = 0xff
+May  5 08:05:19 kernel: [    9.335453] ssdk_dt_parse_mac_mode[315]:INFO:mac mode2 = 0xf
+May  5 08:05:19 kernel: [    9.335474] ssdk_dt_parse[1070]:INFO:switch node is qca83xx!
+May  5 08:05:19 kernel: [    9.335477] ssdk_plat_init start
+May  5 08:05:19 kernel: [    9.422980] f1_phy_api_ops_init[1517]:INFO:qca probe f1 phy driver succeeded!
+May  5 08:05:19 kernel: [    9.422986] qca803x_phy_api_ops_init[2174]:INFO:qca probe qca803x phy driver succeeded!
+May  5 08:05:19 kernel: [    9.423340] regi_init[3653]:INFO:Initializing ISISC!!
+May  5 08:05:19 kernel: [    9.423344] qca_ar8327_gpio_reset[3567]:INFO:reset_gpio node does not exist
+May  5 08:05:19 kernel: [    9.423621] ssdk_switch_register[1816]:INFO:Chip version 0x1302
+May  5 08:05:19 kernel: [    9.423642] qca_link_polling_select[1427]:INFO:the interrupt number is:90
+May  5 08:05:19 kernel: [    9.423645] ssdk_switch_register[1852]:INFO:interrupt is selected
+May  5 08:05:19 kernel: [   10.347328] SFP EEPROM VENDOR [QSFPTEK] OUI [00-40-20] PN [QT-SFP-10G-T] REV [03]
+May  5 08:05:19 kernel: [   10.347332] SFP EEPROM Byte  0:  3, SFP/SFP+
+May  5 08:05:19 kernel: [   10.347337] SFP EEPROM Byte  C: 67, 10300 Mbps
+May  5 08:05:19 kernel: [   10.347339] SFP EEPROM Byte  8:  4, Passive Cable
+May  5 08:05:19 kernel: [   10.347344] SFP EEPROM Byte 12:  1, 50um OM4 cable max. length 10m
+May  5 08:05:19 kernel: [   10.347346] SFP EEPROM 00: 03 04 21 00 00 00 00 00-04 00 00 00 67 00 00 00-00 00 01 00 51 53 46 50-54 45 4B 20 20 20 20 20    ..!.........g.......QSFPTEK     
+May  5 08:05:19 kernel: [   10.347385] SFP EEPROM 01: 20 20 20 20 00 00 40 20-51 54 2D 53 46 50 2D 31-30 47 2D 54 20 20 20 20-30 33 20 20 00 00 00 66        ..@ QT-SFP-10G-T    03  ...f
+May  5 08:05:19 kernel: [   10.347424] SFP EEPROM 02: 00 00 00 00 51 54 36 32-34 30 33 31 34 34 34 38-20 20 20 20 32 34 30 33-32 32 20 20 00 00 00 96    ....QT6240314448    240322  ....
+May  5 08:05:19 kernel: [   10.347462] SFP EEPROM 03: 00 00 08 41 C8 67 C2 75-26 39 63 BF 9B AC 1F 03-F9 47 47 00 00 00 00 00-00 00 00 00 4A 5D 9C 84    ...A.g.u&9c......GG.........J]..
+May  5 08:05:19 kernel: [   10.347500] SFP EEPROM 04: 43 4F 50 51 41 41 36 4A-41 42 33 37 2D 30 39 36-31 2D 30 33 56 30 33 20-01 00 46 00 00 00 00 CF    COPQAA6JAB37-0961-03V03 ..F.....
+May  5 08:05:19 kernel: [   10.347539] SFP EEPROM 05: 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00    ................................
+May  5 08:05:19 kernel: [   10.347577] SFP EEPROM 06: 53 46 50 2D 48 31 30 47-42 2D 43 55 31 4D 20 20-20 20 20 20 30 39 00 00-00 00 00 00 00 00 00 B6    SFP-H10GB-CU1M      09..........
+May  5 08:05:19 kernel: [   10.347616] SFP EEPROM 07: 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00    ................................
+May  5 08:05:19 kernel: [   10.347830] sfp_phy_interface_get_mode_status[683]:INFO:sfp module speed: 10300 interface_mode_status 8 (limit 0)
+May  5 08:05:19 kernel: [   11.135329] regi_init[3658]:INFO:Initializing ISISC Done!!
+May  5 08:05:19 kernel: [   11.135374] regi_init[3728]:INFO:qca-ssdk module init succeeded!
+May  5 08:05:19 kernel: [   11.323171] nss_driver - fw of size 742876  bytes copied to load addr: 40000000, nss_id : 0
+May  5 08:05:19 kernel: [   11.324557] Supported Frequencies - 
+May  5 08:05:19 kernel: [   11.324567] 748.8 MHz 1.4976 GHz 
+May  5 08:05:19 kernel: [   11.324572] 1.6896 GHz <1>[   11.324574] 
+May  5 08:05:19 kernel: [   11.324685] 7f346140: set sdma bb884c00
+May  5 08:05:19 kernel: [   11.324757] 7f346140: meminfo init succeed
+May  5 08:05:19 kernel: [   11.353959] node size 2 # items 4
+May  5 08:05:19 kernel: [   11.353972] memory: 40000000 1073741824 (avl 916688896) items 4 active_cores 2
+May  5 08:05:19 kernel: [   11.353995] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+May  5 08:05:19 kernel: [   11.354001] 7f346140: nss core 0 booted successfully
+May  5 08:05:19 kernel: [   11.372464] nss_driver - fw of size 289400  bytes copied to load addr: 40800000, nss_id : 1
+May  5 08:05:19 kernel: [   11.373258] Supported Frequencies - 
+May  5 08:05:19 kernel: [   11.373269] 748.8 MHz 1.4976 GHz 
+May  5 08:05:19 kernel: [   11.373275] 1.6896 GHz <1>[   11.373277] 
+May  5 08:05:19 kernel: [   11.373395] 7f34a680: set sdma ba435300
+May  5 08:05:19 kernel: [   11.373475] 7f34a680: meminfo init succeed
+May  5 08:05:19 kernel: [   11.377085] node size 2 # items 4
+May  5 08:05:19 kernel: [   11.377098] memory: 40000000 1073741824 (avl 916840448) items 4 active_cores 2
+May  5 08:05:19 kernel: [   11.377129] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+May  5 08:05:19 kernel: [   11.377141] 7f34a680: nss core 1 booted successfully
+May  5 08:05:19 kernel: [   11.390587] QCA Hy-Fi multicast installation successfully
+May  5 08:05:19 kernel: [   11.398096] nat46: module (version 8ff2ae59ec9840a7b8b45f976c51cae80abe0226) loaded.
+May  5 08:05:19 kernel: [   11.408992] QCA multicast snooping installed successfully
+May  5 08:05:19 kernel: [   11.634474] diag: IPC Logging disabled
+May  5 08:05:19 kernel: [   11.634970] TRACK: P[0]	PMask[4]
+May  5 08:05:19 kernel: [   11.634977] TRACK: P[1]	PMask[4]
+May  5 08:05:19 kernel: [   11.634979] TRACK: P[2]	PMask[4]
+May  5 08:05:19 kernel: [   11.635090] TRACK: P[3]	PMask[4]
+May  5 08:05:19 kernel: [   11.645800] <NSS-CRYPTO>:module loaded Build_ID - 10/18/25, 17:41:53 SoC=ipq807x
+May  5 08:05:19 kernel: [   11.649293] crypto bench loaded - Build_ID - 10/18/25, 17:41:53
+May  5 08:05:19 kernel: [   12.001116] mem_manager: module license 'Proprietary' taints kernel.
+May  5 08:05:19 kernel: [   12.001126] Disabling lock debugging due to kernel taint
+May  5 08:05:19 kernel: [   13.373047] wlan: [591:E:CONFIG] cfg_uint_item_handler: 171: gScanProbeRepeatTime=50 - Out of range [0, 30]; Using 50
+May  5 08:05:19 kernel: [   14.924116] wlan: [616:I:ANY] =======ol_if_register_wifi3_0==========
+May  5 08:05:19 kernel: [   14.924133] wlan: [616:I:ANY] osif_nss_register_module: 90: NSS wifi ops registered for target_type:1 with soc_ops:7fa4ff4c
+May  5 08:05:19 kernel: [   14.924155] wlan: [616:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 2 bus_type 1
+May  5 08:05:19 kernel: [   15.904680] wlan: [616:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 3 bus_type 1
+May  5 08:05:19 kernel: [   15.904693] wlan: [616:I:ANY] ol_ath_check_fw_ready: 614: Waiting for FW ready device fffe
+May  5 08:05:19 kernel: [   15.906538] diag: In diag_send_feature_mask_update, control channel is not open, p: 2, 7f4ab944
+May  5 08:05:19 kernel: [   16.005346] wlan: [616:I:ANY] ol_ath_check_fw_ready: 624: FW ready received for device fffe
+May  5 08:05:19 kernel: [   16.006298] wlan: [616:I:ANY] pld_ahb_wlan_enable: 691: cnss_mode: Cold boot calibration
+May  5 08:05:19 kernel: [   16.083090] wlan: [616:I:ANY] Coldboot calibration wait started
+May  5 08:05:19 kernel: [   16.383194] wlan: [616:I:ANY] Coldboot calibration wait ended
+May  5 08:05:19 kernel: [   16.384919] wlan: [616:I:ANY] ol_ath_do_cold_boot_calibration: 598: Coldboot calib successful: radio_id 0x65534
+May  5 08:05:19 kernel: [   16.385443] wlan: [616:I:ANY] init_ath_pci_3_0: 179: ^A6ath_ol_pci_wifi3.0 :  (Atheros/multi-bss)
+May  5 08:05:19 kernel: [   16.388165] wlan: [666:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 0 bus_type 1
+May  5 08:05:19 kernel: [   16.414330] wlan: [666:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 1 bus_type 1
+May  5 08:05:19 kernel: [   16.765686] wlan: [674:I:ANY] =======ol_if_register_wifi3_0==========
+May  5 08:05:19 kernel: [   16.765702] wlan: [674:I:ANY] osif_nss_register_module: 90: NSS wifi ops registered for target_type:1 with soc_ops:7fc74f4c
+May  5 08:05:19 kernel: [   16.765721] wlan: [674:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 2 bus_type 1
+May  5 08:05:19 kernel: [   17.225691] wlan: [674:I:ANY] ol_ath_wifi_ssr: 256: ol_ath_wifi_ssr: SSR event 3 bus_type 1
+May  5 08:05:19 kernel: [   17.225703] wlan: [674:I:ANY] ol_ath_check_fw_ready: 614: Waiting for FW ready device fffe
+May  5 08:05:19 kernel: [   17.335350] wlan: [674:I:ANY] ol_ath_check_fw_ready: 624: FW ready received for device fffe
+May  5 08:05:19 kernel: [   17.335605] wlan: [674:I:ANY] pld_ahb_wlan_enable: 699: cnss_mode: Mission mode 
+May  5 08:05:19 kernel: [   17.344348] wlan: [674:I:ANY] qca_napi_create: 364: qca_napi_create: napi instance 0 created on pipe 4
+May  5 08:05:19 kernel: [   17.344449] wlan: [674:I:ANY] __ol_ath_attach: 3922: Allocated soc b5c40500
+May  5 08:05:19 kernel: [   17.361854] wlan: [674:E:CONFIG] cfg_uint_item_handler: 171: dp_int_timer_threshold_tx=1000 - Out of range [8, 100]; Using 1000
+May  5 08:05:19 kernel: [   17.362126] wlan: [674:I:ANY] osif_nss_wifi_soc_setup: 192: nss-wifili:#1 register wifili function for soc 
+May  5 08:05:19 kernel: [   17.362137] wlan: [674:I:ANY] osif_nss_wifi_soc_setup: 204: nss register id -1 nss config 1 Target Type 18 
+May  5 08:05:19 kernel: [   17.362157] wlan: [674:I:ANY] __ol_ath_attach: 4129: dev name soc0
+May  5 08:05:19 kernel: [   17.362364] wlan: [674:I:ANY] ol_ath_soc_attach: 7200: WMI attached. wmi_handle b8451000 
+May  5 08:05:19 kernel: [   17.362473] wlan: [674:I:ANY] htc_wmi_init: 6210: htc_wmi_init() HT Create . b73c2000
+May  5 08:05:19 kernel: [   17.362479] wlan: [674:I:ANY] htc_wmi_init: 6217: htc_wmi_init() Skipping BMI Done. 
+May  5 08:05:19 kernel: [   17.362485] wlan: [674:I:ANY] htc_wmi_init: 6274: [htc_wmi_init:6274] host_enable 0 nss_nwifi_offload 0
+May  5 08:05:19 kernel: [   17.365944] wlan: [674:I:ANY] ol_target_init_complete: 6396: CDP soc attach success
+May  5 08:05:19 kernel: [   17.365957] wlan: [674:I:ANY] ol_target_init_complete: 6403: Soc attach success NSS config 0 
+May  5 08:05:19 kernel: [   17.366006] wlan: [674:I:ANY] htc_set_async_ep: 428: htc_handle b73c2000, ep 2, value 1
+May  5 08:05:19 kernel: [   17.366050] wlan: [674:I:ANY] htc_set_async_ep: 428: htc_handle b73c2000, ep 3, value 1
+May  5 08:05:19 kernel: [   17.366676] wlan: [404:I:TIF] HE_CAP Info = 1a08010d
+May  5 08:05:19 kernel: [   17.366680] wlan: [404:I:TIF] Num HW modes = 1
+May  5 08:05:19 kernel: [   17.366684] wlan: [404:I:TIF] Num PHY = 2
+May  5 08:05:19 kernel: [   17.366690] wlan: [404:I:TIF] Preferred HW Mode = 1 Num Radios = 2
+May  5 08:05:19 kernel: [   17.366697] wlan: [404:I:TIF] init_deinit_add_11ax_modes: 1784: Adding 11ax regulatory modes,
+May  5 08:05:19 kernel: [   17.366701] wlan: [404:I:TIF] init_deinit_add_11ax_modes: 1788:  phy_id = 0 wireless modes = f97f9001
+May  5 08:05:19 kernel: [   17.366705] wlan: [404:I:TIF] init_deinit_add_11ax_modes: 1784: Adding 11ax regulatory modes,
+May  5 08:05:19 kernel: [   17.366709] wlan: [404:I:TIF] init_deinit_add_11ax_modes: 1788:  phy_id = 1 wireless modes = 680680c
+May  5 08:05:19 kernel: [   17.366714] wlan: [404:I:TIF] init_deinit_add_11ax_modes: 1811: hw_mode_id = 1 phy_id = 0 wireless modes = f97f9001
+May  5 08:05:19 kernel: [   17.366718] wlan: [404:I:TIF] init_deinit_add_11ax_modes: 1811: hw_mode_id = 1 phy_id = 1 wireless modes = 680688c
+May  5 08:05:19 kernel: [   17.366935] wlan: [404:I:dfs] WLAN_DEBUG_DFS_ALWAYS : wlan_dfs_pdev_obj_create_notification: 421: dfs_offload 1
+May  5 08:05:19 kernel: [   17.366941] wlan: [404:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_agile_soc_obj_init: 2846: dfs->dfs_psoc_idx: 0 
+May  5 08:05:19 kernel: [   17.366945] wlan: [404:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_agile_soc_obj_init: 2852: dfs_soc_obj->num_dfs_privs: 1 
+May  5 08:05:19 kernel: [   17.367093] wlan: [404:E:QDF] SOC0_PDEV0 creation failed
+May  5 08:05:19 kernel: [   17.367099] wlan: [404:E:DIRECT_BUF_RX] target_if_direct_buf_pdev_debugfs_init: 325: error while creating direct_buf debugfs dir
+May  5 08:05:19 kernel: [   17.367124] wlan: [404:I:dfs] WLAN_DEBUG_DFS_ALWAYS : wlan_dfs_pdev_obj_create_notification: 393: Do not allocate DFS object for 2G, pdev_id = 1
+May  5 08:05:19 kernel: [   17.367160] wlan: [404:I:ANY] init_deinit_update_pdev_tgt_info: 1347: pdev id:0 wmi_handle:b8451000
+May  5 08:05:19 kernel: [   17.376052] wlan: [404:I:ANY] init_deinit_update_pdev_tgt_info: 1403: Pdev = 0 Number of peers = 529 vdevs = 17
+May  5 08:05:19 kernel: [   17.376064] wlan: [404:I:TIF] init_deinit_update_pdev_tgt_info: 1406: CDP PDEV ATTACH success
+May  5 08:05:19 kernel: [   17.376209] wlan: [404:I:ANY] init_deinit_update_pdev_tgt_info: 1347: pdev id:1 wmi_handle:b4a62000
+May  5 08:05:19 kernel: [   17.380763] wlan: [404:I:ANY] init_deinit_update_pdev_tgt_info: 1403: Pdev = 1 Number of peers = 529 vdevs = 17
+May  5 08:05:19 kernel: [   17.380774] wlan: [404:I:TIF] init_deinit_update_pdev_tgt_info: 1406: CDP PDEV ATTACH success
+May  5 08:05:19 kernel: [   17.481105] wlan: [404:I:ANY] copy_fw_abi_version_tlv: 6960: copy_fw_abi_version_tlv: INIT_CMD version: 1, 0, 0x5f414351, 0x4c4d, 0x0, 0x0
+May  5 08:05:19 kernel: [   17.703471] wlan: [404:I:ANY] ready_extract_init_status_tlv: 9002: ready_extract_init_status_tlv:0
+May  5 08:05:19 kernel: [   17.703481] wlan: [404:I:ANY] dp_peer_map_attach_wifi3: 9830: dp_peer_map_attach_wifi3 max_peers 1109, max_ast_index: 4112
+May  5 08:05:19 kernel: [   17.703701] wlan: [674:I:ANY] ol_ath_connect_htc: 1219: WMI is ready
+May  5 08:05:19 kernel: [   17.755737] wlan: [674:E:TIF] target_if_lro_hash_config: 254: pdev with id 0 is NULL
+May  5 08:05:19 kernel: [   17.759405] wlan: [674:E:TIF] target_if_lro_hash_config: 254: pdev with id 1 is NULL
+May  5 08:05:19 kernel: [   17.760568] wlan: [674:I:ANY] ol_ath_soc_attach: 7291: connect HTC
+May  5 08:05:19 kernel: [   17.760746] wlan: [674:I:ANY] ol_ath_soc_attach: 7292: bypasswmi : 0
+May  5 08:05:19 kernel: [   17.760765] wlan: [674:I:ANY] ol_ath_soc_attach: 7366: ol_ath_soc_attach() UMAC attach . 
+May  5 08:05:19 kernel: [   17.761015] wlan: [674:I:ANY] __ol_ath_attach: 4242: pdev_netdev name wifi0
+May  5 08:05:19 kernel: [   17.761025] wlan: [674:I:ANY] __ol_ath_attach: 4289: Skip txrx_pdev_attach_target
+May  5 08:05:19 kernel: [   17.761030] wlan: [674:I:ANY] __ol_ath_attach: 4315: BURSTING enabled by default
+May  5 08:05:19 kernel: [   17.761489] wlan: [674:I:ANY] ol_ath_pdev_attach: 9153: interface_id 0
+May  5 08:05:19 kernel: [   17.761502] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7520:  phy id = 0 Modes supported
+May  5 08:05:19 kernel: [   17.761680] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7527:  11b = 0 11g = 0 11a = 1 11n = 1 11ac = 1 11ax = 1
+May  5 08:05:19 kernel: [   17.761687] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7536:  Reg cap - phy_id = 0 supp_bnd = 2, modes = f97f9001, lo_2g = 0, hi_2g = 0 lo_g5 = 4900, hi_5g = 6100
+May  5 08:05:19 kernel: [   17.761691] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1349: wireless_modes = f97f9001 before update
+May  5 08:05:19 kernel: [   17.761695] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1365: Wireless_modes = f97f9001 after update
+May  5 08:05:19 kernel: [   17.761700] wlan: [674:I:ANY] ol_ath_update_ext_caps: 1947: 11ax 5G supported case
+May  5 08:05:19 kernel: [   17.762411] wlan: [674:I:ANY] ol_resmgr_create: 223: OL Resmgr Init-ed
+May  5 08:05:19 kernel: [   17.762726] wlan: [674:I:ANY] acfg_attach: 3519: acfg_attach: 3519: Netlink socket created:aff48000
+May  5 08:05:19 kernel: [   17.762917] wlan: [674:I:ANY] ol_ath_stats_attach: 2320: periodic_chan_stats: 1
+May  5 08:05:19 kernel: [   17.772218] wlan: [674:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 25
+May  5 08:05:19 kernel: [   17.772306] wlan: [0:I:ANY] ol_ath_pdev_attach: 9497: Set global_ic[1], ptr:7f7a770c
+May  5 08:05:19 kernel: [   17.772314] wlan: [0:I:ANY] dp_lag_soc_enable: 102: pdev(bc739e04) Enabling DBDC Repeater 1 
+May  5 08:05:19 kernel: [   17.772368] wlan: [0:I:ANY] dp_lag_pdev_set_primary_radio: 55: pdev(bc739e04) is_primary 1 
+May  5 08:05:19 kernel: [   17.772380] wlan: [674:I:ANY] ol_ath_twt_enable_command: 7951: TWT is disable in INI. Do not send enable cmd to FW
+May  5 08:05:19 kernel: [   17.772402] wlan: [0:E:NSS] [nss-wifili]: NSS Wifili DBDC Repeater enable message passed
+May  5 08:05:19 kernel: [   17.774115] wlan: [674:I:ANY] ol_ath_ucfg_set_rx_pkt_protocol_tagging: 2097: Set RX packet type TAG, opcode : 0, pkt_type : 18, metadata : 0xca0,pdev_id = 0, REO dest ring = 5
+May  5 08:05:19 kernel: [   17.774115] 
+May  5 08:05:19 kernel: [   17.774154] wlan: [674:I:ANY] ol_ath_pri20_cfg_blockchanlist_parse: 546: cfg block channel list is empty
+May  5 08:05:19 kernel: [   17.774168] wlan: [674:I:ANY] ol_ath_configure_cong_ctrl_max_msdus: 3850: pdev_idx = 0 tx_desc_limit = 32768
+May  5 08:05:19 kernel: [   17.774184] wlan: [674:I:ANY] osif_wrap_attach: 239: osif wrap attached
+May  5 08:05:19 kernel: [   17.774188] wlan: [674:I:ANY] osif_wrap_devt_init: 201: osif wrap dev table init done
+May  5 08:05:19 kernel: [   17.774193] wlan: [674:I:ANY] osif_wrap_attach: 247:  Wrap Attached: Wrap_com =bd003000 ic->ic_wrap_com=bd003000 &wrap_com->wc_devt=bd003000
+May  5 08:05:19 kernel: [   17.774218] wlan: [674:I:ANY] __ol_ath_attach: 4485: needed_headroom reservation 60
+May  5 08:05:19 kernel: [   17.774223] wlan: [674:I:ANY] ol_ath_enable_fraglist: 3274: Enabled Fraglist bit for the radio wifi0 features 41 
+May  5 08:05:19 kernel: [   17.774501] wlan: [674:I:ANY] ieee80211_cfg80211_radio_attach: 11842: ic: 0xb5820500, wdev: 0xb5837cf0, wiphy: 0xaff48d60, netdev: 0xb5820000 
+May  5 08:05:19 kernel: [   17.775245] wlan: [674:I:ANY] __ol_ath_attach: 4242: pdev_netdev name wifi1
+May  5 08:05:19 kernel: [   17.775272] wlan: [674:I:ANY] __ol_ath_attach: 4289: Skip txrx_pdev_attach_target
+May  5 08:05:19 kernel: [   17.775282] wlan: [674:I:ANY] __ol_ath_attach: 4315: BURSTING enabled by default
+May  5 08:05:19 kernel: [   17.775419] wlan: [674:I:ANY] ol_ath_pdev_attach: 9153: interface_id 1
+May  5 08:05:19 kernel: [   17.775443] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7520:  phy id = 1 Modes supported
+May  5 08:05:19 kernel: [   17.775458] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7527:  11b = 1 11g = 1 11a = 0 11n = 1 11ac = 1 11ax = 1
+May  5 08:05:19 kernel: [   17.775464] wlan: [674:I:TIF] ol_ath_pdev_regdmn_init: 7536:  Reg cap - phy_id = 1 supp_bnd = 1, modes = 680680c, lo_2g = 2312, hi_2g = 2732 lo_g5 = 0, hi_5g = 0
+May  5 08:05:19 kernel: [   17.775469] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1349: wireless_modes = 680680c before update
+May  5 08:05:19 kernel: [   17.775473] wlan: [674:I:ANY] ol_ath_update_wireless_modes: 1365: Wireless_modes = 680680c after update
+May  5 08:05:19 kernel: [   17.775477] wlan: [674:I:ANY] ol_ath_update_ext_caps: 1955: 11ax 2G supported case
+May  5 08:05:19 kernel: [   17.775548] wlan: [674:E:dfs] WLAN_DEBUG_DFS_ALWAYS : tgt_dfs_set_fw_adfs_support: 936: dfs is NULL
+May  5 08:05:19 kernel: [   17.775655] wlan: [674:I:ANY] ol_resmgr_create: 223: OL Resmgr Init-ed
+May  5 08:05:19 kernel: [   17.775775] wlan: [674:I:ANY] acfg_attach: 3494: Offload using existing sock aff48000
+May  5 08:05:19 kernel: [   17.775788] wlan: [674:I:ANY] ol_ath_stats_attach: 2320: periodic_chan_stats: 1
+May  5 08:05:19 kernel: [   17.776055] wlan: [674:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 11
+May  5 08:05:19 kernel: [   17.776090] wlan: [0:I:ANY] ol_ath_pdev_attach: 9497: Set global_ic[2], ptr:7f7a770c
+May  5 08:05:19 kernel: [   17.776098] wlan: [0:I:ANY] dp_lag_soc_enable: 102: pdev(b4a62604) Enabling DBDC Repeater 1 
+May  5 08:05:19 kernel: [   17.776138] wlan: [0:E:NSS] [nss-wifili]: NSS Wifili DBDC Repeater enable message passed
+May  5 08:05:19 kernel: [   17.776148] wlan: [0:I:ANY] dp_lag_pdev_set_primary_radio: 55: pdev(b4a62604) is_primary 0 
+May  5 08:05:19 kernel: [   17.776160] wlan: [674:I:ANY] ol_ath_twt_enable_command: 7951: TWT is disable in INI. Do not send enable cmd to FW
+May  5 08:05:19 kernel: [   17.778063] wlan: [674:I:ANY] ol_ath_ucfg_set_rx_pkt_protocol_tagging: 2097: Set RX packet type TAG, opcode : 0, pkt_type : 18, metadata : 0xca0,pdev_id = 1, REO dest ring = 5
+May  5 08:05:19 kernel: [   17.778063] 
+May  5 08:05:19 kernel: [   17.778112] wlan: [674:I:ANY] ol_ath_pri20_cfg_blockchanlist_parse: 546: cfg block channel list is empty
+May  5 08:05:19 kernel: [   17.778120] wlan: [674:I:ANY] ol_ath_configure_cong_ctrl_max_msdus: 3850: pdev_idx = 1 tx_desc_limit = 32768
+May  5 08:05:19 kernel: [   17.778134] wlan: [674:I:ANY] osif_wrap_attach: 239: osif wrap attached
+May  5 08:05:19 kernel: [   17.778139] wlan: [674:I:ANY] osif_wrap_devt_init: 201: osif wrap dev table init done
+May  5 08:05:19 kernel: [   17.778145] wlan: [674:I:ANY] osif_wrap_attach: 247:  Wrap Attached: Wrap_com =aa3b8c00 ic->ic_wrap_com=aa3b8c00 &wrap_com->wc_devt=aa3b8c00
+May  5 08:05:19 kernel: [   17.778168] wlan: [674:I:ANY] __ol_ath_attach: 4485: needed_headroom reservation 60
+May  5 08:05:19 kernel: [   17.778175] wlan: [674:I:ANY] ol_ath_enable_fraglist: 3274: Enabled Fraglist bit for the radio wifi1 features 41 
+May  5 08:05:19 kernel: [   17.778208] wlan: [674:I:ANY] wlan_cfg80211_init: 11716: Number of 2G channels: 11 
+May  5 08:05:19 kernel: [   17.778397] wlan: [674:I:ANY] ieee80211_cfg80211_radio_attach: 11842: ic: 0xb5860500, wdev: 0xb5877cf0, wiphy: 0xaff4a960, netdev: 0xb5860000 
+May  5 08:05:19 kernel: [   17.779051] wlan: [674:I:Dynamic Mode Change] ol_ath_check_and_reconfig_hw_mode: 3819: Running with HW mode = 1
+May  5 08:05:19 kernel: [   17.779524] wlan: [674:E:QLD] qld_register: 108: Handle or address is NULL
+May  5 08:05:19 kernel: [   17.779570] wlan: [674:I:ANY] wlan_pdev_operation: 730: num_radios=1, wifi_radios[0].sc = b5820500_radio_type = 2
+May  5 08:05:19 kernel: [   17.779581] wlan: [674:I:ANY] wlan_pdev_operation: 730: num_radios=2, wifi_radios[1].sc = b5860500_radio_type = 2
+May  5 08:05:19 kernel: [   17.779618] wlan: [674:I:ANY] init_ath_pci_3_0: 179: ^A6ath_ol_pci_wifi3.0 :  (Atheros/multi-bss)
+May  5 08:05:19 kernel: [   17.870011] wlan: [745:I:ANY] osif_nss_register_module: 90: NSS wifi ops registered for target_type:0 with soc_ops:7fd0b364
+May  5 08:05:19 kernel: [   17.870521] wlan: [745:I:ANY] init_ath_pci_2_0: 143: ^A6ath_ol_pci_2_0:  (Atheros/multi-bss)
+May  5 08:05:19 kernel: [   20.186858] wlan: [795:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 13
+May  5 08:05:19 kernel: [   20.186914] wlan: [795:I:ANY] number of channels: 2G = 13 5G = 0, 6G = 0
+May  5 08:05:19 kernel: [   20.288983] wlan: [823:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 19
+May  5 08:05:19 kernel: [   20.289089] wlan: [823:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=58
+May  5 08:05:19 kernel: [   20.289094] wlan: [823:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=106
+May  5 08:05:19 kernel: [   20.289098] wlan: [823:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=122
+May  5 08:05:19 kernel: [   20.290006] wlan: [823:I:ANY] wlan_scan_update_channel_list: 1135: num_chan: 19
+May  5 08:05:19 kernel: [   20.290055] wlan: [823:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=58
+May  5 08:05:19 kernel: [   20.290059] wlan: [823:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=106
+May  5 08:05:19 kernel: [   20.290063] wlan: [823:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_init_precac_list: 2617: ieee=122
+May  5 08:05:19 kernel: [   20.290111] wlan: [823:I:ANY] number of channels: 2G = 0 5G = 19, 6G = 0
+May  5 08:05:19 kernel: [   20.410690] wlan: [846:I:ANY] wlan_cfg80211_add_virtual_intf: 334: proprietary mode 6 for interface: ath1 : clone params: 0x00000001 
+May  5 08:05:19 kernel: [   20.410727] wlan: [846:I:ANY] osifp_create_wlan_vap: 9638: VDEV Create 24:4b:fe:64:a8:48
+May  5 08:05:19 kernel: [   20.410763] wlan: [846:I:ANY] wlan_vap_create: 1599: devhandle=0xb5860500, opmode=IEEE80211_M_HOSTAP, flags=0x1
+May  5 08:05:19 kernel: [   20.411066] wlan: [846:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:19 kernel: [   20.411091] wlan: [846:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:1|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:19 kernel: [   20.411096] wlan: [846:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x7b
+May  5 08:05:19 kernel: [   20.411106] wlan: [846:I:ANY] ol_ath_vap_set_param: 2268: VDEV params:AC/VHT sounding mode:HE|SU/MU sounding mode:SU|Trig/Non-Trig sounding mode:Non-Trigged
+May  5 08:05:19 kernel: [   20.411143] wlan: [846:I:ANY] MBO Initialized
+May  5 08:05:19 kernel: [   20.411148] wlan: [846:I:ANY] OCE Initialized
+May  5 08:05:19 kernel: [   20.411163] wlan: [846:I:ANY] osif_nss_ol_vap_create: 1478: NSS wifi offload VAP create IF 30 nss_id -1 
+May  5 08:05:19 kernel: [   20.411169] wlan: [846:I:ANY] NSS radio_if 29
+May  5 08:05:19 kernel: [   20.411217] wlan: [0:I:ANY] osif_nss_vdev_cfg_callback: 1203: VDEV configuration success: 0
+May  5 08:05:19 kernel: [   20.411229] wlan: [846:I:ANY] osif_nss_ol_vap_create: 1590: vap create aa6e9500 : if_num 30 
+May  5 08:05:19 kernel: [   20.411479] wlan: [846:I:ANY] osif_create_vap_complete: 9846: TX Checksum:1|SG:1|TSO:1|LRO:0
+May  5 08:05:19 kernel: [   20.411483] wlan: [846:I:ANY] WLAN-NSS: VAP NSS ops initialized 
+May  5 08:05:19 kernel: [   20.412376] wlan: [846:I:ANY] VAP device ath1 created osifp: (aa6e9500) os_if: (a9448000)
+May  5 08:05:19 kernel: [   21.421993] wlan: [858:I:ANY] wlan_cfg80211_add_virtual_intf: 334: proprietary mode 6 for interface: ath0 : clone params: 0x00000001 
+May  5 08:05:19 kernel: [   21.422028] wlan: [858:I:ANY] osifp_create_wlan_vap: 9638: VDEV Create 24:4b:fe:64:a8:4c
+May  5 08:05:19 kernel: [   21.422064] wlan: [858:I:ANY] wlan_vap_create: 1599: devhandle=0xb5820500, opmode=IEEE80211_M_HOSTAP, flags=0x1
+May  5 08:05:19 kernel: [   21.422340] wlan: [858:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:19 kernel: [   21.422372] wlan: [858:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:1|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:19 kernel: [   21.422376] wlan: [858:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x7b
+May  5 08:05:19 kernel: [   21.422387] wlan: [858:I:ANY] ol_ath_vap_set_param: 2268: VDEV params:AC/VHT sounding mode:HE|SU/MU sounding mode:SU|Trig/Non-Trig sounding mode:Non-Trigged
+May  5 08:05:19 kernel: [   21.422426] wlan: [858:I:ANY] MBO Initialized
+May  5 08:05:19 kernel: [   21.422430] wlan: [858:I:ANY] OCE Initialized
+May  5 08:05:19 kernel: [   21.422446] wlan: [858:I:ANY] osif_nss_ol_vap_create: 1478: NSS wifi offload VAP create IF 31 nss_id -1 
+May  5 08:05:19 kernel: [   21.422451] wlan: [858:I:ANY] NSS radio_if 28
+May  5 08:05:19 kernel: [   21.422494] wlan: [0:I:ANY] osif_nss_vdev_cfg_callback: 1203: VDEV configuration success: 0
+May  5 08:05:19 kernel: [   21.422512] wlan: [858:I:ANY] osif_nss_ol_vap_create: 1590: vap create aa769500 : if_num 31 
+May  5 08:05:19 kernel: [   21.422759] wlan: [858:I:ANY] osif_create_vap_complete: 9846: TX Checksum:1|SG:1|TSO:1|LRO:0
+May  5 08:05:19 kernel: [   21.422771] wlan: [858:I:ANY] WLAN-NSS: VAP NSS ops initialized 
+May  5 08:05:19 kernel: [   21.423659] wlan: [858:I:ANY] VAP device ath0 created osifp: (aa769500) os_if: (a9ad0000)
+May  5 08:05:19 kernel: [   22.432141] wlan: [871:I:ANY] wlan_cfg80211_add_virtual_intf: 334: proprietary mode 6 for interface: ath101 : clone params: 0x00000001 
+May  5 08:05:19 kernel: [   22.432176] wlan: [871:I:ANY] osifp_create_wlan_vap: 9638: VDEV Create 2a:4b:fe:64:a8:48
+May  5 08:05:19 kernel: [   22.432213] wlan: [871:I:ANY] wlan_vap_create: 1599: devhandle=0xb5860500, opmode=IEEE80211_M_HOSTAP, flags=0x1
+May  5 08:05:19 kernel: [   22.432399] wlan: [871:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:19 kernel: [   22.432425] wlan: [871:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:1|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:19 kernel: [   22.432429] wlan: [871:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x7b
+May  5 08:05:19 kernel: [   22.432446] wlan: [871:I:ANY] ol_ath_vap_set_param: 2268: VDEV params:AC/VHT sounding mode:HE|SU/MU sounding mode:SU|Trig/Non-Trig sounding mode:Non-Trigged
+May  5 08:05:19 kernel: [   22.432476] wlan: [871:I:ANY] MBO Initialized
+May  5 08:05:19 kernel: [   22.432480] wlan: [871:I:ANY] OCE Initialized
+May  5 08:05:19 kernel: [   22.432499] wlan: [871:I:ANY] osif_nss_ol_vap_create: 1478: NSS wifi offload VAP create IF 32 nss_id -1 
+May  5 08:05:19 kernel: [   22.432505] wlan: [871:I:ANY] NSS radio_if 29
+May  5 08:05:19 kernel: [   22.432534] wlan: [0:I:ANY] osif_nss_vdev_cfg_callback: 1203: VDEV configuration success: 0
+May  5 08:05:19 kernel: [   22.432545] wlan: [871:I:ANY] osif_nss_ol_vap_create: 1590: vap create b894c500 : if_num 32 
+May  5 08:05:19 kernel: [   22.432756] wlan: [871:I:ANY] osif_create_vap_complete: 9846: TX Checksum:1|SG:1|TSO:1|LRO:0
+May  5 08:05:19 kernel: [   22.432760] wlan: [871:I:ANY] WLAN-NSS: VAP NSS ops initialized 
+May  5 08:05:19 kernel: [   22.434930] wlan: [871:I:ANY] VAP device ath101 created osifp: (b894c500) os_if: (aa680000)
+May  5 08:05:19 kernel: [   23.508130] UBIFS (ubi0:5): background thread "ubifs_bgt0_5" started, PID 904
+May  5 08:05:19 kernel: [   23.534948] UBIFS (ubi0:5): recovery needed
+May  5 08:05:19 kernel: [   24.103500] UBIFS (ubi0:5): recovery completed
+May  5 08:05:19 kernel: [   24.103584] UBIFS (ubi0:5): UBIFS: mounted UBI device 0, volume 5, name "jffs2"
+May  5 08:05:19 kernel: [   24.103591] UBIFS (ubi0:5): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+May  5 08:05:19 kernel: [   24.103598] UBIFS (ubi0:5): FS size: 142974976 bytes (136 MiB, 1126 LEBs), journal size 9023488 bytes (8 MiB, 72 LEBs)
+May  5 08:05:19 kernel: [   24.103603] UBIFS (ubi0:5): reserved for root: 0 bytes (0 KiB)
+May  5 08:05:19 kernel: [   24.103610] UBIFS (ubi0:5): media format: w4/r0 (latest is w4/r0), UUID 8F81CF9E-1672-4C25-B261-44577F80E254, small LPT model
+May  5 08:05:19 kernel: [   30.491109] msm-usb-ssphy-qmp 78000.ssphy: QMP PHY initialization timeout
+May  5 08:05:19 kernel: [   30.491117] msm-usb-ssphy-qmp 78000.ssphy: USB3_PHY_PCS_STATUS:68686868
+May  5 08:05:19 kernel: [   30.700301] msm-usb-ssphy-qmp 58000.ssphy: QMP PHY initialization timeout
+May  5 08:05:19 kernel: [   30.700309] msm-usb-ssphy-qmp 58000.ssphy: USB3_PHY_PCS_STATUS:68686868
+May  5 08:05:20 kernel: [   31.523924] wlan: [1104:I:ANY] ol_ath_set_config_param: 1664: set TXBF_SND_PERIOD: value 100 wmi_status 0
+May  5 08:05:20 kernel: [   31.650973] wlan: [0:I:ANY] ol_ath_set_config_param: 2416: Disconnect_timeout value: 10
+May  5 08:05:20 kernel: [   31.692857] wlan: [0:I:ANY] ol_ath_set_config_param: 2422: Reconfiguration_timeout value:60
+May  5 08:05:20 kernel: [   32.145972] eth0: PHY Link up speed: 1000
+May  5 08:05:20 kernel: [   32.155405] eth4: PHY Link up speed: 10000
+May  5 08:05:21 kernel: [   32.564034] wlan: [1317:I:ANY] ol_ath_set_config_param: 1664: set TXBF_SND_PERIOD: value 100 wmi_status 0
+May  5 08:05:21 kernel: [   32.715042] wlan: [0:I:ANY] ol_ath_set_config_param: 2416: Disconnect_timeout value: 10
+May  5 08:05:21 kernel: [   32.757783] wlan: [0:I:ANY] ol_ath_set_config_param: 2422: Reconfiguration_timeout value:60
+May  5 08:05:22 avahi-daemon[1643]: WARNING: No NSS support for mDNS detected, consider installing nss-mdns!
+May  5 08:05:23 RT-AX89X: start https:8443
+May  5 08:05:23 RT-AX89X: start httpd:80
+May  5 08:05:23 httpd: Succeed to init SSL certificate...8443
+May  5 08:05:23 disk monitor: be idle
+May  5 08:05:23 httpd: S:RT-AX89X-A848 Server Certificate, I:RT-AX89X-A848 Root Certificate 20250114091710, 2025/3/17 ~ 2045/3/18
+May  5 08:05:23 hour monitor: daemon is starting
+May  5 08:05:23 avahi-daemon[1643]: Alias name "RT-AX89X" successfully established.
+May  5 08:05:23 avahi-daemon[1643]: Alias name "findasus" successfully established.
+May  5 08:05:24 lldpd[1732]: cannot get ethtool link information with GLINKSETTINGS (requires 4.9+): Operation not permitted
+May  5 08:05:25 kernel: [   37.145990] eth1: PHY Link up speed: 1000
+May  5 08:05:26 kernel: [   38.155733] eth2: PHY Link up speed: 1000
+May  5 08:05:26 kernel: [   38.394316] wlan: [1841:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:27 kernel: [   38.954680] wlan: [1894:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:27 kernel: [   38.954697] wlan: [1894:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x73
+May  5 08:05:27 WAN Connection: WAN(0) link down.
+May  5 08:05:27 kernel: [   39.259912] wlan: [1916:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:27 kernel: [   39.259980] wlan: [1916:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x53
+May  5 08:05:28 kernel: [   39.539675] wlan: [1989:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:0|dl_muofdma_bfer:0
+May  5 08:05:28 kernel: [   39.539692] wlan: [1989:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x13
+May  5 08:05:28 kernel: [   39.579127] wlan: [1993:I:ANY] DES SSID SET=fireless
+May  5 08:05:29 kernel: [   40.476554] wlan: [1480:I:ANY] wlan_cfg80211_do_acs: 3717: vap-0(ath1):ACS Params
+May  5 08:05:29 kernel: [   40.476570] wlan: [1480:I:ANY] wlan_cfg80211_do_acs: 3720: ht_enabled:1|ht40_enabled:1|vht_enabled:1|hw_mode:29|chwidth:40|
+May  5 08:05:29 pppd[2101]: pppd 2.4.7 started by rpotcoava, uid 0
+May  5 08:05:29 syslog: module phy-qcom-dwc3 not found in modules.dep
+May  5 08:05:29 syslog: module scsi_mod not found in modules.dep
+May  5 08:05:29 syslog: module scsi_wait_scan not found in modules.dep
+May  5 08:05:29 kernel: [   40.831817] wlan: [2099:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:29 syslog: module jbd not found in modules.dep
+May  5 08:05:29 syslog: module ext3 not found in modules.dep
+May  5 08:05:29 : fwver: 3.0.0.4_388_33812-gab9863d (sn: /ha:24:4B:FE:64:A8:49 )
+May  5 08:05:29 : bootcode:RT-AX89U-02-02-02-02
+May  5 08:05:29 ahs: [read_json]Update ahs JSON file.
+May  5 08:05:29 kernel: [   41.349500] wlan: [2189:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:29 kernel: [   41.349511] wlan: [2189:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x73
+May  5 08:05:29 kernel: [   41.401781] wlan: [2198:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:29 kernel: [   41.401792] wlan: [2198:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x53
+May  5 08:05:29 kernel: [   41.458282] wlan: [2207:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:0|dl_muofdma_bfer:0
+May  5 08:05:29 kernel: [   41.458295] wlan: [2207:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x13
+May  5 08:05:29 kernel: [   41.469917] wlan: [2220:I:ANY] DES SSID SET=fireless
+May  5 08:05:30 kernel: [   41.794985] wlan: [1480:I:ANY] wlan_cfg80211_do_acs: 3717: vap-1(ath0):ACS Params
+May  5 08:05:30 kernel: [   41.794999] wlan: [1480:I:ANY] wlan_cfg80211_do_acs: 3720: ht_enabled:1|ht40_enabled:0|vht_enabled:1|hw_mode:31|chwidth:20|
+May  5 08:05:30 kernel: [   41.993557] wlan: [2335:I:ANY] ol_ath_vap_set_param: 1208: Setting SGI value: 1
+May  5 08:05:30 kernel: [   42.161792] wlan: [2353:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:1|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   42.161806] wlan: [2353:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x73
+May  5 08:05:30 kernel: [   42.165837] eth5: PHY Link up speed: 1000
+May  5 08:05:30 kernel: [   42.246661] wlan: [2362:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:1|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   42.246673] wlan: [2362:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x53
+May  5 08:05:30 kernel: [   42.314974] wlan: [2372:I:ANY] ol_ath_vap_set_param: 2240: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:0|ul_mumimo:0|dl_muofdma_bfer:0
+May  5 08:05:30 kernel: [   42.314987] wlan: [2372:I:ANY] ol_ath_vap_set_param: 2253: he_bf_cap=0x13
+May  5 08:05:30 kernel: [   42.321882] wlan: [2376:I:ANY] DES SSID SET=FGuest
+May  5 08:05:31 kernel: [   42.548717] wlan: [1480:I:ANY] wlan_cfg80211_do_acs: 3717: vap-2(ath101):ACS Params
+May  5 08:05:31 kernel: [   42.548731] wlan: [1480:I:ANY] wlan_cfg80211_do_acs: 3720: ht_enabled:1|ht40_enabled:1|vht_enabled:1|hw_mode:29|chwidth:40|
+May  5 08:05:32 WAN Connection: Fail to connect with some issues.
+May  5 08:05:33 kernel: [   44.501584] wlan: [594:I:ANY] vap-0(ath1): ACS result PCH 6 freq 2437, SCH 2 freq 2417, hw_mode 1 chwidth 40, vht_seg0 4 freq 2427, vht_seg1 0 freq 0
+May  5 08:05:33 kernel: [   44.501651] wlan: [594:I:ANY] vap-2(ath101): ACS result PCH 6 freq 2437, SCH 2 freq 2417, hw_mode 1 chwidth 40, vht_seg0 4 freq 2427, vht_seg1 0 freq 0
+May  5 08:05:33 kernel: [   44.516306] wlan: [1480:I:ANY] DES SSID SET=fireless
+May  5 08:05:33 kernel: [   44.516322] wlan: [1480:I:ANY] wlan_cfg80211_chan_to_phymode: 1238: band:0 width: 2 channel_cfreq: 2437 center_freq1: 2427 chandef.center_freq2: 0 flags: 384 
+May  5 08:05:33 kernel: [   44.516422] wlan: [1480:I:ANY] ieee80211_ucfg_set_freq_internal: 553: Channel is configured already!!
+May  5 08:05:33 kernel: [   44.532083] wlan: [1480:I:ANY] DES SSID SET=FGuest
+May  5 08:05:33 kernel: [   44.532096] wlan: [1480:I:ANY] wlan_cfg80211_set_phymode: 1214: desired hw mode: 27
+May  5 08:05:33 kernel: [   44.532196] wlan: [1480:I:ANY] ieee80211_ucfg_set_freq_internal: 553: Channel is configured already!!
+May  5 08:05:33 kernel: [   44.617236] wlan: [0:I:CMN_MLME] vdev[0] ieee chan:6 freq:2437
+May  5 08:05:33 kernel: [   44.617431] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.617431] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.617431] Disabling FD
+May  5 08:05:33 kernel: [   44.617529] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.617529] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.617529] Disabling FD
+May  5 08:05:33 kernel: [   44.617567] wlan: [0:I:ANY] vdev[0]: Mgt Rate:1000(kbps)
+May  5 08:05:33 kernel: [   44.617593] wlan: [0:I:ANY] vdev[0]: Mgt Rate:1000(kbps)
+May  5 08:05:33 kernel: [   44.619499] wlan: [0:I:CMN_MLME] vdev[2] ieee chan:6 freq:2437
+May  5 08:05:33 kernel: [   44.619659] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.619659] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.619659] Disabling FD
+May  5 08:05:33 kernel: [   44.619749] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:33 kernel: [   44.619749] FD Interval should be a factor of BI.
+May  5 08:05:33 kernel: [   44.619749] Disabling FD
+May  5 08:05:33 kernel: [   44.619786] wlan: [0:I:ANY] vdev[2]: Mgt Rate:1000(kbps)
+May  5 08:05:33 kernel: [   44.619814] wlan: [0:I:ANY] vdev[2]: Mgt Rate:1000(kbps)
+May  5 08:05:33 roamast: ROAMING Start...
+May  5 08:05:34 kernel: [   46.468619] wlan: [1480:I:ANY] wlan_cfg80211_set_ap_chanwidth: 569: wlan_cfg80211_set_ap_chanwidth: freq:2437 hw_value:6 ch_width:1 
+May  5 08:05:35 rc_service: rc 2642:notify_rc restart_qca_lbd
+May  5 08:05:35 QCA LBD: daemon is stopped
+May  5 08:05:35 mcastds: Entering evloopRun
+May  5 08:05:35 pppd[2101]: Connected to 3c:ec:ef:d9:ad:50 via interface eth5
+May  5 08:05:35 pppd[2101]: Connect: ppp0 <--> eth5
+May  5 08:05:35 Mastiff: init
+May  5 08:05:36 kernel: [   47.770594] wlan: [594:I:ANY] vap-1(ath0): ACS result PCH 100 freq 5500, SCH 108 freq 5540, hw_mode 2 chwidth 160, vht_seg0 114 freq 5570, vht_seg1 0 freq 0
+May  5 08:05:36 kernel: [   47.783582] wlan: [1480:I:ANY] DES SSID SET=fireless
+May  5 08:05:36 kernel: [   47.783596] wlan: [1480:I:ANY] wlan_cfg80211_set_phymode: 1214: desired hw mode: 31
+May  5 08:05:36 kernel: [   47.783691] wlan: [1480:I:ANY] ieee80211_switch_to_intercac_chan: 414: Use intermediate channel in VHT80 mode
+May  5 08:05:36 kernel: [   48.094445] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_agile_precac_start: 4682:  setting true to cur_precac_dfs_index = 0, dfs: b5840000
+May  5 08:05:36 kernel: [   48.094461] wlan: [0:I:ANY] dfs_agile_precac_start: 4692: Initiated agile precac
+May  5 08:05:36 kernel: [   48.094469] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 0 ms
+May  5 08:05:36 kernel: [   48.094538] wlan: [0:I:CMN_MLME] vdev[1] ieee chan:48 freq:5240
+May  5 08:05:36 kernel: [   48.094753] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:36 kernel: [   48.094753] FD Interval should be a factor of BI.
+May  5 08:05:36 kernel: [   48.094753] Disabling FD
+May  5 08:05:36 kernel: [   48.094854] wlan: [0:E:FILS discovery] wlan_fd_set_valid_fd_period: 607: Invalid FD Interval : 0. Valid range is 20 - 100ms.
+May  5 08:05:36 kernel: [   48.094854] FD Interval should be a factor of BI.
+May  5 08:05:36 kernel: [   48.094854] Disabling FD
+May  5 08:05:36 kernel: [   48.094902] wlan: [0:I:ANY] vdev[1]: Mgt Rate:6000(kbps)
+May  5 08:05:36 kernel: [   48.094932] wlan: [0:I:ANY] vdev[1]: Mgt Rate:6000(kbps)
+May  5 08:05:36 kernel: [   48.095353] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_precac_timeout: 2154: Pre-cac expired, Agile Precac chan 0 curr time 4294715
+May  5 08:05:36 kernel: [   48.095397] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3242: current operating channel(s) to be excluded = [5210] [0]
+May  5 08:05:36 kernel: [   48.095406] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_get_ieeechan_for_precac_for_freq: 3259: Channel picked for preCAC = 5610
+May  5 08:05:36 kernel: [   48.095415] wlan: [0:I:dfs] WLAN_DEBUG_DFS_ALWAYS : dfs_start_agile_precac_timer: 3416: precactimeout = 3600000 ms
+May  5 08:05:36 kernel: [   48.095427] wlan: [0:I:ANY] dfs_prepare_agile_precac_chan: 822: ADFS channel set request sent for pdev: b9517400 ch_freq: 5610
+May  5 08:05:38 pppd[2101]: PAP authentication succeeded
+May  5 08:05:38 pppd[2101]: peer from calling number 3C:EC:EF:D9:AD:50 authorized
+May  5 08:05:38 pppd[2101]: local  IP address 86.124.25.57
+May  5 08:05:38 pppd[2101]: remote IP address 10.0.24.125
+May  5 08:05:38 pppd[2101]: primary   DNS address 100.100.1.1
+May  5 08:05:38 pppd[2101]: secondary DNS address 100.100.0.1
+May  5 08:05:38 kernel: [   50.310853] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:38 kernel: [   50.311808] wlan: [1480:I:ANY] wlan_cfg80211_set_ap_chanwidth: 569: wlan_cfg80211_set_ap_chanwidth: freq:5240 hw_value:48 ch_width:3 
+May  5 08:05:39 kernel: [   50.514073] nf_conntrack_rtsp v0.7 loading
+May  5 08:05:39 kernel: [   50.519739] nf_nat_rtsp v0.7 loading
+May  5 08:05:39 wan: finish adding multi routes
+May  5 08:05:40 kernel: [   51.881750] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:40 kernel: [   52.381335] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:41 kernel: [   52.738325] wlan: [0:I:ANY] No non preferred channel report
+May  5 08:05:41 kernel: [   53.108134] wlan: [1480:I:ANY] wlan_cfg80211_set_ap_chanwidth: 569: wlan_cfg80211_set_ap_chanwidth: freq:2437 hw_value:6 ch_width:1 
+May  5 08:05:43 WAN Connection: WAN was restored.
+May  5 08:05:44 kernel: [   56.306297] SHN Release Version: 2.0.6 6be3752-newgpl-32bit
+May  5 08:05:44 kernel: [   56.306317] UDB Core Version: 0.2.20
+May  5 08:05:45 kernel: [   56.495370] Registered DNS Req parsing
+May  5 08:05:45 kernel: [   56.495410] pcc register
+May  5 08:05:45 kernel: [   56.495431] sizeof forward pkt param = 192
+May  5 08:05:45 BWDPI: fun bitmap = 4bf
+May  5 08:05:45 kernel: [   56.628696] wlan: [3520:I:ANY] ol_ath_vap_set_param: 1334: Now supported MCAST RATE is 1000(kbps) and rate code: 0x10000103
+May  5 08:05:45 kernel: [   56.632558] wlan: [3522:I:ANY] ol_ath_vap_set_param: 1334: Now supported MCAST RATE is 6000(kbps) and rate code: 0x10000003
+May  5 08:05:45 kernel: [   56.637635] wlan: [3521:I:ANY] ol_ath_vap_set_param: 1334: Now supported MCAST RATE is 1000(kbps) and rate code: 0x10000103
+May  5 08:05:45 ntp: start NTP update
+Oct 10 19:27:18 rc_service: ntp 3004:notify_rc restart_diskmon
+Oct 10 19:27:18 disk_monitor: Finish
+Oct 10 19:27:18 disk monitor: be idle
+Oct 10 19:27:19 kernel: [   57.509874] tdts_core_ioctl_udb_op_prog_ctrl() fail!
+Oct 10 19:27:20 A.QoS: qos_count=0, qos_check=0
+Oct 10 19:27:20 A.QoS: set_qos_on fails
+Oct 10 19:27:20 A.QoS: restart A.QoS because set_qos_conf / set_qos_on / setup rule fail
+Oct 10 19:27:20 kernel: [   58.748060] ERR[qos_start:3363] qos_ops is not registered!
+Oct 10 19:27:20 kernel: [   58.748169] ioctl_iqos_op_switch(1) fail!
+Oct 10 19:27:20 zcip client: configured 169.254.245.187
+Oct 10 19:27:21 A.QoS: qos_count=0, qos_check=1
+Oct 10 19:27:24 rc_service: ip-up 2891:notify_rc stop_samba
+Oct 10 19:27:24 rc_service: ip-up 2891:notify_rc start_samba
+Oct 10 19:27:24 rc_service: waitting "stop_samba" via ip-up ...
+Oct 10 19:27:24 Samba Server: smb daemon is stopped
+Oct 10 19:27:25 wan_up: Restart DDNS
+Oct 10 19:27:30 kernel: [   68.705936] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 19:27:34 crond[1646]: time disparity of 4435882 minutes detected
+Oct 10 19:27:47 kernel: [   86.065606] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 19:27:52 HTTPD: [LOGIN][https][Web] success (192.168.0.73)
+Oct 10 19:27:59 kernel: [   97.343867] wlan: [0:I:ANY] No non preferred channel report
+Oct 10 19:27:59 kernel: [   97.523642] wlan: [0:I:ANY] No non preferred channel report

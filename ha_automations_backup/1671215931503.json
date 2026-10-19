@@ -1,0 +1,39 @@
+{
+  "id": "1671215931503",
+  "alias": "LV: Sets the Wall Lights when turned on",
+  "description": "Sets the LV Ceiling Lights Level to desired",
+  "triggers": [
+    {
+      "entity_id": [
+        "light.tradfri_bulb_9"
+      ],
+      "from": "off",
+      "to": "on",
+      "trigger": "state"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "state",
+      "entity_id": "input_boolean.light_override",
+      "state": "off"
+    }
+  ],
+  "actions": [
+    {
+      "data": {
+        "transition": 3,
+        "color_temp_kelvin": "{{ states(\"input_number.lights_color\") | int }}",
+        "brightness_pct": "{{ states(\"input_number.light_level\") | int }}"
+      },
+      "target": {
+        "entity_id": [
+          "light.tradfri_bulb_9",
+          "light.tradfri_bulb_10"
+        ]
+      },
+      "action": "light.turn_on"
+    }
+  ],
+  "mode": "single"
+}

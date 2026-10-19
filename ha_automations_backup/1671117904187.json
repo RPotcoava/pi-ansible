@@ -1,0 +1,37 @@
+{
+  "id": "1671117904187",
+  "alias": "HOME: Decrease lights level",
+  "description": "Decreases lights level in the evening",
+  "trigger": [
+    {
+      "platform": "time",
+      "at": "20:00:00"
+    }
+  ],
+  "condition": [],
+  "action": [
+    {
+      "repeat": {
+        "count": "7",
+        "sequence": [
+          {
+            "service": "input_number.decrement",
+            "data": {},
+            "target": {
+              "entity_id": "input_number.light_level"
+            }
+          },
+          {
+            "delay": {
+              "hours": 0,
+              "minutes": 20,
+              "seconds": 0,
+              "milliseconds": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "mode": "single"
+}
