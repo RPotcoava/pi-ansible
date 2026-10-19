@@ -193,7 +193,7 @@ def process_and_send_findings(gmp, report_id):
                 "severity": sev_label,
                 "title": name,
                 "host": host,
-                "port": port,
+                "target_port": port,
                 "cvss_score": score,
                 "cve": cve,
                 "solution": solution,
