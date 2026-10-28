@@ -1,37 +1,111 @@
 {
   "id": "1671117904187",
-  "alias": "HOME: Decrease lights level",
-  "description": "Decreases lights level in the evening",
-  "trigger": [
+  "alias": "HOME: Decrease lights level and color",
+  "description": "Smoothly decreases light intensity (min 20%) and color temperature (min 2200K) along a gentle evening curve every 10 minutes until 10:00 PM",
+  "triggers": [
     {
-      "platform": "time",
-      "at": "20:00:00"
+      "trigger": "state",
+      "entity_id": "input_number.light_level",
+      "to": "99.0"
+    },
+    {
+      "trigger": "state",
+      "entity_id": "input_number.light_level",
+      "to": "99"
+    },
+    {
+      "trigger": "homeassistant",
+      "event": "start"
     }
   ],
-  "condition": [],
-  "action": [
+  "conditions": [
+    {
+      "condition": "state",
+      "entity_id": "input_boolean.light_override",
+      "state": "off"
+    },
+    {
+      "condition": "template",
+      "value_template": "{{ now() >= today_at('15:00') and now() < today_at('22:00') and states('input_number.light_level') | float(0) > 20 }}"
+    }
+  ],
+  "actions": [
     {
       "repeat": {
-        "count": "7",
         "sequence": [
           {
-            "service": "input_number.decrement",
-            "data": {},
-            "target": {
-              "entity_id": "input_number.light_level"
+            "delay": {
+              "minutes": 10
             }
           },
           {
-            "delay": {
-              "hours": 0,
-              "minutes": 20,
-              "seconds": 0,
-              "milliseconds": 0
+            "condition": [
+              {
+                "condition": "state",
+                "entity_id": "input_boolean.light_override",
+                "state": "off"
+              },
+              {
+                "condition": "template",
+                "value_template": "{{ now() <= today_at('22:00') }}"
+              }
+            ]
+          },
+          {
+            "action": "input_number.set_value",
+            "target": {
+              "entity_id": "input_number.light_level"
+            },
+            "data": {
+              "value": "{% set next_set = as_datetime(state_attr('sun.sun', 'next_setting')) %} {% set sunset = next_set - timedelta(days=1) if is_state('sun.sun', 'below_horizon') else next_set %} {% set end_time = today_at('22:00') %} {% set total_sec = [(end_time - sunset).total_seconds(), 3600] | max %} {% set elapsed_sec = (now() - sunset).total_seconds() %} {% set progress = [[(elapsed_sec / total_sec), 0] | max, 1] | min %} {% set curve = progress ** 1.8 %} {{ [20, (99 - (curve * 79)) | round(0) | int] | max }}"
             }
+          },
+          {
+            "action": "input_number.set_value",
+            "target": {
+              "entity_id": "input_number.lights_color"
+            },
+            "data": {
+              "value": "{% set next_set = as_datetime(state_attr('sun.sun', 'next_setting')) %} {% set sunset = next_set - timedelta(days=1) if is_state('sun.sun', 'below_horizon') else next_set %} {% set end_time = today_at('22:00') %} {% set total_sec = [(end_time - sunset).total_seconds(), 3600] | max %} {% set elapsed_sec = (now() - sunset).total_seconds() %} {% set progress = [[(elapsed_sec / total_sec), 0] | max, 1] | min %} {% set curve = progress ** 1.8 %} {{ [2200, (((4000 - (curve * 1800)) / 50) | round(0) * 50) | int] | max }}"
+            }
+          }
+        ],
+        "until": [
+          {
+            "condition": "template",
+            "value_template": "{{ now() >= today_at('22:00') or (states('input_number.light_level') | float(0) <= 20 and states('input_number.lights_color') | float(0) <= 2200) }}"
           }
         ]
       }
+    },
+    {
+      "if": [
+        {
+          "condition": "template",
+          "value_template": "{{ now() >= today_at('22:00') and states('input_boolean.light_override') == 'off' }}"
+        }
+      ],
+      "then": [
+        {
+          "action": "input_number.set_value",
+          "target": {
+            "entity_id": "input_number.light_level"
+          },
+          "data": {
+            "value": 20
+          }
+        },
+        {
+          "action": "input_number.set_value",
+          "target": {
+            "entity_id": "input_number.lights_color"
+          },
+          "data": {
+            "value": 2200
+          }
+        }
+      ]
     }
   ],
-  "mode": "single"
+  "mode": "restart"
 }

@@ -1,33 +1,45 @@
 {
   "id": "1671116922645",
   "alias": "HOME: Sunset Lights Set",
-  "description": "Sets the lights level to max and cold ",
+  "description": "Sets lights to max/cold at sunset, then triggers decrease sequence",
   "triggers": [
     {
+      "trigger": "sun",
       "event": "sunset",
-      "offset": "-02:00:00",
-      "trigger": "sun"
+      "offset": "00:00:00"
     }
   ],
-  "conditions": [],
+  "conditions": [
+    {
+      "condition": "time",
+      "after": "15:00:00",
+      "before": "22:30:00"
+    }
+  ],
   "actions": [
     {
-      "data": {
-        "value": 99
-      },
+      "action": "input_number.set_value",
       "target": {
         "entity_id": "input_number.light_level"
       },
-      "action": "input_number.set_value"
+      "data": {
+        "value": 99
+      }
     },
     {
-      "data": {
-        "value": 4000
-      },
+      "action": "input_number.set_value",
       "target": {
         "entity_id": "input_number.lights_color"
       },
-      "action": "input_number.set_value"
+      "data": {
+        "value": 4000
+      }
+    },
+    {
+      "action": "automation.trigger",
+      "target": {
+        "entity_id": "automation.home_decrease_lights_level"
+      }
     }
   ],
   "mode": "single"
