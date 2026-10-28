@@ -34,8 +34,8 @@ spec:
         kubernetes.io/hostname: raspberrypi5b
       containers:
         - name: n8n
-          image: docker.n8n.io/n8nio/n8n:latest
-          imagePullPolicy: IfNotPresent
+          image: docker.n8n.io/n8nio/n8n:2.45.5
+          imagePullPolicy: Always
           env:
             - name: N8N_HOST
               value: "n8n.rpotcoava.duckdns.org"
