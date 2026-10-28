@@ -219,3 +219,26 @@ spec:
   selector:
     app: suricata-app
   type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: suricata-threshold-config
+  namespace: default
+data:
+  threshold.config: |
+    # Thresholding & Suppression Rules
+    # Documented at: https://docs.suricata.io/en/latest/configuration/global-thresholds.html
+
+    # SUPPRESS: SURICATA Ethertype unknown (sig_id 2200121)
+    # Reason: Switch Spanning Tree Protocol (STP / RSTP BPDU) and LLDP multicast frames
+    # using IEEE 802.3 LLC frame length instead of Ethernet II EtherType.
+    suppress gen_id 1, sig_id 2200121
+
+    # SUPPRESS: ET HUNTING Observed Telegram API Domain (sig_id 2033967, 2033966)
+    # Scope: raspberrypi5c (Hermes / honeypot / Wazuh Telegram bot)
+    # Covers both current DHCP IP (.146) and pinned reservation (.145)
+    suppress gen_id 1, sig_id 2033967, track by_src, ip 192.168.0.145
+    suppress gen_id 1, sig_id 2033966, track by_src, ip 192.168.0.145
+    suppress gen_id 1, sig_id 2033967, track by_src, ip 192.168.0.146
+    suppress gen_id 1, sig_id 2033966, track by_src, ip 192.168.0.146
